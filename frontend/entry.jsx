@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import Root from "./component/root";
+import Root from "./components/root";
 import configureStore from "./store/store";
 
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -15,5 +15,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
   }
 
   const rootElement = document.getElementById("root");
-  ReactDOM.render(<h1>hello!</h1>, rootElement);
+  ReactDOM.render(<Root store={store}/>, rootElement);
 });

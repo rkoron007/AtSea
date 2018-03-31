@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HouseList</title>
+    <title>AtSea</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <% if current_user %>
+      <script>
+        window.currentUser = {
+          "id": <%= curent_user.id %>,
+          "username": "<%= current_user.username %>",
+          "imgUrl": "<%= current_user.img_url %>"
+        }
+      </script>
+    <% end %>
   </head>
 
   <body>
