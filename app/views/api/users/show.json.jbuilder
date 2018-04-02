@@ -1,2 +1,5 @@
-json.extract! @user, :id, :username
-# json.img_url asset_path(@user.img_url)
+json.partial! "api/users/user", user:@user
+
+# if @user.img_url === nil?
+#   json.img_url asset_path(anchor.png)
+# end

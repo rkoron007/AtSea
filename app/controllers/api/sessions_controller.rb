@@ -1,7 +1,4 @@
 class Api::SessionsController < ApplicationController
-  def new
-    render :new
-  end
 
   def create
     @user = User.find_by_credentials(
@@ -22,6 +19,7 @@ class Api::SessionsController < ApplicationController
       logout
       render "api/users/show"
     else
-      render json: ["Sorry couldn't find a user to logtout!"]
+      render json: ["Sorry couldn't find a user to logout!"]
+    end
   end
 end

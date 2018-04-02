@@ -16,17 +16,16 @@ export const receiveErrors = (errors) => ({
 export const signup = (user) => (dispatch) => (
   API.signup(user).then((cUser) => (
     dispatch(receiveCurrentUser(cUser))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
+  ), error => (
+    dispatch(receiveErrors(error.responseJSON))
   ))
 );
 
 export const login = (user) => (dispatch) => (
-  API.login(user).then((cUser) => (
-    dispatch(receiveCurrentUser(cUser))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
-  ))
+  API.login(user).then(
+    cUser => dispatch(receiveCurrentUser(cUser)),
+    error => dispatch(receiveErrors(error.responseJSON))
+  )
 );
 
 export const logout = () => (dispatch) => (

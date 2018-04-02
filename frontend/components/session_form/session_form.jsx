@@ -13,18 +13,21 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
+    if (this.props.errors.session){
     return (
       <ul>
-        {this.props.errors.map((error, i) => (
+        {this.props.errors.session.map((error, i) => (
           <li key = {`${i}`}>{error}</li>))}
-          </ul>
+      </ul>
         );
       }
+    }
+
 
 
   updateField(input){
     return ((e) =>
-      this.setState({[input]: e.currentTarget.value})
+      this.setState({[input]: e.target.value})
     );
   }
 
@@ -39,7 +42,8 @@ class SessionForm extends React.Component {
     return(
       <div className="session-form-container">
         <form onSubmit = { this.handleSubmit }>
-          <p>{this.props.formType}</p>
+          <h3>{this.props.formType}</h3>
+          {this.renderErrors()}
           <label>Username
             <input
               type="text"
