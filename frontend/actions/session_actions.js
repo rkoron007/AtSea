@@ -14,11 +14,10 @@ export const receiveErrors = (errors) => ({
 });
 
 export const signup = (user) => (dispatch) => (
-  API.signup(user).then((cUser) => (
-    dispatch(receiveCurrentUser(cUser))
-  ), error => (
-    dispatch(receiveErrors(error.responseJSON))
-  ))
+  API.signup(user).then(
+    logUser => dispatch(receiveCurrentUser(logUser)),
+    error => dispatch(receiveErrors(error.responseJSON))
+  )
 );
 
 export const login = (user) => (dispatch) => (
