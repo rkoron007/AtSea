@@ -1,0 +1,33 @@
+
+.search-input{
+  font-family: $roboto;
+  width:56%;
+  float: left;
+  line-height: 16px;
+  color: #333;
+  font-size: 12px;
+  padding: 7px 7px 8px 0;
+  width: 241px;
+  border: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+
+}
+.search-button{
+  font-family: $roboto;
+  width:42%;
+  float: left;
+  padding: 7px 7px 8px 0;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  background-color: #FFAA00;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  width: 80px;
+}
+.clearfix{
+    clear:both
+}

@@ -1,4 +1,5 @@
-.modal-back-drop {
+
+.modal-backdrop {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -8,7 +9,9 @@
   background: rgba(0,0,0,0.3);
 }
 
+
 .modal-window {
+  font-family: $roboto;
   top: 100px;
   left: 20%;
   margin-left: -220px;
@@ -29,8 +32,7 @@
     padding: 10px;
     border-bottom: 1px solid grey;
     a{
-      background-color: grey;
-      margin-right: 8px;
+      background-color: lightgrey;
       border: 1px solid grey;
       border-radius: 5px;
       padding: 11px;
@@ -44,6 +46,39 @@
       border-bottom: none;
     }
   }
+}
 
+.session-form-container{
+  font-family: $roboto;
+  display: flex;
+  flex-direction: column;
+
+  input{
+    line-height: 16px;
+    color: #333;
+    font-size: 12px;
+    padding: 6px;
+    width: 218px;
+    border: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    display: block;
+  }
+  label{
+    padding: 10px 10px 15px 0px;
+  }
+  button{
+    display: inline-block;
+    padding: 7px 7px 8px;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    background-color: #FFAA00;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 218px;
+  }
 
 }

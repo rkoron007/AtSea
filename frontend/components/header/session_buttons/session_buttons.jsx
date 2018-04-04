@@ -8,7 +8,7 @@ class SessionButtons extends React.Component {
       <ul>
           <li><Link
             to="/signup"
-            ClassName="register">
+            className="register">
             Register</Link>
           </li>
 
@@ -24,12 +24,12 @@ class SessionButtons extends React.Component {
             >Demo</button>
           </li>
 
-          <li><NavLink
-            to="/carts" ClassName="carts-link">
+          <li className="carts-link"><Link
+            to="/carts">
             <i className="fa fa-shopping-cart fa-2x"></i>
             <br></br>
 						<p>Cart</p>
-            </NavLink>
+            </Link>
           </li>
 
         </ul>
@@ -37,16 +37,48 @@ class SessionButtons extends React.Component {
     );
   }
 
+  renderUserPhoto(){
+    //if there is no curent user we display a default icon instead
+    if (this.currentUser.img_url){
+    return (<img className="user-image"
+      src={this.currentUser.img_url}></img>);
+      }else{
+    return (
+      <i className="fa fa-anchor fa-2x" aria-hidden="true">
+      </i>);
+    }
+  }
+
 
   navBarGreeting(){
       return (
-        <nav className="current-session-btns">
-
-          <p className="current-user">You</p>
-          <button className="logout-button"
-            onClick={this.logout}
-            >Logout
-          </button>
+      <nav className="current-session-btns">
+        <ul>
+          <li>
+              <div
+                className="session-user-picture">
+                {this.renderUserPhoto()}
+              </div>
+            <h3
+            className="current-user">
+              {this.props.currentUser.username}
+            </h3>
+          </li>
+          <li>
+            <button className="logout-button"
+              onClick={this.logout}
+              >Logout
+            </button>
+          </li>
+          <li className="carts-link">
+            <Link
+              to="/carts">
+              <i className="fa fa-shopping-cart fa-2x"></i>
+              <br></br>
+  						<p>Cart</p>
+              </Link>
+          </li>
+        </ul>
       </nav>
     );
   }

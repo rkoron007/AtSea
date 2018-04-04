@@ -5,11 +5,27 @@ import { AuthRoute } from "../../../util/route_util";
 import { NavLink } from "react-router-dom";
 
 class Modal extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      open:true
+    };
+    this.handleClick = this.handleClick.bind(this);
+
+  }
+
+  handleClick() {
+   this.setState({open: false});
+ }
+
   render(){
+    if(!this.state.open) {
+      return <div></div>;
+    }
     return (
-      // <section> with two <Link> components
-      // Two Route components:
-      <div className="modal-back-drop">
+      <div>
+        <div className='modal-backdrop'onClick={this.handleClick}>
+        </div>
         <div className="modal-window">
           <section>
             <NavLink to="/login" activeClassName="selected">Sign In</NavLink>
@@ -18,11 +34,10 @@ class Modal extends React.Component{
 
           <AuthRoute exact path="/login" component={ LoginFormContainer }/>
           <AuthRoute exact path="/signup" component={ SignUpFormContainer }/>
-
-         </div>
-       </div>
-     );
-    }
+        </div>
+    </div>
+    );
+  }
 }
 
 
