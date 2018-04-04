@@ -1,0 +1,49 @@
+.modal-back-drop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  background: rgba(0,0,0,0.3);
+}
+
+.modal-window {
+  top: 100px;
+  left: 20%;
+  margin-left: -220px;
+  width: 580px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  z-index: 999;
+  overflow: hidden;
+  height: 485px;
+  margin: 0 auto;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 255, .1);
+
+  section{
+    padding: 10px;
+    border-bottom: 1px solid grey;
+    a{
+      background-color: grey;
+      margin-right: 8px;
+      border: 1px solid grey;
+      border-radius: 5px;
+      padding: 11px;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .selected{
+      background-color: white;
+      border-bottom: none;
+    }
+  }
+
+
+}
