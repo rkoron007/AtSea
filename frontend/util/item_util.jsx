@@ -16,7 +16,7 @@ export const fetchItem = (itemId) => (
 export const createItem = (item) => (
   $.ajax({
     method: "POST",
-    url: `/api/items/`,
+    url: `/api/users/`,
     data: {item}
   })
 );

@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom";
 class ItemShow extends React.Component{
 
   componentDidMount(){
@@ -7,7 +7,7 @@ class ItemShow extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.item.id !== nextProps.match.params.itemId) {
+    if (this.props.match.params.itemId !== nextProps.match.params.itemId) {
       this.props.fetchItem(nextProps.match.params.itemId);
     }
   }
@@ -19,9 +19,9 @@ class ItemShow extends React.Component{
       }
     return(
       <div className="items-show">
+        <img src={item.imageUrl}/>
           <h3>{item.title}</h3>
           <p>{item.description}</p>
-
           <p>{item.price}</p>
           <Link to="/"className="keep-shopping">Keep Shopping</Link>
       </div>

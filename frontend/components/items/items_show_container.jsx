@@ -4,8 +4,8 @@ import { fetchItems } from "../../actions/item_actions";
 import ItemShow from "./item_show";
 
 const mapStateToProps = (state, ownParams) => {
-  console.log(state)
-  return { item: state.items[ownParams.match.params.itemId]};
+  return { item: state.entities.items[ownParams.match.params.itemId],
+    user: state.entities.user};
 };
 
 const mapDispatchToProps = (dispatch) => ({

@@ -15,13 +15,11 @@ class Modal extends React.Component{
   }
 
   handleClick() {
-   this.setState({open: false});
+   this.setState({open: false}, this.props.history.push('/'));
  }
 
   render(){
-    if(!this.state.open) {
-      return <Redirect to="/" />;
-    }
+    if(!this.state.open) return null;
     return (
       <div>
         <div className='modal-backdrop'onClick={this.handleClick}>

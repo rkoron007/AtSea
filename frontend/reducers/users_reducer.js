@@ -10,7 +10,7 @@ const usersReducer = (state={}, action) =>{
     case RECEIVE_ITEMS:
       return action.payload.users;
     case RECEIVE_ITEM:
-      return state;
+      return action.payload.user;
     default:
       return state;
   }

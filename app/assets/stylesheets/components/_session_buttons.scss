@@ -10,7 +10,7 @@
   li{
     padding: 10px;
     font-size: 14px;
-
+    margin-right: 15px;
     .register{
       display:block;
       padding: 8px;
@@ -68,7 +68,7 @@
 
   .current-user{
     font-size: 14px;
-    margin-right: 15px;
+    margin-right: 20px;
   }
   .session-user-picture{
     display: flex;
@@ -82,7 +82,12 @@
     border: 1px solid $gold-orange;
     padding: 8px;
     margin-top: 20px;
-    margin-right: 10px;
+    margin-right: 15px;
     border-radius: 5px;
+  }
+  .user-image{
+    width: 28px;
+    height: 28px;
+
   }
 }

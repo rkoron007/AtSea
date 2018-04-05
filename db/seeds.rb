@@ -8,16 +8,16 @@
 
 
 
-user1 = User.create!({ username: 'USERNAME',password: 'PASSWORD' })
-user2 = User.create!({ username: 'BoatLover',password: 'PASSWORD1' })
-user3 = User.create!({ username: 'Knotsar3C00l',password: 'PASSWORD2' })
-user4 = User.create!({ username: 'LandLubber',password: 'PASSWORD3' })
-user5 = User.create!({ username: 'BIRDS!',password: 'PASSWORD4' })
-user6 = User.create!({ username: 'poseidon#1',password: 'PASSWORD5' })
-user7 = User.create!({ username: 'SailorGal',password: 'PASSWORD6' })
-user8 = User.create!({ username: 'PartyBooats',password: 'PASSWORD7' })
-user9 = User.create!({ username: 'HelloHallo',password: 'PASSWORD8' })
-user10 = User.create!({ username: 'Parrots4Ever',password: 'PASSWORD9' })
+user1 = User.create!({ username: 'USERNAME',password: 'PASSWORD' ,img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522954985/anchor.png"})
+user2 = User.create!({ username: 'BoatLover',password: 'PASSWORD1', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957073/anchor2.jpg" })
+user3 = User.create!({ username: 'Knotsar3C00l',password: 'PASSWORD2', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957185/seahorse.jpg" })
+user4 = User.create!({ username: 'LandLubber',password: 'PASSWORD3', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957236/crab.jpg" })
+user5 = User.create!({ username: 'BIRDS!',password: 'PASSWORD4', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957293/whale.jpg"})
+user6 = User.create!({ username: 'poseidon#1',password: 'PASSWORD5', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957461/Poseidon_2.jpg" })
+user7 = User.create!({ username: 'SailorGal',password: 'PASSWORD6', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957591/moon.png" })
+user8 = User.create!({ username: 'PartyBooats',password: 'PASSWORD7', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957634/boat.jpg" })
+user9 = User.create!({ username: 'HelloHallo',password: 'PASSWORD8', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957715/ocean.jpg" })
+user10 = User.create!({ username: 'Parrots4Ever',password: 'PASSWORD9', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957770/parrottsss.jpg" })
 
 item1 = Item.create!({ title: 'Knotted Knot',
   description: 'I have no idea how to undo this. Halp.', price: 25, user_id: user1.id,
@@ -60,25 +60,25 @@ item12 = Item.create!({ title: 'Sea Fairing Cat',
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522887390/cat.jpg" })
 item13 = Item.create!({ title: 'This Compass Works!',
   description: 'I think...', price: 60, user_id: user2.id,
-  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522878283/Broighter_Gold_2C_Dublin_2C_October_2010__2803_29.jpg" })
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957865/wcompass.jpg" })
 item14 = Item.create!({ title: 'Map to Everywhere!',
   description: 'I can do any map you would like! Just let me know which you would prefer!', price: 10, user_id: user1.id,
-  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522878283/Broighter_Gold_2C_Dublin_2C_October_2010__2803_29.jpg" })
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522959427/globe.png" })
 item15 = Item.create!({ title: 'Unsinkable Boat',
   description: 'I got a ton of these totally unsinkable boats!', price: 2000, user_id: user3.id,
-  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522878283/Broighter_Gold_2C_Dublin_2C_October_2010__2803_29.jpg" })
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522959477/Titanic_modelo_cropped.jpg" })
 item16 = Item.create!({ title: 'Large Knot',
   description: 'Put this is any room for a more nautical feel.', price: 300, user_id: user4.id,
-  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522878283/Broighter_Gold_2C_Dublin_2C_October_2010__2803_29.jpg" })
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522959526/bigknot.jpg" })
 item17 = Item.create!({ title: 'Tiny Compass',
   description: 'So tiny you can store it in your sock! Oh man, that is what I should have called this. ', price: 5, user_id: user1.id,
-  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522878283/Broighter_Gold_2C_Dublin_2C_October_2010__2803_29.jpg" })
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522959649/compass.png" })
 item18 = Item.create!({ title: 'Large Boat',
   description: 'Solid large boat. Will definetly carry you many large places.', price: 1200, user_id: user2.id,
-  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522878283/Broighter_Gold_2C_Dublin_2C_October_2010__2803_29.jpg" })
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522959695/largeboat.jpg" })
 item19 = Item.create!({ title: 'Paper Boat',
   description: 'Totally safe to boat in.', price: 50, user_id: user3.id,
-  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522878283/Broighter_Gold_2C_Dublin_2C_October_2010__2803_29.jpg" })
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522959734/paper.jpg" })
 item20 = Item.create!({ title: 'Large Compass',
   description: 'Much better than tiny compass.', price: 2, user_id: user9.id,
-  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522878283/Broighter_Gold_2C_Dublin_2C_October_2010__2803_29.jpg" })
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522959804/largecompass.jpg" })

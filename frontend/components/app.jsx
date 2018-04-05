@@ -19,14 +19,13 @@ const App = () => (
     <header>
       <HeaderContainer />
     </header>
-    <CategoriesBar />
-    <MainPageContainer />
 
-    <div className="filter-and-index">
-      <Route exact path="/items" component={FilterForm } />
-      <Route exact path="/items" component={ ItemIndexContainer }/>
-      <ProtectRoute path="/items/:itemId" component={ ItemShowContainer }/>
-    </div>
+      <Switch>
+        <Route exact path ="/" component={MainPageContainer} />
+        <Route exact path="/items" component={ ItemIndexContainer }/>
+        <Route path="/items/:itemId" component={ ItemShowContainer }/>
+        <Redirect to="/" />
+      </Switch>
   </div>
 );
 export default App;

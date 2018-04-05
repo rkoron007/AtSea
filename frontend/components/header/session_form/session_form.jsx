@@ -23,8 +23,6 @@ class SessionForm extends React.Component {
       }
     }
 
-
-
   updateField(input){
     return ((e) =>
       this.setState({[input]: e.target.value})
@@ -36,6 +34,10 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
     this.setState({ username: "", password:""});
+  }
+
+  componentWillUnmount(){
+    return this.props.clearErrors();
   }
 
   render(){

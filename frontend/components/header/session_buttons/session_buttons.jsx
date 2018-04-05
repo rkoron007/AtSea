@@ -39,12 +39,11 @@ class SessionButtons extends React.Component {
 
   renderUserPhoto(){
     //if there is no curent user we display a default icon instead
-    if (this.currentUser.img_url){
-    return (<img className="user-image"
-      src={this.currentUser.img_url}></img>);
+    if (this.currentUser.imgUrl){
+    return (<img src={this.currentUser.imgUrl}className="user-image"></img>);
       }else{
     return (
-      <i className="fa fa-anchor fa-2x" aria-hidden="true">
+      <i className="fa fa-anchor fa-1x" aria-hidden="true">
       </i>);
     }
   }
