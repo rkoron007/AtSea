@@ -1,9 +1,10 @@
-$splash: image_path("cloud.jpg");
+$splash: image_path("ocean2.jpg");
 
 .splashImage{
   background-image: url($splash);
-  background-size: 100%;
+  background-size: 1385px;
+  background-position: center;
   background-repeat: no-repeat;
-  height: 340px;
-  width: 100%;
+  height: 320px;
+  margin: 20px;
 }

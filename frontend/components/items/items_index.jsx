@@ -9,8 +9,7 @@ class ItemsIndex extends React.Component{
 
   render(){
     return(
-      <div>
-        <h1 className="staff-headline">Staff Favorites</h1>
+      <div className="items-index-main">
         <ul className="items-index">
           {this.props.items.map(
             item =>

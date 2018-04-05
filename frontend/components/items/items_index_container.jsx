@@ -5,7 +5,8 @@ import ItemsIndex from "./items_index";
 
 const mapStateToProps = (state) => {
 
-  return { items: Object.keys(state.entities.items).map(id => state.entities.items[id])};
+  return { items: Object.keys(state.entities.items).map(
+    id => state.entities.items[id])};
 
 };
 

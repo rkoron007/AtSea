@@ -5,9 +5,11 @@ import {
   Switch,
   Link,
 } from 'react-router-dom';
-import Splash from "./splash/splash";
+
 import HeaderContainer from "./header/header_container";
+import MainPageContainer from "./mainpage/mainpage";
 import ItemIndexContainer from "./items/items_index_container";
+import FilterForm from "./items/index_filter/filter_form";
 import CategoriesBar from "./categories/categories_bar";
 import { AuthRoute, ProtectRoute } from '../util/route_util';
 
@@ -17,8 +19,11 @@ const App = () => (
       <HeaderContainer />
     </header>
     <CategoriesBar />
-    <Route exact path="/" component={ Splash } />
-    <ItemIndexContainer />
+    <MainPageContainer />
+    <div className="filter-and-index">
+      <Route exact path="/items" component={FilterForm } />
+      <Route exact path="/items" component={ ItemIndexContainer }/>
+    </div>
   </div>
 );
 export default App;
