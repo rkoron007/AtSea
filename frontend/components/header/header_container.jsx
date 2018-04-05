@@ -10,6 +10,7 @@ import {
 import Modal from "./session_form/modal";
 import SessionButtonsContainer from "./session_buttons/session_buttons_container";
 import SearchContainer from "./search/search_index";
+
 import { AuthRoute, ProtectRoute } from '../../util/route_util';
 
 
@@ -17,12 +18,17 @@ class HeaderContainer extends React.Component{
   render(){
     return(
       <div className="header">
+        <div className="header-left">
         <Link to="/" className="header-link">
           <i className="fa fa-anchor fa-3x" aria-hidden="true"></i>
-          <h1>AtSea</h1>
+          <h2>AtSea</h2>
         </Link>
-        <SessionButtonsContainer />
+
         <SearchContainer />
+        </div>
+        <div className="header-right">
+        <SessionButtonsContainer />
+        </div>
           <AuthRoute exact path="/login" component={ Modal }/>
           <AuthRoute exact path="/signup" component={ Modal }/>
       </div>

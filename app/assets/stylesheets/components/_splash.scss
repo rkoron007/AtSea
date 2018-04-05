@@ -1,0 +1,9 @@
+$splash: image_path("cloud.jpg");
+
+.splashImage{
+  background-image: url($splash);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 340px;
+  width: 100%;
+}

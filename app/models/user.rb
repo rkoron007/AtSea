@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length:{ minimum:6, allow_nil: true}
 
-  # has_many :items
+  has_many :items
   # has_one :shopping_cart
   # has_many :comments
 

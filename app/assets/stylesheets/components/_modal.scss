@@ -13,7 +13,7 @@
 .modal-window {
   font-family: $roboto;
   top: 100px;
-  left: 20%;
+  left: 30%;
   margin-left: -220px;
   width: 580px;
   padding: 20px;
@@ -34,7 +34,9 @@
     a{
       background-color: lightgrey;
       border: 1px solid grey;
-      border-radius: 5px;
+
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
       padding: 11px;
 
       &:hover{
@@ -52,6 +54,21 @@
   font-family: $roboto;
   display: flex;
   flex-direction: column;
+
+
+  .session-errors {
+    font-family: $roboto;
+    line-height: 16px;
+
+    color: #C12323;
+    display: inline-block;
+
+    li{
+    background-color: #FFEDED;
+    padding: 10px;
+    border-radius: 5px;
+    }
+  }
 
   input{
     line-height: 16px;

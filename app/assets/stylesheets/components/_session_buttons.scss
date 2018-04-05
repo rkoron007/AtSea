@@ -5,12 +5,22 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: center;
 
-  // min-width: 30%;
   li{
     padding: 10px;
     font-size: 14px;
+
+    .register{
+      display:block;
+      padding: 8px;
+      line-height: 15px;
+      margin-top: 13px;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
 
     button:hover {
       background-color: #fce0a9;

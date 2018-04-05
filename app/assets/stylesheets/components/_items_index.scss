@@ -1,0 +1,18 @@
+
+.items-index{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+
+  .item{
+    margin: 10px;
+    max-width: 20%;
+    max-height: 20%;
+  }
+}
+
+
+.staff-headline{
+  margin-bottom:18px;
+  font-size: 26px;
+}

@@ -1,0 +1,18 @@
+.categories-bar{
+
+  border-bottom: 1px solid $light-grey;
+  border-top: 1px solid $light-grey;
+  color: $medium-grey;
+  padding: 5px 0 10px 0;
+  .categories{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    width: 100%;
+
+    li {
+      font-family: $roboto;
+      margin: 0 10px;
+    }
+  }
+}

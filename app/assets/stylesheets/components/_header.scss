@@ -1,4 +1,22 @@
 .header-link{
-  display: flex;
-  background-color: green;
+  padding: 10px 10px 10px 40px;
+  color: $gold-orange;
+}
+
+
+.header{
+  background-color: #fff;
+  display:flex;
+  justify-content: space-between;
+
+  .header-left{
+    display:flex;
+    justify-content: flex-start;
+    width:50%;
+  }
+  .header-right{
+    display:flex;
+    justify-content: flex-end;
+    width:50%;
+  }
 }
