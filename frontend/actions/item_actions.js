@@ -6,10 +6,10 @@ export const RECEIVE_ITEM = "RECEIVE_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
 
 
-const receiveItems = (items) =>{
+const receiveItems = (payload) =>{
   return({
   type: RECEIVE_ITEMS,
-  items
+  payload
 });};
 
 const receiveItem = (item) =>({

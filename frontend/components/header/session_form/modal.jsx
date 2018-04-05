@@ -2,7 +2,7 @@ import React from "react";
 import LoginFormContainer from "./login_form_container";
 import SignUpFormContainer from "./signup_form_container";
 import { AuthRoute } from "../../../util/route_util";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 
 class Modal extends React.Component{
   constructor(props){
@@ -20,7 +20,7 @@ class Modal extends React.Component{
 
   render(){
     if(!this.state.open) {
-      return <div></div>;
+      return <Redirect to="/" />;
     }
     return (
       <div>

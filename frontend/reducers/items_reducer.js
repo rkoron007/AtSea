@@ -8,7 +8,7 @@ const itemsReducer = (state={}, action) =>{
   let newState;
   switch (action.type) {
     case RECEIVE_ITEMS:
-      return action.items;
+      return action.payload.items;
     case RECEIVE_ITEM:
       newState = Object.assign({}, state, {[action.item.id]:action.item});
       return newState;

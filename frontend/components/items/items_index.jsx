@@ -16,6 +16,7 @@ class ItemsIndex extends React.Component{
             <ItemIndexItem
               key={item.id}
               item={item}
+              user={this.props.users[item.userId]}
             />)};
         </ul>
       </div>

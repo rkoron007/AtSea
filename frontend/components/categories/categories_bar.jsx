@@ -7,29 +7,29 @@ class CategoriesBar extends React.Component{
     return(
       <div className="categories-bar">
         <ul className="categories">
-          <li><NavLink to="/item"
+          <li><NavLink to="/items"
             activeClassName="categories-selected"
-            />Maps
+            >Maps</NavLink>
           </li>
-          <li><NavLink to="/item"
+          <li><NavLink to="/items"
             activeClassName="categories-selected"
-            />Boats
+            >Boats</NavLink>
           </li>
-          <li><NavLink to="/item"
+          <li><NavLink to="/items"
             activeClassName="categories-selected"
-            />Oceans
+            >Oceans</NavLink>
           </li>
-          <li><NavLink to="/item"
+          <li><NavLink to="/items"
             activeClassName="categories-selected"
-            />Knots
+            >Knots</NavLink>
           </li>
-          <li><NavLink to="/item"
+          <li><NavLink to="/items"
             activeClassName="categories-selected"
-            />Compasses
+            >Compasses</NavLink>
           </li>
-          <li><NavLink to="/item"
+          <li><NavLink to="/items"
             activeClassName="categories-selected"
-            />Animals
+            >Animals</NavLink>
           </li>
         </ul>
       </div>

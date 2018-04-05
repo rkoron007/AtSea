@@ -41,7 +41,7 @@ class Api::ItemsController  < ApplicationController
   end
 
   def index
-    @items = Item.all
+    @items = Item.all.includes(:user)
   end
 
   def show
