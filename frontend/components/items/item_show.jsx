@@ -16,16 +16,17 @@ class ItemShow extends React.Component{
   createList(item){
     return(
     <li>
-      <Link to={`items/${item.id}`}>
-        <img src={item.imgUrl} className="extra-user-item-img"/>
+      <Link to={`/items/${item.id}`}>
+        <img src={item.imageUrl} className="extra-user-item-img"/>
       </Link>
     </li>);
   }
 
   otherUserItemPictures(items){
+    console.warn(items);
     if (items)
     {
-      return items.forEach(item => this.createList(item));
+      return items.map(item => this.createList(item));
     }
   }
 
@@ -43,9 +44,7 @@ class ItemShow extends React.Component{
          </div>
          <div className="show-right">
             <ul>
-              <li><img src={user.imgUrl} className="extra-user-item-img"/></li>
-              <li><img src={user.imgUrl} className="extra-user-item-img"/></li>
-              <li><img src={user.imgUrl} className="extra-user-item-img"/></li>
+              {this.otherUserItemPictures(items)}
               <Link to="/"className="keep-shopping">Keep Shopping</Link>
            </ul>
          </div>

@@ -6,12 +6,11 @@ class Api::ItemsController  < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.user_id = current_user.id
-
+      debugger
     if @item.save
       render "api/items/show"
     else
-      render json: current_user.errors.full_messages, status: 422
+      render json: ['NAH'], status: 422
     end
   end
 
@@ -26,7 +25,7 @@ class Api::ItemsController  < ApplicationController
       if @item.update_attributes(item_params)
         render "api/items/show"
       else
-        render json: current_user.errors.full_messages, status: 422
+        render json: ['NO'], status: 422
       end
     end
   end
@@ -51,6 +50,6 @@ class Api::ItemsController  < ApplicationController
   private
 
   def item_params
-    params.require(:items).permit(:title, :description, :price, :img_url)
+    params.require(:item).permit(:title, :description, :price, :img_url, :user_id)
   end
 end
