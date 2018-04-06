@@ -78,13 +78,14 @@ class ItemForm extends React.Component {
   render(){
      const { item, formType, formTitle } = this.props;
     return(
-      <div>
+      <div className="item-form">
 
-        <button onClick={this.handleDelete}>Delete Item</button>
+        <button className="item-delete"
+          onClick={this.handleDelete}>Delete Item</button>
 
         <form onSubmit={this.handleSubmit}>
-          <h1>{this.props.formTitle}</h1>
-          <div className="FileUpload">
+          <h1 className="item-form-title">{this.props.formTitle}</h1>
+          <div className="file-upload">
             <Dropzone
               multiple={false}
               accept="image/*"
@@ -93,31 +94,32 @@ class ItemForm extends React.Component {
             </Dropzone>
           </div>
 
-          <div>
+          <div className="uploaded-picture">
             {this.state.uploadedFileCloudinaryUrl === '' ? null :
               <div>
                 <img src={this.state.uploadedFileCloudinaryUrl} />
               </div>}
             </div>
 
-          <label>Title
+          <label className="item-form-title">Title
             <input type="text"
               value={this.state.title}
               onChange={this.updateField("title")}>
             </input>
           </label>
-          <label>Description
+          <label className="item-form-description">Description
             <textarea
               value={this.state.description}
               onChange={this.updateField("description")}>
             </textarea>
           </label>
 
-          <label>Price
+          <label className="item-form-price">Price
             <input type="number"  value={this.state.price}
               onChange={this.updateField("price")} />
           </label>
-          <input type="submit">{this.formType}</input>
+          <input className="item-form-submit"
+            type="submit">{this.formType}</input>
         </form>
       </div>
     );

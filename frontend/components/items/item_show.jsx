@@ -23,29 +23,30 @@ class ItemShow extends React.Component{
   }
 
   otherUserItemPictures(items){
-    console.warn(items);
     if (items)
     {
-      return items.map(item => this.createList(item));
+      return items.slice(1, 4).map(item => this.createList(item));
     }
   }
 
   render(){
    const { item, user, items } = this.props;
    if (!item || !user ) {
-     return <div>Loading...</div>;
+     return <div>Nope...</div>;
      }
    return(
      <div className="items-show">
        <div className="show-header">
          <div className="show-left">
-           <img src={user.imgUrl} className="user-item-img"/>
+           <Link to={`users/${user.id}`}>
+             <img src={user.imgUrl} className="user-item-img"/></Link>
            <h1>{user.username}</h1>
          </div>
          <div className="show-right">
             <ul>
               {this.otherUserItemPictures(items)}
-              <Link to="/"className="keep-shopping">Keep Shopping</Link>
+              <Link to={`users/${user.id}`}
+                className="keep-shopping">See More</Link>
            </ul>
          </div>
        </div>
@@ -54,7 +55,17 @@ class ItemShow extends React.Component{
          <img src={item.imageUrl} className="show-item-img"/>
          <aside className="show-aside" >
            <h3 className="show-item-title">{item.title}</h3>
-           <p className="show-item-price">{item.price}</p>
+           <label className="show-item-price-label">Item Price:
+             <p className="show-item-price">${item.price}</p>
+           </label>
+           <label className="quantity">Quantity
+               <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </label>
            <button className="cart-button">Add to Cart</button>
          </aside>
        </div>

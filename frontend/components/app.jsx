@@ -26,7 +26,6 @@ const App = () => (
     </header>
     <Route path ="/" component={CategoriesBar} />
       <Switch>
-        <Route exact path ="/" component={MainPageContainer} />
         <Route exact path="/items/new"
           component={ ItemCreateContainer }/>
         <Route exact path="/items/:itemId/edit"
@@ -34,6 +33,7 @@ const App = () => (
         <Route exact path="/items/:itemId"
           component={ ItemShowContainer }/>
         <Route exact path="/items" component={ ItemIndexContainer }/>
+        <Route path ="/" component={MainPageContainer} />
         <Redirect to="/" />
       </Switch>
   </div>

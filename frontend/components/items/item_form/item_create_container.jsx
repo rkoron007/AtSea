@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { createItem, receiveErrors } from "../../../actions/item_actions";
 import ItemForm from "./item_form";
 
-const mapStateToProps = ( state ) => {
+const mapStateToProps = ( state, ownProps ) => {
   const item = { title: "",
     description: "",
     price:"",

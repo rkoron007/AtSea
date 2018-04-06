@@ -1,9 +1,50 @@
-input{
-  border: 1px solid $medium-grey;
-    color: $medium-grey;
-}
+.item-form{
+  color: $medium-grey;
+  border:1px solid $medium-grey;
+  font-family: $roboto;
 
-textarea{
-    border: 1px solid $medium-grey;
-    color: $medium-grey;
+  .item-delete{
+  }
+
+  .item-form-title{
+    font-weight: 500;
+    font-size: 26px;
+  }
+
+  .file-upload{
+
+    .uploaded-picture{
+
+    }
+  }
+
+  .item-form-title{
+
+
+  }
+  .item-form-description{
+
+
+  }
+
+  .item-form-price{
+
+  }
+  .item-form-submit{
+    font-size: 15px;
+    line-height: 1.2;
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #FFF;
+    background-color: $gold-orange;
+    border-radius: 4px;
+    border-width: 1px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    height: 24px;
+    line-height: 1.4;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+  }
 }

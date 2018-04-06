@@ -12,44 +12,52 @@
     width: 95%;
 
     .show-item-img{
-      height: 100%;
-      width: 50%;
+      height: 570px;
+      width: 570px;
       margin-top: 4%;
       display: inline-block;
       vertical-align: middle;
       margin-top: 25px;
       margin-bottom: 25px;
       padding-bottom: 25px;
-      border-bottom: 1px solid $light-grey;
+      border-bottom: 1px solid $medium-grey;
       color: $dark-grey;
     }
     .show-aside{
       background-color: #fff;
-      border-radius: 3px 3px 0 0;
-      margin: 0;
-      padding: 10%;
-      margin-bottom: 10px;
-      text-align: left;
-      line-height: 20px;
+      border-radius: 4px;
+      margin: 1%;
+      padding-top: 1%;
+      padding-left: 100px;
+      padding-right: 100px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid $medium-grey;
+      padding-bottom: 10%;
 
       .show-item-title{
         font-size: 20px;
         line-height: 26px;
         font-weight: 700;
-        margin: 0 0 16px;
-        word-wrap: break-word;
+        color: #3E3E3E;
+        text-shadow: 0 1px 0 white;
         color: $dark-grey;
         width: auto;
         text-shadow: 0 1px 0 white;
         text-align: left;
+        padding-bottom: 10%;
       }
 
       .show-item-price{
+        display: flex;
         font-size: 20px;
         font-weight: bold;
         line-height: 1.4;
-        text-align: left;
-        color: $black;
+        text-align: right;
+        color: #222;
+        padding-bottom: 10%;
+        align-content: unset;
+        padding-left: 100px;
       }
 
       .cart-button{
@@ -58,20 +66,26 @@
         border-color: rgba(0, 0, 0, 0.1);
         color: #FFF;
         background-color: $gold-orange;
-        border-radius: 3px;
-        border-style: solid;
+        border-radius: 4px;
         border-width: 1px;
         font-family: inherit;
         font-size: 14px;
         font-weight: bold;
-        height: 38px;
+        height: 24px;
         line-height: 1.4;
         padding: 8px 12px;
         text-align: center;
         text-decoration: none;
-        white-space: nowrap;
       }
-
+      .quantity{
+        padding-bottom: 15%;
+      }
+      .show-item-price-label{
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
     }
   }
 
@@ -148,14 +162,11 @@
     flex-wrap: wrap;
     line-height: 1.4;
     text-align: left;
-    margin: auto;
-    border-bottom: 1px solid $light-grey;
+    margin: 29.5%;
+    border-bottom: 1px solid $medium-grey;
     margin-top: 100px;
     text-align: left;
-    width: 60%;
-    margin-top: 100px;
-    text-align: left;
-    margin-bottom: 30%;
+    width: 1000px;
 
     h1{
       font-weight: 700;

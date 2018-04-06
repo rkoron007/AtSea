@@ -6,7 +6,6 @@ class Api::ItemsController  < ApplicationController
 
   def create
     @item = Item.new(item_params)
-      debugger
     if @item.save
       render "api/items/show"
     else
@@ -23,7 +22,7 @@ class Api::ItemsController  < ApplicationController
 
     if @item.user_id == current_user.id
       if @item.update_attributes(item_params)
-        render "api/items/show"
+        render "api/items/show/"
       else
         render json: ['NO'], status: 422
       end
