@@ -12,9 +12,9 @@ const receiveItems = (payload) =>{
   payload
 });};
 
-const receiveItem = (item) =>({
+const receiveItem = (payload) =>({
   type: RECEIVE_ITEM,
-  item
+  payload
 });
 
 const removeItem = (item) =>({

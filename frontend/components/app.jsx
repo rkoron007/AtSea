@@ -19,7 +19,7 @@ const App = () => (
     <header>
       <HeaderContainer />
     </header>
-
+    <Route path ="/" component={CategoriesBar} />
       <Switch>
         <Route exact path ="/" component={MainPageContainer} />
         <Route exact path="/items" component={ ItemIndexContainer }/>

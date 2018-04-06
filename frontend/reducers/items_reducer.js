@@ -10,7 +10,8 @@ const itemsReducer = (state={}, action) =>{
     case RECEIVE_ITEMS:
       return action.payload.items;
     case RECEIVE_ITEM:
-      newState = Object.assign({}, state, {[action.item.id]:action.item});
+      newState = Object.assign({}, action.payload.items,
+        {[action.payload.item.id]:action.payload.item});
       return newState;
     case REMOVE_ITEM:
       newState = Object.assign({}, state);

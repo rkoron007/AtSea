@@ -5,4 +5,8 @@ class Item < ApplicationRecord
 foreign_key: :user_id,
   class_name: User
 
+  def associated_items
+    Item.where(user: user).where.not(id: id)
+  end
+
 end

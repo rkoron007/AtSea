@@ -45,7 +45,7 @@ class Api::ItemsController  < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    @item = Item.includes(user: [:items]).find(params[:id])
   end
 
   private
