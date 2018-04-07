@@ -14,27 +14,29 @@ class Api::ItemsController  < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
+    debugger
+    @item = Item.find(params[:item][:id])
   end
 
   def update
-    @item = Item.find(params[:id])
-
+    @item = Item.find(params[:item][:id])
     if @item.user_id == current_user.id
       if @item.update_attributes(item_params)
-        render "api/items/show/"
+        render "api/items/show"
       else
         render json: ['NO'], status: 422
       end
     end
   end
 
-  def delete
+  def destroy
     @item = Item.find(params[:id])
-
-    if @item
-      @item.delete!
-      render "api/items/index"
+    if @item.user_id == current_user.id
+      if @item.destroy
+        render :show
+      else
+        render json: @item.errors.full_messages, status: 422
+      end
     end
   end
 

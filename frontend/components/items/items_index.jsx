@@ -10,6 +10,10 @@ class ItemsIndex extends React.Component{
   }
 
   render(){
+    if (Object.keys(this.props.users).length < 2) {
+      return null;
+    }
+
     return(
       <div className="filter-and-index">
         <Route exact path="/items" component={FilterForm } />

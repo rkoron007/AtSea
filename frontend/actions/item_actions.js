@@ -18,9 +18,9 @@ const receiveItem = (payload) =>({
   payload
 });
 
-const removeItem = (item) =>({
+const removeItem = (itemId) =>({
   type: REMOVE_ITEM,
-  item
+  itemId
 });
 
 const receiveItemErrors = (errors) =>({
@@ -52,13 +52,13 @@ export const createItem = (item) => dispatch => {
 
 export const updateItem = (item) => dispatch => {
   return API.updateItem(item).then(
-    updatedItem => dispatch(updateItem(updatedItem)),
+    updatedItem => dispatch(receiveItem(updatedItem)),
     error => dispatch(receiveItemErrors(error.responseJSON))
   );
 };
 export const deleteItem = (itemId) => dispatch => {
-  return API.updateItem(itemId).then(
-    item => dispatch(updateItem(item.id)),
+  return API.deleteItem(itemId).then(
+    item => dispatch(removeItem(itemId)),
     error => dispatch(receiveItemErrors(error.responseJSON))
   );
 };

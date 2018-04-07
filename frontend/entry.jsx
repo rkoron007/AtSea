@@ -15,11 +15,7 @@ let store;
   } else {
     store = configureStore();
   }
-
-  // window.store = store;
-  // window.dispatch = store.dispatch;
-  // window.login = login;
-  // window.createItem = createItem;
+  window.getState = store.getState;
   const rootElement = document.getElementById("root");
   ReactDOM.render(<Root store={store}/>, rootElement);
 });

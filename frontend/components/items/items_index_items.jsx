@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 const ItemIndexItem = ({ item, user }) => {
+
   return <li className="item">
     <Link
       to={`/items/${item.id}`}><img src={item.imageUrl}/>

@@ -3,11 +3,13 @@ import { connect } from "react-redux";
 import { fetchItems } from "../../actions/item_actions";
 import ItemsIndex from "./items_index";
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state) => {
+  console.log(state.entities.users);
+  return{
   items: Object.keys(state.entities.items).map(
     id => state.entities.items[id]),
-  users: state.entities.users
-});
+  users: state.entities.users};
+};
 
 const mapDispatchToProps = (dispatch) => ({
     fetchItems: () => dispatch(fetchItems())

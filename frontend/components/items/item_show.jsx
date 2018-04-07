@@ -25,7 +25,7 @@ class ItemShow extends React.Component{
   otherUserItemPictures(items){
     if (items)
     {
-      return items.slice(1, 4).map(item => this.createList(item));
+      return items.slice(1).map(item => this.createList(item));
     }
   }
 
@@ -51,12 +51,13 @@ class ItemShow extends React.Component{
          </div>
        </div>
 
-       <div className="show-middle">
-         <img src={item.imageUrl} className="show-item-img"/>
-         <aside className="show-aside" >
-           <h3 className="show-item-title">{item.title}</h3>
-           <label className="show-item-price-label">Item Price:
-             <p className="show-item-price">${item.price}</p>
+      <div className="show-middle-box">
+        <div className="show-middle">
+          <img src={item.imageUrl} className="show-item-img"/>
+          <aside className="show-aside" >
+            <h3 className="show-item-title">{item.title}</h3>
+            <label className="show-item-price-label">Item Price:
+              <p className="show-item-price">${item.price}</p>
            </label>
            <label className="quantity">Quantity
                <select>
@@ -69,11 +70,12 @@ class ItemShow extends React.Component{
            <button className="cart-button">Add to Cart</button>
          </aside>
        </div>
+
        <div className="show-item-description">
          <h1>Details:</h1>
          <p>{item.description}</p>
        </div>
-
+      </div>
      </div>
    );
  }

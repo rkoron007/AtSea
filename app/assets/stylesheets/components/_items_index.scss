@@ -24,29 +24,29 @@
     margin: 10px;
     width: 206px;
     height: 164px;
-    margin-left: 15px;
-    margin-bottom: 15px;
     transition: box-shadow 0.5s;
     margin-top: 0px;
-    margin-bottom: 120px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-bottom: 180px;
+    margin-left: 30px;
+    margin-right: 30px;
 
     .item-index-price{
-      font-weight: 550;
       color: $dark-grey;
-      font-size: 14px;
+      font-weight: 550;
+      font-size: 13px;
+      line-height: 1.4;
       text-align: left;
     }
     .item-index-title{
       color: #444;
       text-align: left;
-      white-space: nowrap;
-      font-size: 20px;
-      font-weight: 100;
+      font-size: 13px;
+      font-weight: 400;
       margin-top: 7px;
       margin-bottom: 3px;
-    }
+      letter-spacing: .02em;
+      font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI";
+  }
     .item-index-user{
       font-size: 14px;
       line-height: 1.4;

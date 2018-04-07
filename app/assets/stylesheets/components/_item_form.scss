@@ -2,20 +2,28 @@
   color: $medium-grey;
   border:1px solid $medium-grey;
   font-family: $roboto;
-
-  .item-delete{
-  }
-
-  .item-form-title{
+  .form-header{
     font-weight: 500;
     font-size: 26px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    text-align: center;
+    color: #444;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    line-height: 1.4;
   }
+  .item-delete{
+    display: flex;
+  }
+
+
 
   .file-upload{
 
-    .uploaded-picture{
-
-    }
+  }
+  .uploaded-picture{
+    width: 570px;
+    height: 570px;
   }
 
   .item-form-title{

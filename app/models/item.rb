@@ -6,7 +6,7 @@ foreign_key: :user_id,
   class_name: User
 
   def associated_items
-    Item.where(user: user).where.not(id: id)
+    Item.where(user: user).where.not(id: id).limit(3)
   end
 
 end
