@@ -25,7 +25,7 @@ class SessionButtons extends React.Component {
           </li>
 
           <li className="carts-link"><Link
-            to="/carts">
+            to="/cart">
             <i className="fa fa-shopping-cart fa-2x"></i>
             <br></br>
 						<p>Cart</p>

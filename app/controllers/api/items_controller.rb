@@ -1,4 +1,4 @@
-class Api::ItemsController  < ApplicationController
+class Api::ItemsController < ApplicationController
 
   def new
     @item = Item.new
@@ -14,7 +14,6 @@ class Api::ItemsController  < ApplicationController
   end
 
   def edit
-    debugger
     @item = Item.find(params[:item][:id])
   end
 
