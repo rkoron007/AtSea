@@ -37,11 +37,13 @@ const App = () => (
         <Route exact path="/items/:itemId"
           component={ ItemShowContainer }/>
         <Route exact path="/items" component={ ItemIndexContainer }/>
-        <AuthRoute exact path="/login" component={ Modal }/>
-        <AuthRoute exact path="/signup" component={ Modal }/>
+
+        <Route exact path ="/signup" component={MainPageContainer} />
+        <Route exact path ="/login" component={MainPageContainer} />
         <Route exact path ="/" component={MainPageContainer} />
         <Redirect to="/" />
       </Switch>
+
   </div>
 );
 export default App;

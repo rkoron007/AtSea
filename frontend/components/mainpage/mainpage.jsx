@@ -10,8 +10,12 @@ import ItemIndexContainer from "../items/items_index_container";
 import CategoriesBar from "../categories/categories_bar";
 import Modal from "../header/session_form/modal";
 
+import { AuthRoute } from "../../util/route_util";
+
 const MainPageContainer = () => (
   <div className="main-page">
+    <AuthRoute exact path="/login" component={ Modal }/>
+    <AuthRoute exact path="/signup" component={ Modal }/>
     <Route exact path="/" component={ Splash } />
     <Route exact path="/login" component={ Splash } />
     <Route exact path="/signup" component={ Splash } />
