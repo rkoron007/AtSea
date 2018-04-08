@@ -8,6 +8,7 @@ import {
 import Splash from "../splash/splash";
 import ItemIndexContainer from "../items/items_index_container";
 import CategoriesBar from "../categories/categories_bar";
+import Modal from "../header/session_form/modal";
 
 const MainPageContainer = () => (
   <div className="main-page">

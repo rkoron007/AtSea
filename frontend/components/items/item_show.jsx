@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import ItemShowItem from "./item_show_item";
 class ItemShow extends React.Component{
 
   componentDidMount(){
@@ -12,27 +13,17 @@ class ItemShow extends React.Component{
     }
   }
 
-
-  createList(item){
-    return(
-    <li>
-      <Link to={`/items/${item.id}`}>
-        <img src={item.imageUrl} className="extra-user-item-img"/>
-      </Link>
-    </li>);
-  }
-
   otherUserItemPictures(items){
     if (items)
     {
-      return items.slice(1).map(item => this.createList(item));
+      return items.slice(1).map(item => <ItemShowItem key={item.id} item={item} />);
     }
   }
 
   render(){
    const { item, user, items } = this.props;
    if (!item || !user ) {
-     return <div>Nope...</div>;
+     return <div>No Items to be Found!</div>;
      }
    return(
      <div className="items-show">
@@ -46,7 +37,7 @@ class ItemShow extends React.Component{
             <ul>
               {this.otherUserItemPictures(items)}
               <Link to={`users/${user.id}`}
-                className="keep-shopping">See More</Link>
+                className="keep-shopping">See More Items</Link>
            </ul>
          </div>
        </div>

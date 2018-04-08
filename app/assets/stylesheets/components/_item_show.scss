@@ -12,18 +12,17 @@
     width: 1000px;
 
     .keep-shopping{
-      background-color: #FFF;
-      color: $dark-grey;
-      display: flex;
-      justify-content: inherit;
-      font-weight: bold;
-      font-size: 12px;
-      height: 28px;
-      margin-top: 13%;
-      margin-left: 15%;
-      border: 1px solid grey;
-      padding: 5px;
-      border-radius: 4px;
+    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 7px;
+    display: table;
+    color: #444;
+    font-weight: normal;
+    text-shadow: none;
+    border-radius: 3px;
+    border: 1px solid #ececec;
+    margin-top: 10%;
     }
 
     .show-left{
@@ -55,9 +54,11 @@
     width: 50%;
     display: flex;
     justify-content: center;
+    justify-content: space-evenly;
     ul{
-      flex-direction: row;
       display: flex;
+      justify-content: space-evenly;
+      width: 100%;
     }
     .extra-user-item-img{
       margin-left: 18px;
@@ -81,7 +82,7 @@
     margin: auto;
 
     .show-middle{
-      flex-wrap: wrap;
+
       display: flex;
       background: white;
       border-radius: 4px;

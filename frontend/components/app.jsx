@@ -26,7 +26,7 @@ const App = () => (
     </header>
 
     <Route path ="/" component={CategoriesBar} />
-    <Route exact path ="/"  component={MainPageContainer} />
+
 
 
     <Switch>

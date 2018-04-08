@@ -9,7 +9,7 @@ class Api::ItemsController  < ApplicationController
     if @item.save
       render "api/items/show"
     else
-      render json: ['NAH'], status: 422
+      render json: ['Sorry invalid item, please try again.'], status: 422
     end
   end
 
@@ -24,8 +24,10 @@ class Api::ItemsController  < ApplicationController
       if @item.update_attributes(item_params)
         render "api/items/show"
       else
-        render json: ['NO'], status: 422
+        render json: ['Sorry the item did not update, please try again.'], status: 422
       end
+    else
+      render "api/items/show"
     end
   end
 
