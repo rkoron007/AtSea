@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :password, length:{ minimum:6, allow_nil: true}
 
   has_many :items
-  # has_one :shopping_cart
+  has_one :cart
   # has_many :comments
 
   attr_reader :password
@@ -38,5 +38,6 @@ class User < ApplicationRecord
     return @user if @user && @user.is_password?(password)
     nil
   end
+
 
 end

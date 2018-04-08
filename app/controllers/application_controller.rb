@@ -29,4 +29,5 @@ class ApplicationController < ActionController::Base
     session[:session_token] = @current_user.session_token
   end
 
+
 end

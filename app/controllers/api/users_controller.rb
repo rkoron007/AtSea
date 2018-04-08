@@ -3,11 +3,22 @@ class Api::UsersController < ApplicationController
     @user = User.new
   end
 
+  def set_cart
+    @cart = Cart.find_by({user_id: self.id })
+
+    if @cart
+      return @cart
+    else
+      @cart = Cart.create!({user_id:self.id})
+    end
+  end
+
   def create
     @user = User.new(user_params)
 
     if @user.save
       login!(@user)
+      @user.set_cart
       render "api/users/show"
     else
       render json: @user.errors.full_messages, status: 422

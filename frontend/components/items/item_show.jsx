@@ -53,6 +53,7 @@ class ItemShow extends React.Component{
 
       <div className="show-middle-box">
         <div className="show-middle">
+
           <img src={item.imageUrl} className="show-item-img"/>
           <aside className="show-aside" >
             <h3 className="show-item-title">{item.title}</h3>

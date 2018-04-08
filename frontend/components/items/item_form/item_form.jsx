@@ -105,7 +105,7 @@ class ItemForm extends React.Component {
         item => this.props.history.push(`/items`));
         }
         else {
-        return <Redirect to="/items"/>;
+        this.props.history.push(`/items`);
       }
   }
 

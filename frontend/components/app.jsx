@@ -16,7 +16,7 @@ import ItemShowContainer from "./items/item_show_container";
 import ItemEditContainer from "./items/item_form/item_edit_container";
 import ItemCreateContainer from "./items/item_form/item_create_container";
 
-import FilterForm from "./items/index_filter/filter_form";
+import Modal from "./header/session_form/modal";
 import { AuthRoute, ProtectRoute } from '../util/route_util';
 
 const App = () => (
@@ -24,8 +24,12 @@ const App = () => (
     <header>
       <HeaderContainer />
     </header>
+
     <Route path ="/" component={CategoriesBar} />
-      <Switch>
+    <Route exact path ="/"  component={MainPageContainer} />
+
+
+    <Switch>
         <ProtectRoute exact path="/items/new"
           component={ ItemCreateContainer }/>
         <ProtectRoute exact path="/items/:itemId/edit"
@@ -33,6 +37,8 @@ const App = () => (
         <Route exact path="/items/:itemId"
           component={ ItemShowContainer }/>
         <Route exact path="/items" component={ ItemIndexContainer }/>
+        <AuthRoute exact path="/login" component={ Modal }/>
+        <AuthRoute exact path="/signup" component={ Modal }/>
         <Route exact path ="/" component={MainPageContainer} />
         <Redirect to="/" />
       </Switch>

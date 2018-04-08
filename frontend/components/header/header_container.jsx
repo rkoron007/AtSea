@@ -29,8 +29,6 @@ class HeaderContainer extends React.Component{
         <div className="header-right">
         <SessionButtonsContainer />
         </div>
-          <AuthRoute exact path="/login" component={ Modal }/>
-          <AuthRoute exact path="/signup" component={ Modal }/>
       </div>
     );
   }

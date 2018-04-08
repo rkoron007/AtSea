@@ -7,11 +7,10 @@ export const REMOVE_ITEM = "REMOVE_ITEM";
 export const RECEIVE_ITEM_ERRORS = "RECEIVE_ITEM_ERRORS";
 
 
-const receiveItems = (payload) =>{
-  return({
+const receiveItems = (payload) => ({
   type: RECEIVE_ITEMS,
   payload
-});};
+});
 
 const receiveItem = (payload) =>({
   type: RECEIVE_ITEM,
