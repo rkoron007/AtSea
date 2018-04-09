@@ -4,7 +4,7 @@
   border-top: 1px solid $light-grey;
   color: #222;
   padding: 5px 0 10px 0;
-  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-family: $graphik;
   .categories{
     display: flex;
     justify-content: space-around;

@@ -35,6 +35,7 @@ export const fetchItems = () => dispatch => {
   );
 };
 
+
 export const fetchItem = (id) => dispatch => {
   return API.fetchItem(id).then(
     item => dispatch(receiveItem(item)),

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchItems } from "../../actions/item_actions";
+import { fetchItems, requestItemsByCart } from "../../actions/item_actions";
 import ItemsIndex from "./items_index";
 
 const mapStateToProps = (state) => {
@@ -10,9 +10,13 @@ const mapStateToProps = (state) => {
   users: state.entities.users};
 };
 
-const mapDispatchToProps = (dispatch) => ({
-    fetchItems: () => dispatch(fetchItems())
-});
+const mapDispatchToProps = (dispatch) => {
+
+  return {
+    fetchItems: () => dispatch(fetchItems()),
+    requestItemsByCart: () => dispatch(requestItemsByCart()),
+  };
+};
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemsIndex);

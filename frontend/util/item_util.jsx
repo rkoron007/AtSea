@@ -35,3 +35,11 @@ export const deleteItem = (itemId) => (
     url: `/api/items/${itemId}`,
   })
 );
+
+export const fetchItemByFilter = (filter) => {
+  return $.ajax({
+    method: "GET",
+    url: "/api/items",
+    data: filter
+  });
+};

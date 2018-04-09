@@ -1,14 +1,14 @@
 export const fetchCart = () => (
   $.ajax({
     method: "GET",
-    url: `/api/cart/`,
+    url: `api/carts/`,
   })
 );
 
 export const addCartItem = (cartItem) => (
   $.ajax({
     method: "POST",
-    url: `/api/cart_items`,
+    url: `api/cart_items`,
     data: { cartItem }
   })
 );
@@ -16,6 +16,6 @@ export const addCartItem = (cartItem) => (
 export const removeCartItem = (cartItemId) => (
   $.ajax({
     method: "DELETE",
-    url: `/api/cart_items/${cartItemId}`,
+    url: `api/cart_items/${cartItemId}`,
   })
 );

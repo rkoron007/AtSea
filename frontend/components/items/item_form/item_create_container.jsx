@@ -10,7 +10,6 @@ import {withRouter} from "react-router-dom";
 
 const mapStateToProps = ( state, ownProps ) => {
   return {
-    formType: "Create Item",
     formTitle: "Create a New Product!",
     currentUser: state.session.currentUser
   };

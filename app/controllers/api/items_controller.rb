@@ -15,6 +15,9 @@ class Api::ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:item][:id])
+    if @item.user != current_user
+      render "api/items/show"
+    end
   end
 
   def update

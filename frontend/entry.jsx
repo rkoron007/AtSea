@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
 
-import fetchCart from "./actions/cart_actions";
+import addItemtoCart from "./actions/cart_actions";
 
 document.addEventListener("DOMContentLoaded", ()=>{
 let store;
@@ -16,7 +16,7 @@ let store;
     store = configureStore();
   }
 
-  window.getState = store.getState;
+
 
   const rootElement = document.getElementById("root");
   ReactDOM.render(<Root store={store}/>, rootElement);

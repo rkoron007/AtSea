@@ -12,7 +12,7 @@
     width: 1000px;
 
     .keep-shopping{
-    font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    font-family: $graphik;
     font-size: 14px;
     line-height: 1.4;
     padding: 7px;
@@ -178,7 +178,7 @@
         margin-bottom: 1em;
         font-weight: 500;
         font-size: 16px;
-        font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+        font-family: $graphik;
         color: black;
         line-height: 1.6;
         text-align: start;

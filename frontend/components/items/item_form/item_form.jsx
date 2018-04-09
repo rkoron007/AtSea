@@ -109,6 +109,21 @@ class ItemForm extends React.Component {
       }
   }
 
+  showCurrentPicture(){
+    if (this.state.imageUrl && this.state.uploadedFileCloudinaryUrl === ''){
+      return(
+          <div className="uploaded-picture">
+              <img src={this.state.imageUrl} />
+          </div>);
+    } else if (this.state.uploadedFileCloudinaryUrl){
+      return(
+          <div className="uploaded-picture">
+            <img src={this.state.uploadedFileCloudinaryUrl} />
+          </div>
+      );
+    } else {return null;}
+  }
+
   render(){
      const { item, formType, formTitle } = this.props;
     return(
@@ -117,12 +132,12 @@ class ItemForm extends React.Component {
           <h1>{this.props.formTitle}</h1>
         </div>
 
-        <div className="item-form-container">
-          <button className="item-delete"
-            onClick={this.handleDelete}>Delete Item</button>
-
-          <form onSubmit={this.handleSubmit}>
+        <div>
+          <form onSubmit={this.handleSubmit}
+            className="item-form-container">
             <div className="file-upload">
+              <h2>Photos</h2>
+              <p>Please Add One Photo per Item</p>
               <Dropzone
                 multiple={false}
                 accept="image/*"
@@ -131,38 +146,38 @@ class ItemForm extends React.Component {
               </Dropzone>
             </div>
 
-            <div>
-              {this.state.uploadedFileCloudinaryUrl === '' ? null :
-                <div className="uploaded-picture">
-                  <img src={this.state.uploadedFileCloudinaryUrl} />
-                </div>}
+            <section className="picture-show">
+              {this.showCurrentPicture()}
+            </section>
 
-              {this.state.imageUrl === '' ? null :
-                <div className="uploaded-picture">
-                    <img src={this.state.imageUrl} />
-                </div>}
-            </div>
+            <section>
+              <label className="item-form-title">Title
+                <input type="text"
+                  value={this.state.title}
+                  onChange={this.updateField("title")}>
+                </input>
+              </label>
 
-            <label className="item-form-title">Title
-              <input type="text"
-                value={this.state.title}
-                onChange={this.updateField("title")}>
+              <label className="item-form-description">Description
+                <textarea
+                  value={this.state.description}
+                  onChange={this.updateField("description")}>
+                </textarea>
+              </label>
+
+              <label className="item-form-price">Price
+                <input type="number"  value={this.state.price}
+                  onChange={this.updateField("price")} />
+              </label>
+            </section>
+            <div className="item-form-footer">
+              <button className="item-delete-button"
+                onClick={this.handleDelete}>Delete Item
+              </button>
+              <input className="item-form-submit"
+                type="submit" value="Submit Item">
               </input>
-            </label>
-
-            <label className="item-form-description">Description
-              <textarea
-                value={this.state.description}
-                onChange={this.updateField("description")}>
-              </textarea>
-            </label>
-
-            <label className="item-form-price">Price
-              <input type="number"  value={this.state.price}
-                onChange={this.updateField("price")} />
-            </label>
-            <input className="item-form-submit"
-              type="submit">{this.formType}</input>
+            </div>
           </form>
         </div>
       </div>

@@ -12,7 +12,6 @@ const mapStateToProps = ( state, ownProps ) => {
   const item = state.entities.items[ownProps.match.params.itemId];
   return {
     item,
-    formType: "Update Item",
     formTitle: "Update Your Product",
     currentUser: state.session.currentUser
   };

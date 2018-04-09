@@ -6,7 +6,7 @@ export const ADD_CART_ITEM = "ADD_CART_ITEM";
 export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
 export const RECEIVE_CART_ERRORS = "RECEIVE_CART_ERRORS";
 
-const receiveCart = (cart) => ({
+const receiveCart = ( cart) => ({
   type: RECEIVE_CART,
   cart
 });
@@ -17,7 +17,7 @@ const addCartItem = (cartItem) => ({
 });
 
 const removeCartItem = (cartItemId) => ({
-  type: RECEIVE_CART,
+  type: REMOVE_CART_ITEM,
   cartItemId
 });
 

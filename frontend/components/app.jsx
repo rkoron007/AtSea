@@ -9,6 +9,8 @@ import {
 import HeaderContainer from "./header/header_container";
 import MainPageContainer from "./mainpage/mainpage";
 import CategoriesBar from "./categories/categories_bar";
+import CartIndexContainer from "./cart/cart_index_container";
+
 
 import ItemIndexContainer from "./items/items_index_container";
 import ItemShowContainer from "./items/item_show_container";
@@ -37,10 +39,10 @@ const App = () => (
         <Route exact path="/items/:itemId"
           component={ ItemShowContainer }/>
         <Route exact path="/items" component={ ItemIndexContainer }/>
-
-        <Route exact path ="/signup" component={MainPageContainer} />
-        <Route exact path ="/login" component={MainPageContainer} />
-        <Route exact path ="/" component={MainPageContainer} />
+        <Route exact path ="/signup" component={ MainPageContainer } />
+        <Route exact path ="/login" component={ MainPageContainer } />
+        <Route exact path ="/carts" component={ CartIndexContainer } />
+        <Route exact path ="/" component={ MainPageContainer } />
         <Redirect to="/" />
       </Switch>
 

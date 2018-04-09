@@ -6,7 +6,6 @@ class Cart < ApplicationRecord
   def add_item(cart_item_params)
     current_cart_item = cart_items.find_by(item_id: cart_item_params[:item_id])
 
-    debugger
     if current_cart_item
       current_cart_item.quantity += cart_item_params[:quantity].to_i
       current_cart_item.save!

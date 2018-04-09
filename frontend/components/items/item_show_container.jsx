@@ -4,12 +4,14 @@ import { fetchItem } from "../../actions/item_actions";
 import ItemShow from "./item_show";
 
 const mapStateToProps = (state, ownParams) => {
-  const item = state.entities.items[ownParams.match.params.itemId];
-  const items = Object.keys(state.entities.items).map(
-    id => state.entities.items[id]);
-  return { item,
+  const  item = state.entities.items[ownParams.match.params.itemId];
+  const  items = Object.keys(state.entities.items).map(
+      id => state.entities.items[id]);
+
+  return {
+    item,
+    items,
     user: Object.values(state.entities.users)[0],
-    items
   };
 };
 
