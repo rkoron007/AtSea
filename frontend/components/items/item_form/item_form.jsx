@@ -150,7 +150,7 @@ class ItemForm extends React.Component {
               {this.showCurrentPicture()}
             </section>
 
-            <section>
+            <section className="">
               <label className="item-form-title">Title
                 <input type="text"
                   value={this.state.title}
