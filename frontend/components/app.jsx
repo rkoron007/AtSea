@@ -41,7 +41,7 @@ const App = () => (
         <Route exact path="/items" component={ ItemIndexContainer }/>
         <Route exact path ="/signup" component={ MainPageContainer } />
         <Route exact path ="/login" component={ MainPageContainer } />
-        <Route exact path ="/carts" component={ CartIndexContainer } />
+        <ProtectRoute exact path ="/carts" component={ CartIndexContainer } />
         <Route exact path ="/" component={ MainPageContainer } />
         <Redirect to="/" />
       </Switch>
