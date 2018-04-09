@@ -1,7 +1,8 @@
 json.items do
   @items.each do |item|
     json.set! item.id do
-      json.partial! 'item', item: item
+      json.extract! item, :id, :title, :price, :user_id
+      json.image_url asset_path(item.img_url)
     end
   end
 end

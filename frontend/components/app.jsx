@@ -10,11 +10,10 @@ import HeaderContainer from "./header/header_container";
 import MainPageContainer from "./mainpage/mainpage";
 import CategoriesBar from "./categories/categories_bar";
 import CartIndexContainer from "./cart/cart_index_container";
-
+import UserShowContainer from "./users/user_show_container";
 
 import ItemIndexContainer from "./items/items_index_container";
 import ItemShowContainer from "./items/item_show_container";
-
 import ItemEditContainer from "./items/item_form/item_edit_container";
 import ItemCreateContainer from "./items/item_form/item_create_container";
 
@@ -32,11 +31,12 @@ const App = () => (
 
 
     <Switch>
+      <Route exact path ="/users/:userId" component={ UserShowContainer } />
         <ProtectRoute exact path="/items/new"
           component={ ItemCreateContainer }/>
         <ProtectRoute exact path="/items/:itemId/edit"
           component={ ItemEditContainer }/>
-        <Route exact path="/items/:itemId"
+        <ProtectRoute exact path="/items/:itemId"
           component={ ItemShowContainer }/>
         <Route exact path="/items" component={ ItemIndexContainer }/>
         <Route exact path ="/signup" component={ MainPageContainer } />

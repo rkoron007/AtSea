@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
 
     if @user
       login!(@user)
-      render "api/users/show"
+      render partial: "api/users/user", locals: { user: @user }
 
     else
       render json: ['Invalid username or password. Please Try Again!'], status: 401

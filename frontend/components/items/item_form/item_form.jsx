@@ -99,6 +99,8 @@ class ItemForm extends React.Component {
     return (e) => this.setState({[field]: e.target.value});
   }
 
+
+
   handleDelete(){
     if (typeof this.props.handleDelete === 'function'){
       this.props.handleDelete(this.state.id).then(
@@ -126,7 +128,16 @@ class ItemForm extends React.Component {
 
   render(){
      const { item, formType, formTitle } = this.props;
+     if(this.props.item){
+       if (this.props.item.userId !== this.props.currentUser.id){
+         return (
+           <h1 className="not-yo-item">Hey this is not your item!
+             Get outta here and go make some! </h1>
+         );
+       }
+     }
     return(
+
       <div className="item-form">
         <div className="form-header">
           <h1>{this.props.formTitle}</h1>

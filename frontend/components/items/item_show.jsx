@@ -25,15 +25,20 @@ class ItemShow extends React.Component{
   render(){
    const { item, user, items } = this.props;
    if (!item || !user ) {
-     return <div>No Items to be Found!</div>;
+     debugger 
+     return  <div>No Items to be Found!</div>;
      }
+
    return(
      <div className="items-show">
        <div className="show-header">
          <div className="show-left">
-           <Link to={`users/${user.id}`}>
-             <img src={user.imgUrl} className="user-item-img"/></Link>
+
+           <Link to={`/users/${user.id}`}>
+             <img src={user.imgUrl} className="user-item-img"/>
+           </Link>
            <h1>{user.username}</h1>
+
          </div>
          <div className="show-right">
             <ul>

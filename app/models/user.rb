@@ -39,5 +39,20 @@ class User < ApplicationRecord
     nil
   end
 
+  def setDefaultPicture
+    if !(self.img_url)
+    self.img_url = "http://res.cloudinary.com/dkaolr6pg/image/upload/v1523305258/Screen_Shot_2018-04-09_at_13.20.32.png"
+    end
+  end
+
+  def set_cart
+    @cart = Cart.find_by({user_id: self.id })
+
+    if @cart
+
+    else
+      @cart = Cart.create!({user_id:self.id})
+    end
+  end
 
 end

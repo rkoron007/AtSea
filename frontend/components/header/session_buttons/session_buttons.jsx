@@ -24,28 +24,9 @@ class SessionButtons extends React.Component {
             >Demo</button>
           </li>
 
-          <li className="carts-link"><Link
-            to="/cart">
-            <i className="fa fa-shopping-cart fa-2x"></i>
-            <br></br>
-						<p>Cart</p>
-            </Link>
-          </li>
-
-        </ul>
+      </ul>
   </nav>
     );
-  }
-
-  renderUserPhoto(){
-    //if there is no curent user we display a default icon instead
-    if (this.currentUser.imgUrl){
-    return (<img src={this.currentUser.imgUrl}className="user-image"></img>);
-      }else{
-    return (
-      <i className="fa fa-anchor fa-1x" aria-hidden="true">
-      </i>);
-    }
   }
 
 
@@ -56,7 +37,9 @@ class SessionButtons extends React.Component {
           <li>
               <div
                 className="session-user-picture">
-                {this.renderUserPhoto()}
+                <Link to={`users/${this.currentUser.id}`}>
+                <img src={this.currentUser.imgUrl}className="user-image"></img>
+                </Link>
               </div>
             <h3
             className="current-user">

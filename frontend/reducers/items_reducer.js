@@ -3,11 +3,17 @@ import { RECEIVE_ITEMS,
   REMOVE_ITEM
 } from "../actions/item_actions";
 
+import {
+  RECEIVE_USER,
+} from "../actions/user_actions";
+
 const itemsReducer = (state={}, action) =>{
   Object.freeze(state);
   let newState;
   switch (action.type) {
     case RECEIVE_ITEMS:
+      return action.payload.items;
+    case RECEIVE_USER:
       return action.payload.items;
     case RECEIVE_ITEM:
       newState = Object.assign({}, action.payload.items,

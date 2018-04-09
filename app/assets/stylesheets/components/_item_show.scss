@@ -194,3 +194,14 @@
     }
   }
 }
+
+  .not-yo-item{
+    display: flex;
+    justify-content: center;
+    padding: 10%;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 26px;
+    color: $black;
+    font-family: $graphik;
+  }

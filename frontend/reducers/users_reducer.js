@@ -1,7 +1,12 @@
 import { RECEIVE_ITEMS,
   RECEIVE_ITEM,
-  REMOVE_ITEM
+  REMOVE_ITEM,
 } from "../actions/item_actions";
+
+import {
+  RECEIVE_USER,
+  RECEIVE_USER_ERRORS
+} from "../actions/user_actions";
 
 const usersReducer = (state={}, action) =>{
   Object.freeze(state);
@@ -10,7 +15,15 @@ const usersReducer = (state={}, action) =>{
     case RECEIVE_ITEMS:
       return action.payload.users;
     case RECEIVE_ITEM:
-      return action.payload.user;
+    newState = Object.assign({},
+      {[action.payload.user.id]: action.payload.user});
+      return newState;
+    case RECEIVE_USER:
+    newState = Object.assign({}, state,
+      {[action.payload.user.id]: action.payload.user});
+      return newState;
+    case RECEIVE_USER_ERRORS:
+      return action.errors;
     default:
       return state;
   }
