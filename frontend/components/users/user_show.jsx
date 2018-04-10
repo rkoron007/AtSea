@@ -9,8 +9,16 @@ class UserShow extends React.Component{
     return this.props.getUser(this.props.match.params.userId);
   }
 
-  componentWillReceiveProps(nextProps) {
-
+  createButtonShow(){
+    if (this.props.items[0]){
+      if (this.props.currentUser.id === this.props.items[0].userId) {
+        return(
+          <Link to={`items/new`} className="create-item-btn">
+            Create an Item!
+          </Link>
+        );
+      }
+    }
   }
 
   render(){
@@ -39,9 +47,7 @@ class UserShow extends React.Component{
           <div className="show-right">
               <div className="right-box-header">
                 <h2>{user.username}s Profile</h2>
-                <Link to={`items/new`} className="create-item-btn">
-                  Create an Item!
-                </Link>
+                {this.createButtonShow()}
               </div>
             <UserShowList items={items} currentUser={currentUser}/>
           </div>

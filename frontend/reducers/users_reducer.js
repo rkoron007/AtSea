@@ -19,7 +19,7 @@ const usersReducer = (state={}, action) =>{
       {[action.payload.user.id]: action.payload.user});
       return newState;
     case RECEIVE_USER:
-    newState = Object.assign({}, state,
+    newState = Object.assign({},
       {[action.payload.user.id]: action.payload.user});
       return newState;
     case RECEIVE_USER_ERRORS:

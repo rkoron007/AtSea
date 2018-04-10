@@ -30,6 +30,7 @@ const App = () => (
 
 
     <Switch>
+      <ProtectRoute exact path ="/users/:userId" component={ UserShowContainer } />
       <ProtectRoute exact path="/items/:itemId/edit"
         component={ ItemEditContainer }/>
         <ProtectRoute exact path="/items/new"
@@ -37,7 +38,6 @@ const App = () => (
         <ProtectRoute exact path="/items/:itemId"
           component={ ItemShowContainer }/>
         <ProtectRoute exact path="/items" component={ ItemIndexContainer }/>
-        <ProtectRoute exact path ="/users/:userId" component={ UserShowContainer } />
         <Route exact path ="/signup" component={ MainPageContainer } />
         <Route exact path ="/login" component={ MainPageContainer } />
         <ProtectRoute exact path ="/carts" component={ CartIndexContainer } />
