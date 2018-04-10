@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import { makeChange } from "../../util/item_util";
 
 class UserShowItem extends React.Component{
   editButtonVisible(){
@@ -23,7 +24,7 @@ class UserShowItem extends React.Component{
         <img src={item.imageUrl} className="show-item-img"/>
         <div className="item-info">
           <h5>{item.title}</h5>
-          <p>{item.price}</p>
+          <p>{makeChange(item.price)}</p>
         </div>
         <div className="item-buttons">
           <Link to={`items/${this.props.item.id}/`}

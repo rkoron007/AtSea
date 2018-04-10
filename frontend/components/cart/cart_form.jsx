@@ -1,5 +1,7 @@
 import React from "react";
 import Redirect from "react-router-dom";
+import { makeChange } from "../../util/item_util";
+
 class CartForm extends React.Component{
   constructor(props){
     super(props);
@@ -34,7 +36,7 @@ class CartForm extends React.Component{
           <aside className="show-aside" >
             <h3 className="show-item-title">{item.title}</h3>
             <label className="show-item-price-label">
-              <p className="show-item-price">${item.price}</p>
+              <p className="show-item-price">{makeChange(item.price)}</p>
            </label>
            <label className="quantity">Quantity
                 <br></br>

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { makeChange } from "../../util/item_util";
 
 const ItemIndexItem = ({ item, user }) => {
-
   return <li className="item">
     <Link
       to={`/items/${item.id}`}><img src={item.imageUrl}/>
@@ -17,7 +17,7 @@ const ItemIndexItem = ({ item, user }) => {
     </Link>
     <Link
       to={`/items/${item.id}`}
-      className= 'item-index-price'>${item.price}
+      className= 'item-index-price'>{makeChange(item.price)}
     </Link>
   </li>;
 };

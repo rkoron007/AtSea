@@ -43,3 +43,11 @@ export const fetchItemByFilter = (filter) => {
     data: filter
   });
 };
+
+  export const makeChange = (price) => {
+    let newPrice = new Intl.NumberFormat('en-US',
+    { style: 'currency', currency: 'USD' });
+
+
+    return newPrice.format(price);
+  };
