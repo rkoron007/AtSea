@@ -83,10 +83,9 @@
         margin: 0 0 30px;
 
         .cart-item-image{
-          width: 200px;
+          min-width: 200px;
+          max-width: 200px;
           height: 200px;
-          justify-content: flex-start;
-          display: flex;
           border-radius: 4px;
         }
 
@@ -138,25 +137,26 @@
 
           .total-price-items{
             font-family: "Roboto", sans-serif;
-            padding-bottom: 10%;
             text-align: left;
             padding-right: 15px;
             display: flex;
             justify-content: space-between;
             border-bottom: 1px solid $box-grey;
-            width: 100%;
+            width: 180px;
+            margin-bottom: 10%;
+            padding-bottom: 10%;
           }
 
           .total-price{
-            margin: 5px auto;
+            padding-bottom: 13%;
             font-size: 14px;
             font-weight: 700;
             line-height: 1.4;
             color: $black;
             font-family: $roboto;
-            padding-bottom: 10%;
             display: flex;
-            width: 100%;
+            justify-content: space-between;
+            width: 180px;
           }
 
           .checkout-button{

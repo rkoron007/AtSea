@@ -1,6 +1,7 @@
 import React from "react";
 import CartIndexItem from "./cart_index_item";
 import { Link } from "react-router-dom";
+
 class CartIndex extends React.Component{
   componentDidMount(){
     this.props.fetchCart();
