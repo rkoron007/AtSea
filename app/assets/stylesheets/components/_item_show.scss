@@ -92,28 +92,29 @@
       .show-item-img{
         height: 570px;
         width: 570px;
+        margin-right: 28px;
         margin-top: 3.1%;
         vertical-align: middle;
         margin-bottom: 25px;
         padding-bottom: 25px;
-        border-bottom: 1px solid $medium-grey;
+        border-bottom: 1px solid $line-grey;
         color: $dark-grey;
       }
 
       .show-aside{
+        margin-top: 3.1%;
         background-color: #fff;
         border-radius: 4px;
-        margin: 3%;
-        padding-top: 1%;
-        padding-left: 100px;
-        padding-right: 100px;
+        width: 392px;
         display: flex;
         flex-direction: column;
-        border: 1px solid $medium-grey;
-        padding-bottom: 10%;
+        font-family: $graphik;
+        border-bottom: 1px solid $line-grey;
+        padding-bottom: 43px;
 
         .show-item-title{
           font-size: 20px;
+          font-family:$item-title;
           line-height: 26px;
           font-weight: 700;
           color: #3E3E3E;
@@ -122,7 +123,7 @@
           width: auto;
           text-shadow: 0 1px 0 white;
           text-align: left;
-          padding-bottom: 10%;
+          padding-bottom: 16px;
         }
 
         .show-item-price{
@@ -134,7 +135,6 @@
           color: #222;
           padding-bottom: 10%;
           align-content: unset;
-          padding-left: 100px;
           }
 
         .cart-button{
@@ -153,9 +153,17 @@
           padding: 8px 12px;
           text-align: center;
           text-decoration: none;
+          &:hover{
+            border-color: rgba(0, 0, 0, 0.2);
+          }
         }
         .quantity{
           padding-bottom: 15%;
+          display: block;
+          color: $black;
+          font-size: 14px;
+          margin-bottom: 3px;
+          font-weight: 100;
         }
         .show-item-price-label{
           text-align: left;
@@ -172,13 +180,15 @@
       padding-bottom: 25px;
       display: flex;
       flex-direction: column;
-
+      font-size: 14px;
+      line-height: 1.4;
+      font-family: $graphik;
+      
       h1{
         height: 25px;
         margin-bottom: 1em;
         font-weight: 500;
         font-size: 16px;
-        font-family: $graphik;
         color: black;
         line-height: 1.6;
         text-align: start;
@@ -189,7 +199,7 @@
         flex-direction: column;
         margin-bottom: 2em;
         padding-bottom: 50px;
-        border-bottom: 1px solid #818181;
+        border-bottom: 1px solid $line-grey;
       }
     }
   }

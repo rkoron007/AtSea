@@ -6,6 +6,7 @@ import UserShow from "./user_show";
 const mapStateToProps = (state, ownParams) => {
   const  items = Object.keys(state.entities.items).map(
       id => state.entities.items[id]);
+
   return {
     items,
     user: Object.values(state.entities.users)[0],

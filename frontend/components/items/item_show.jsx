@@ -25,7 +25,6 @@ class ItemShow extends React.Component{
   render(){
    const { item, user, items } = this.props;
    if (!item || !user ) {
-     debugger 
      return  <div>No Items to be Found!</div>;
      }
 

@@ -10,14 +10,11 @@ class UserShow extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.userId !== nextProps.match.params.userId) {
-      this.props.getUser(nextProps.match.params.userId);
-    }
+
   }
 
   render(){
    const { user, items, currentUser } = this.props;
-
    if ( !user ) {
      return <div>No User Here!</div>;
      }
@@ -40,7 +37,12 @@ class UserShow extends React.Component{
 
         <div className="user-show-right-box">
           <div className="show-right">
-            <h2>{user.username}s Profile</h2>
+              <div className="right-box-header">
+                <h2>{user.username}s Profile</h2>
+                <Link to={`items/new`} className="create-item-btn">
+                  Create an Item!
+                </Link>
+              </div>
             <UserShowList items={items} currentUser={currentUser}/>
           </div>
         </div>

@@ -33,10 +33,11 @@ class CartForm extends React.Component{
         <form onSubmit={this.handleSubmit}>
           <aside className="show-aside" >
             <h3 className="show-item-title">{item.title}</h3>
-            <label className="show-item-price-label">Item Price:
+            <label className="show-item-price-label">
               <p className="show-item-price">${item.price}</p>
            </label>
            <label className="quantity">Quantity
+                <br></br>
                <select onChange={this.updateQuantity()}
                  value={this.state.quantity}>
                 <option value="1">1</option>

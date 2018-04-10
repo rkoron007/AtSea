@@ -114,14 +114,11 @@ class ItemForm extends React.Component {
   showCurrentPicture(){
     if (this.state.imageUrl && this.state.uploadedFileCloudinaryUrl === ''){
       return(
-          <div className="uploaded-picture">
               <img src={this.state.imageUrl} />
-          </div>);
+          );
     } else if (this.state.uploadedFileCloudinaryUrl){
       return(
-          <div className="uploaded-picture">
             <img src={this.state.uploadedFileCloudinaryUrl} />
-          </div>
       );
     } else {return null;}
   }
@@ -146,22 +143,28 @@ class ItemForm extends React.Component {
         <div>
           <form onSubmit={this.handleSubmit}
             className="item-form-container">
-            <div className="file-upload">
-              <h2>Photos</h2>
-              <p>Please Add One Photo per Item</p>
-              <Dropzone
-                multiple={false}
-                accept="image/*"
-                onDrop={this.onImageDrop.bind(this)}>
-                <p>Drop an image or click to select a file to upload.</p>
-              </Dropzone>
-            </div>
+            <section>
+              <div className="file-upload-title">
+                <h2>Photos</h2>
+                <p>Please Add One Photo per Item</p>
+              </div>
+              <div className="file-upload">
+                <Dropzone padding="15px"
+                  multiple={false}
+                  accept="image/*"
+                  onDrop={this.onImageDrop.bind(this)}>
+                  <p className="droptext">Drop an image or click to
+                    select a file to upload.</p>
+                </Dropzone>
+                  <div className="uploaded-picture">
+                    {this.showCurrentPicture()}
+                  </div>
+              </div>
 
-            <section className="picture-show">
-              {this.showCurrentPicture()}
             </section>
 
-            <section className="">
+            <section className="item-form-details">
+              <h2>Item Details</h2>
               <label className="item-form-title">Title
                 <input type="text"
                   value={this.state.title}
@@ -177,10 +180,11 @@ class ItemForm extends React.Component {
               </label>
 
               <label className="item-form-price">Price
-                <input type="number"  value={this.state.price}
+                $<input type="number"  value={this.state.price}
                   onChange={this.updateField("price")} />
               </label>
             </section>
+
             <div className="item-form-footer">
               <button className="item-delete-button"
                 onClick={this.handleDelete}>Delete Item

@@ -3,21 +3,23 @@ import {Link} from "react-router-dom";
 
 class UserShowItem extends React.Component{
   editButtonVisible(){
-    if (this.props.currentUser.id === this.props.item.id) {
+    if (this.props.currentUser.id === this.props.item.userId) {
       return(
-
-        <Link to={`items/${this.props.item.id}/edit`}></Link>
+        <Link to={`items/${this.props.item.id}/edit`}>Edit Item</Link>,
+        <Link to={`items/${this.props.item.id}/`}>View Item</Link>
       );
     } else {
       return(
-        null
+        <Link to={`items/${this.props.item.id}/`}>View Item</Link>
       );
     }
   }
 
   render(){
     const { item, currentUser } = this.props;
-    debugger
+    if (!currentUser){
+      return null;
+    }
     return(
       <li className="user-item">
         <img src={item.imageUrl} className="show-item-img"/>

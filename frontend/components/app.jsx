@@ -29,16 +29,15 @@ const App = () => (
     <Route path ="/" component={CategoriesBar} />
 
 
-
     <Switch>
-      <Route exact path ="/users/:userId" component={ UserShowContainer } />
+      <ProtectRoute exact path="/items/:itemId/edit"
+        component={ ItemEditContainer }/>
         <ProtectRoute exact path="/items/new"
           component={ ItemCreateContainer }/>
-        <ProtectRoute exact path="/items/:itemId/edit"
-          component={ ItemEditContainer }/>
         <ProtectRoute exact path="/items/:itemId"
           component={ ItemShowContainer }/>
-        <Route exact path="/items" component={ ItemIndexContainer }/>
+        <ProtectRoute exact path="/items" component={ ItemIndexContainer }/>
+        <ProtectRoute exact path ="/users/:userId" component={ UserShowContainer } />
         <Route exact path ="/signup" component={ MainPageContainer } />
         <Route exact path ="/login" component={ MainPageContainer } />
         <ProtectRoute exact path ="/carts" component={ CartIndexContainer } />

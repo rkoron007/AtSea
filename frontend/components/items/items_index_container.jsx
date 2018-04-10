@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchItems, requestItemsByCart } from "../../actions/item_actions";
+import { fetchItems, requestItemsByCart, makeChange } from "../../actions/item_actions";
 import ItemsIndex from "./items_index";
 
 const mapStateToProps = (state) => {
@@ -14,6 +14,7 @@ const mapDispatchToProps = (dispatch) => {
 
   return {
     fetchItems: () => dispatch(fetchItems()),
+    makeChange: (price) => dispatch(makeChange(price)),
     requestItemsByCart: () => dispatch(requestItemsByCart()),
   };
 };

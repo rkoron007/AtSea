@@ -1,7 +1,7 @@
 .item-form{
   color: $medium-grey;
   font-family: $roboto;
-  background-color: #F4F3EF;
+  background-color: $cart-background;
 
   .form-header{
     font-weight: 500;
@@ -19,94 +19,194 @@
     display: flex;
     flex-direction: column;
     border-radius: 4px;
+    background-color: $cart-background;
+    min-height: 900px;
 
-    .file-upload{
+    section{
       background: white;
+      border: 1px solid var(--border);
       padding: 15px;
       min-height: 250px;
       margin: 25px 0;
       display: flex;
-      flex-direction: column;
+      justify-content: flex-start;
+      flex-direction: row;
       border-radius: 4px;
+      margin-left: 15%;
+      margin-right: 15%;
+
+      .file-upload-title{
+        color: #777;
+        font-family: $graphik;
+        font-weight: 600;
+
+        h2{
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 1.2;
+          text-align: left;
+          color: #222;
+        }
+        p{
+          font-size: 14px;
+          line-height: 1.4;
+          text-align: left;
+          padding-bottom: 10px;
+        }
+      }
+      .file-upload{
+        background: white;
+        min-height: 250px;
+        display: flex;
+        border-radius: 4px;
+        width: 60%;
+        justify-content: space-evenly;
+        .drop-box{
+          padding:13px;
+
+        }
+        .droptext{
+          text-align: center;
+          align-content: center;
+          display: flex;
+          font-size: 14px;
+          justify-content: center;
+        }
+
+      }
+    }
+    .uploaded-picture{
+      padding: 15px;
+      display: flex;
+      border: 1px solid #E1E4DF;
+      border-radius: 4px;
+      transition: box-shadow 0.5s;
+      width: 175px;
+      height: 175px;
+      &:hover{
+        box-shadow: 1px 4px 15px 3px rgba(0, 0, 255, 0.1);
+      }
+    }
+
+    .item-form-details{
+      color: #777;
+      font-family: $graphik;
+      font-size: 14px;
+      line-height: 1.4;
+      text-align: left;
+      padding-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
       h2{
         font-weight: 500;
         font-size: 20px;
-        margin-bottom: 20px;
-        padding-top: 30px;
-        line-height: 1.2;
-        text-align: left;
-        color: $black;
-        font-family: $graphik;
+        color: #222;
       }
 
       p{
-        color: #777;
         font-size: 14px;
         line-height: 1.4;
         text-align: left;
+        padding-bottom: 10px;
       }
-    }
-
-    .picture-show{
-      .uploaded-picture{
-        width: 570px;
-        height: 570px;
+      input{
+        font-family: "Roboto", sans-serif;
+        width: 56%;
+        line-height: 16px;
+        color: #333;
+        font-size: 12px;
+        padding: 9px 7px 7px;
+        border: 1px solid #E1E4DF;
+        border-radius: 4px;
       }
-    }
-
-    .item-form-title{
-
-    }
-
-    .item-form-description{
-
-    }
-
-    .item-form-price{
-
-    }
-    .item-form-footer{
-      position: fixed;
-      background: white;
-      bottom: 0;
-      display: flex;
-      justify-content: space-between;
-      position: fixed;
-      z-index: 70;
-      padding-bottom: 12px;
-      padding-top: 12px;
-      border-top: 1px solid $box-grey;
-      width: 100%;
-
-      .item-form-submit{
+      label{
+        margin: 10px 0;
+      }
+      .item-form-title{
+        height: 25px;
+        min-width: 880px;
+        color: #444;
+        text-align: left;
         font-size: 15px;
-        color: #FFF;
-        background-color: $gold-orange;
-        border: 1px solid $gold-orange;
-        border-radius: 3px;
-        border-width: 1px;
-        font-family: inherit;
-        font-weight: bold;
-        height: 38px;
-        line-height: 1.4;
-        padding: 3px 3px 2px 2px;
-        margin-right: 18px;
-        letter-spacing: .03em;
+        font-weight: 100;
+        margin-bottom: 10px;
+        letter-spacing: .02em;
+        input{
+          margin-left: 4.2%;
+          padding-bottom: 10px;
+        }
       }
 
-      .item-delete-button{
+      .item-form-description{
         display: flex;
-        border-radius: 3px;
-        font-size: 14px;
-        font-weight: bold;
-        height: 38px;
-        line-height: 1.4;
-        padding: 3px 3px 2px 2px;
-        margin-left: 18px;
-        border: 1px solid $medium-grey;
-        letter-spacing: .02em;
+        justify-content: flex-start;
+        min-width: 880px;
+
+        textarea{
+          margin: 0px 0px 0px 13.0156px;
+          height: 211px;
+          width: 1201px;
+          border: 1px solid #E1E4DF;
+        }
       }
+
+      .item-form-price{
+        color: $dark-grey;
+        min-width: 880px;
+        font-weight: 550;
+        line-height: 1.4;
+        text-align: left;
+        font-size: 14px;
+        input{
+          margin-left: 2.8%;
+        }
+      }
+    }
+  }
+
+
+  .item-form-footer{
+    position: fixed;
+    background: white;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 70;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    border-top: 1px solid $box-grey;
+    width: 100%;
+
+    .item-form-submit{
+      font-size: 15px;
+      color: #FFF;
+      background-color: $gold-orange;
+      border: 1px solid $gold-orange;
+      border-radius: 3px;
+      border-width: 1px;
+      font-family: inherit;
+      font-weight: bold;
+      height: 38px;
+      line-height: 1.4;
+      padding: 3px 3px 2px 2px;
+      margin-right: 18px;
+      letter-spacing: .03em;
+    }
+
+    .item-delete-button{
+      display: flex;
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: bold;
+      height: 38px;
+      line-height: 1.4;
+      padding: 3px 3px 2px 2px;
+      margin-left: 18px;
+      border: 1px solid $medium-grey;
+      letter-spacing: .02em;
     }
   }
 }
