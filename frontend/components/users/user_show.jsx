@@ -9,6 +9,12 @@ class UserShow extends React.Component{
     return this.props.getUser(this.props.match.params.userId);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.userId !== nextProps.match.params.userId) {
+      this.props.fetchItem(nextProps.match.params.userId);
+    }
+  }
+
   createButtonShow(){
     if (this.props.items[0]){
       if (this.props.currentUser.id === this.props.items[0].userId) {

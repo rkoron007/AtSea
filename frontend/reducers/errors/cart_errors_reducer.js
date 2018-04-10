@@ -1,6 +1,6 @@
 import { RECEIVE_CART,
         RECEIVE_CART_ERRORS
-      } from "../actions/cart_actions";
+      } from "../../actions/cart_actions";
 
 export const CartErrorsReducer = (state = [], action) => {
   Object.freeze(state);

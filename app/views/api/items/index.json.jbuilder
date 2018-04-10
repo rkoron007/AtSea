@@ -14,3 +14,6 @@ json.users do
     end
   end
 end
+
+
+review = {user_id:1, body:"hello", rating: 2.5, item_id:1}

@@ -1,6 +1,6 @@
 import { RECEIVE_USER_ERRORS,
   RECEIVE_USER
- } from "../actions/user_actions";
+} from "../../actions/user_actions";
 
 
 const userErrorsReducer = (state = [], action) => {

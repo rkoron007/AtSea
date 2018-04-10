@@ -5,7 +5,10 @@ class User < ApplicationRecord
 
   has_many :items
   has_one :cart
-  # has_many :comments
+
+  has_many :reviews,
+  foreign_key: :author_id,
+  class_name: "Review"
 
   attr_reader :password
 

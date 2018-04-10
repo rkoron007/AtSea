@@ -9,6 +9,8 @@ class Item < ApplicationRecord
   foreign_key: :item_id,
   class_name: "CartItem"
 
+  has_many :reviews
+
 
   def associated_items
     Item.where(user: user).where.not(id: id).limit(3)

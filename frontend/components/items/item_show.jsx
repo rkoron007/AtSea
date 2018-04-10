@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import ItemShowItem from "./item_show_item";
+import ReviewIndexContainer from "../reviews/review_index_container";
 import CartFormContainer from "../cart/cart_form_container";
 
 class ItemShow extends React.Component{
@@ -59,6 +60,7 @@ class ItemShow extends React.Component{
          <h1>Details:</h1>
          <p>{item.description}</p>
        </div>
+       
       </div>
      </div>
    );

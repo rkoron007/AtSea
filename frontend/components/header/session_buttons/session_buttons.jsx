@@ -43,7 +43,9 @@ class SessionButtons extends React.Component {
               </div>
             <h3
             className="current-user">
+            <Link to={`users/${this.currentUser.id}`}>
               {this.props.currentUser.username}
+              </Link>
             </h3>
           </li>
           <li>

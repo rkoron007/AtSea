@@ -14,8 +14,6 @@ const mapDispatchToProps = (dispatch) => {
 
   return {
     fetchItems: () => dispatch(fetchItems()),
-    makeChange: (price) => dispatch(makeChange(price)),
-    requestItemsByCart: () => dispatch(requestItemsByCart()),
   };
 };
 

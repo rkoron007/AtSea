@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import {
   createItem,
-  receiveErrors,
+  receiveItemErrors,
   fetchItem
 } from "../../../actions/item_actions";
 import ItemForm from "./item_form";
@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     processItemForm: (item) => dispatch(createItem(item)),
     fetchItem: (itemId) => dispatch(fetchItem(itemId)),
-    clearErrors: () => dispatch(receiveErrors([])),
+    clearErrors: () => dispatch(receiveItemErrors([])),
     handleDelete: null
   };
 };

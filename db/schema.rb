@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20180410173504) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "cart_id", null: false
     t.integer "author_id", null: false
     t.integer "item_id", null: false
     t.float "rating", null: false

@@ -33,10 +33,10 @@ const App = () => (
       <ProtectRoute exact path ="/users/:userId" component={ UserShowContainer } />
       <ProtectRoute exact path="/items/:itemId/edit"
         component={ ItemEditContainer }/>
+      <ProtectRoute exact path="/items/new"
+        component={ ItemCreateContainer }/>
       <ProtectRoute exact path="/items/:itemId"
         component={ ItemShowContainer }/>
-        <ProtectRoute exact path="/items/new"
-          component={ ItemCreateContainer }/>
         <ProtectRoute exact path="/items" component={ ItemIndexContainer }/>
         <Route exact path ="/signup" component={ MainPageContainer } />
         <Route exact path ="/login" component={ MainPageContainer } />

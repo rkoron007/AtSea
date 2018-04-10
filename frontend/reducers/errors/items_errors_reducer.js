@@ -1,6 +1,6 @@
 import { RECEIVE_ITEM,
         RECEIVE_ITEM_ERRORS
-      } from "../actions/item_actions";
+      } from "../../actions/item_actions";
 
 export const itemsErrorsReducer = (state = [], action) => {
   Object.freeze(state);

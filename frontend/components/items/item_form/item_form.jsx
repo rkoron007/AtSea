@@ -86,7 +86,10 @@ class ItemForm extends React.Component {
       description: this.state.description,
       price: this.state.price,
       user_id: this.props.currentUser.id,
-      img_url: this.state.uploadedFileCloudinaryUrl || this.state.imageUrl,
+      img_url: this.state.uploadedFileCloudinaryUrl
+      ||
+      this.state.imageUrl ||
+      "http://res.cloudinary.com/dkaolr6pg/image/upload/v1523392738/default.jpg",
       id: this.state.id || null
     };
     this.props.processItemForm(currentItem, this.state.id).then(
@@ -121,6 +124,10 @@ class ItemForm extends React.Component {
             <img src={this.state.uploadedFileCloudinaryUrl} />
       );
     } else {return null;}
+  }
+
+  componentWillUnmount(){
+    return this.props.clearErrors();
   }
 
   render(){
@@ -168,20 +175,20 @@ class ItemForm extends React.Component {
               <label className="item-form-title">Title
                 <input type="text"
                   value={this.state.title}
-                  onChange={this.updateField("title")}>
+                  onChange={this.updateField("title")} required>
                 </input>
               </label>
 
               <label className="item-form-description">Description
                 <textarea
                   value={this.state.description}
-                  onChange={this.updateField("description")}>
+                  onChange={this.updateField("description")} required>
                 </textarea>
               </label>
 
               <label className="item-form-price">Price
                 $<input type="number"  value={this.state.price}
-                  onChange={this.updateField("price")} />
+                  onChange={this.updateField("price")} required/>
               </label>
             </section>
 
