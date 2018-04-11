@@ -9,7 +9,7 @@ import {
 
 import Modal from "./session_form/modal";
 import SessionButtonsContainer from "./session_buttons/session_buttons_container";
-import SearchContainer from "./search/search_index";
+import SearchContainer from "./search/search_container";
 
 import { AuthRoute, ProtectRoute } from '../../util/route_util';
 
