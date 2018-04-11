@@ -14,6 +14,8 @@ const itemsReducer = (state={}, action) =>{
   switch (action.type) {
     case RECEIVE_ITEMS:
       return action.payload.items;
+    case RECEIVE_SEARCH_ITEMS:
+      return action.results;
     case RECEIVE_USER:
       return action.payload.items;
     case RECEIVE_ITEM:

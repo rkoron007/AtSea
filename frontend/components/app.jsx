@@ -42,6 +42,10 @@ const App = () => (
         exact path="/items"
         component={ ItemIndexContainer }
       />
+      <ProtectRoute
+        exact path="/item_searches"
+        component={ ItemIndexContainer }
+      />
       <Route exact path ="/signup" component={ MainPageContainer } />
       <Route exact path ="/login" component={ MainPageContainer } />
       <ProtectRoute exact path ="/carts"

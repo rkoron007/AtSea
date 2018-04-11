@@ -7,7 +7,8 @@ const mapStateToProps = ( state, ownProps ) => {
 
   return {
     itemId: ownProps.itemId,
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    errors: state.errors.reviews
   };
 };
 

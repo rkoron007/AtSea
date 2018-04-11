@@ -35,18 +35,24 @@ class ItemShow extends React.Component{
      <div className="items-show">
        <div className="show-header">
          <div className="show-left">
-
-           <Link to={`/users/${user.id}`}>
-             <img src={user.imgUrl} className="user-item-img"/>
-           </Link>
-           <h1>{user.username}</h1>
-
+             <Link to={`/users/${user.id}`}>
+               <img src={user.imgUrl} className="user-item-img"/>
+             </Link>
+           <div className="username">
+             <Link to={`/users/${user.id}`}>
+               <h1>{user.username}</h1>
+             </Link>
+            </div>
          </div>
          <div className="show-right">
             <ul>
               {this.otherUserItemPictures(items)}
-              <Link to={`/users/${user.id}`}
-                className="keep-shopping">See More Items</Link>
+              <div className="outside-border">
+                <div className="border">
+                  <Link to={`/users/${user.id}`}
+                    className="keep-shopping">See More Items</Link>
+                </div>
+              </div>
            </ul>
          </div>
        </div>

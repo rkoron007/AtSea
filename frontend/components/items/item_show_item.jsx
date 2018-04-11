@@ -5,9 +5,11 @@ const ItemShowItem = ({item}) => {
 
     return(
       <li>
-        <Link to={`/items/${item.id}`}>
-          <img src={item.imageUrl} className="extra-user-item-img"/>
-        </Link>
+        <div className="border">
+          <Link to={`/items/${item.id}`}>
+            <img src={item.imageUrl} className="extra-user-item-img"/>
+          </Link>
+        </div>
       </li>
   );
 };

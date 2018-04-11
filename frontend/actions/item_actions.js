@@ -72,7 +72,7 @@ export const deleteItem = (itemId) => dispatch => {
 
 export const searchItems = (description) => dispatch => (
     API.fetchItemsBySearch(description).then(
-    items => dispatch(receiveItems(items)),
+    items => dispatch(receiveSearchItems(items)),
     error => dispatch(receiveItemErrors(error.responseJSON))
   )
 );

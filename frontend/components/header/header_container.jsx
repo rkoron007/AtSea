@@ -9,7 +9,7 @@ import {
 
 import Modal from "./session_form/modal";
 import SessionButtonsContainer from "./session_buttons/session_buttons_container";
-import SearchContainer from "./search/search_container";
+import SearchFormContainer from "./search/search_container";
 
 import { AuthRoute, ProtectRoute } from '../../util/route_util';
 
@@ -23,11 +23,10 @@ class HeaderContainer extends React.Component{
           <i className="fa fa-anchor fa-3x" aria-hidden="true"></i>
           <h2>AtSea</h2>
         </Link>
-
-        <SearchContainer />
+          <SearchFormContainer />
         </div>
         <div className="header-right">
-        <SessionButtonsContainer />
+          <SessionButtonsContainer />
         </div>
       </div>
     );

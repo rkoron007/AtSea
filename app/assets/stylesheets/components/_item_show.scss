@@ -4,33 +4,44 @@
   flex-wrap: wrap;
 
   .show-header{
-    height: 103px;
     display: flex;
+    margin-left: -36px;
+    padding-left: 18px;
+    padding-right: 18px;
+    margin-right: -36px;
+    margin: auto;
+    width: 1000px;
     justify-content: center;
     margin: auto;
-    margin-bottom: 5%;
-    width: 1000px;
+    padding: 28px 28px 0 28px;
+    color: #222;
+    font-family: "Graphik Webfont", -apple-system, BlinkMacSystemFont, "Roboto", "Droid Sans", "Segoe UI", "Helvetica", Arial, sans-serif;
+    line-height: 1.4;
+
 
     .keep-shopping{
-    font-family: $graphik;
-    font-size: 14px;
-    line-height: 1.4;
-    padding: 7px;
-    display: table;
-    color: #444;
-    font-weight: normal;
-    text-shadow: none;
-    border-radius: 3px;
-    border: 1px solid #ececec;
-    margin-top: 10%;
+      border-radius: 3px;
+      width: 60px;
+      height: 60px;
+      font-family: $graphik;
+      font-size: 14px;
+      display: table;
+      color: #444;
+      font-weight: normal;
+      text-shadow: none;
+      border: 3px solid #fff;
     }
 
     .show-left{
       width: 50%;
-      margin-top: 28px;
       display: flex;
+      font-weight: 500;
+      font-size: 26px;
+      color: #222;
       justify-content: flex-start;
-      margin-left: 10%;
+      padding-left: 18px;
+      padding-right: 18px;
+
       img{
         width: 75px;
         height: 75px;
@@ -38,14 +49,19 @@
         border-radius: 3px;
       }
 
-      h1{
+
+      .username{
         color: $black;
         font-weight: 500;
         font-size: 26px;
         margin-left: 18px;
         margin-top: 28px;
-        font-family: "Guardian-EgypTT",serif;
+        font-family: $graphik;
         text-align: left;
+
+        &:hover{
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -53,41 +69,59 @@
   .show-right{
     width: 50%;
     display: flex;
-    justify-content: center;
     justify-content: space-evenly;
+
     ul{
       display: flex;
       justify-content: space-evenly;
       width: 100%;
-    }
-    .extra-user-item-img{
-      margin-left: 18px;
-      margin-top: 28px;
-      border-radius: 3px;
-      width: 80px;
-      height: 80px;
-      border: 1px solid $white;
+      padding-left: 25px;
 
-      &:hover{
-        background-color: $light-grey;
+      .border{
+        border-radius: 3px;
+        border: 3px solid #fff;
+        background: #fff;
+        overflow: hidden;
+        transition: all 0.1s;
+      }
+
+      .outside-border{
+        border: 1px solid $line-grey;
+      }
+
+      li{
+        border: 1px solid $line-grey;
+
+        .extra-user-item-img{
+          border-radius: 3px;
+          width: 69px;
+          height: 69px;
+          border: 1px solid $white;
+          opacity: 0.99;
+
+        }
       }
     }
   }
+
 
   .show-middle-box{
     flex-wrap: wrap;
     background: white;
     border-radius: 4px;
-    width: 1050px;
+    width: 990px;
+    border-radius: 5px;
     margin: auto;
+    margin: 28px auto 20px;
+    padding: 28px;
 
     .show-middle{
-
-      display: flex;
+      display:flex;
       background: white;
       border-radius: 4px;
-      width: 1050px;
       margin: auto;
+      padding: 28px;
+      padding-bottom: 0px;
 
       .show-item-img{
         height: 570px;
@@ -174,8 +208,9 @@
       }
     }
     .show-item-description{
+      padding-left: 28px;
       height: 2em;
-      width: 55%;
+      width: 59%;
       margin-bottom: 3%;
       padding-bottom: 25px;
       display: flex;

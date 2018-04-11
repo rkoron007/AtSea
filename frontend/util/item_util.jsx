@@ -36,7 +36,7 @@ export const deleteItem = (itemId) => (
   })
 );
 
-export const fetchItemsBySearch = (description) => {
+export const fetchItemsBySearch = ({description}) => {
   return $.ajax({
     method: "GET",
     url: "/api/item_searches",

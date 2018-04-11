@@ -5,9 +5,11 @@
   font-family: $graphik;
   line-height: 1.6;
   display: flex;
+  padding-left:28px;
 
   .review-index-main{
     .review-header{
+      border-top: 1px solid $line-grey;
       display: flex;
       flex-direction: row;
       color: $medium-grey;
@@ -30,7 +32,7 @@
     .review-list{
       display: flex;
       flex-direction: column-reverse;
-      
+
       .review{
         border-bottom: 1px solid $line-grey;
         padding: 10px;

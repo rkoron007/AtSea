@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchItems, requestItemsByCart, makeChange } from "../../actions/item_actions";
+import { fetchItems, makeChange } from "../../actions/item_actions";
 import ItemsIndex from "./items_index";
 
 const mapStateToProps = (state) => {

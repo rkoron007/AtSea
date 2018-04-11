@@ -73,7 +73,6 @@ class ReviewForm extends React.Component{
         </i>);
     }
 
-    // debugger
     return starArr;
   }
 
