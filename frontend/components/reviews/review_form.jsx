@@ -2,60 +2,56 @@ import React from "react";
 import Redirect from "react-router-dom";
 import { makeChange } from "../../util/item_util";
 
-class CartForm extends React.Component{
+class ReviewForm extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      quantity: 1,
-      itemId: this.props.item.id,
+      itemId: this.props.itemId,
+      rating: 0,
+      body: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateQuantity = this.updateQuantity.bind(this);
+    this.updateRating = this.updateRating.bind(this);
     this.updateField = this.updateField.bind(this);
   }
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.addItemtoCart(this.state);
+    this.props.createReview(this.state, this.props.item.id);
+    this.setState({
+      itemId: this.props.item.id,
+      rating: 0,
+      body: "" });
   }
 
   updateField(field){
     return (e) => this.setState({[field]: e.target.value});
   }
 
-  updateQuantity(){
-    return (e) => this.setState({quantity: parseInt(e.target.value)});
+  updateRating(){
+    return (e) => this.setState({rating: e.target.value});
   }
 
   render(){
-    const { item, currentUser } = this.props;
     return (
-      <div>
+      <div className="review-form">
+        <h3 className="review-head">Leave a Review?</h3>
         <form onSubmit={this.handleSubmit}>
-          <aside className="show-aside" >
-            <h3 className="show-item-title">{item.title}</h3>
-            <label className="show-item-price-label">
-              <p className="show-item-price">{makeChange(item.price)}</p>
-           </label>
-           <label className="quantity">Quantity
-                <br></br>
-               <select onChange={this.updateQuantity()}
-                 value={this.state.quantity}>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+          <div className="review-box">
+            <label className="review-body">
+              <textarea className="review-body"
+                value={this.state.body}>
+                {this.updateField("body")}
+              </textarea>
             </label>
 
-           <button className="cart-button">Add to Cart</button>
-         </aside>
+         <button className="leave-review">Leave Review</button>
+         </div>
        </form>
      </div>
    );
   }
 }
 
-export default CartForm;
+export default ReviewForm;

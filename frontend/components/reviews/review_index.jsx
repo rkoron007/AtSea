@@ -8,14 +8,22 @@ class ReviewsIndex extends React.Component{
     this.props.fetchReviews(this.props.itemId);
   }
 
+  reviewCount(){
+    return this.props.reviews.length;
+  }
+
   render(){
     if (!this.props.reviews) {
       return null;
     }
 
+
     return(
       <div className="review-index">
         <div className="review-index-main">
+          <div className="review-header">
+            <h3>Reviews {this.reviewCount()}</h3>
+          </div>
           <ul className="review-list">
             {this.props.reviews.map(
               review =>

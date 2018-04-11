@@ -10,6 +10,7 @@ class UserShow extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
+    debugger
     if (this.props.match.params.userId !== nextProps.match.params.userId) {
       this.props.fetchItem(nextProps.match.params.userId);
     }
@@ -19,7 +20,7 @@ class UserShow extends React.Component{
     if (this.props.items[0]){
       if (this.props.currentUser.id === this.props.items[0].userId) {
         return(
-          <Link to={`items/new`} className="create-item-btn">
+          <Link to={`/items/new`} className="create-item-btn">
             Create an Item!
           </Link>
         );

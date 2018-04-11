@@ -19,7 +19,7 @@ class CartIndexItem extends React.Component{
           <p className="cart-item-price">{makeChange(item.price)}</p>
           <h1 className="cart-item-title">{item.title}</h1>
           <p className="cart-item-quantity">Quantity:  {item.quantity}</p>
-          <Link to={`users/${item.userId}`} className="keep-shopping">
+          <Link to={`/users/${item.userId}`} className="keep-shopping">
             See More By This User
           </Link>
            <button

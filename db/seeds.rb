@@ -82,3 +82,9 @@ item19 = Item.create!({ title: 'Paper Boat',
 item20 = Item.create!({ title: 'Large Compass',
   description: 'Much better than tiny compass.', price: 2, user_id: user9.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522959804/largecompass.jpg" })
+
+
+review1 = Review.create!({author_id: user1.id, item_id: 1, rating: 5, body: "I'd buy it."})
+review1 = Review.create!({author_id: user2.id, item_id: 1, rating: 5, body: "I'd buy it."})
+review1 = Review.create!({author_id: user3.id, item_id: 1, rating: 5, body: "I'd buy it."})
+review1 = Review.create!({author_id: user4.id, item_id: 1, rating: 5, body: "I'd buy it."})

@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import ItemShowItem from "./item_show_item";
 import ReviewIndexContainer from "../reviews/review_index_container";
 import CartFormContainer from "../cart/cart_form_container";
+import ReviewFormContainer from "../reviews/review_form_container";
 
 class ItemShow extends React.Component{
 
@@ -11,6 +12,7 @@ class ItemShow extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
+    debugger
     if (this.props.match.params.itemId !== nextProps.match.params.itemId) {
       this.props.fetchItem(nextProps.match.params.itemId);
     }
@@ -43,7 +45,7 @@ class ItemShow extends React.Component{
          <div className="show-right">
             <ul>
               {this.otherUserItemPictures(items)}
-              <Link to={`users/${user.id}`}
+              <Link to={`/users/${user.id}`}
                 className="keep-shopping">See More Items</Link>
            </ul>
          </div>
@@ -60,7 +62,8 @@ class ItemShow extends React.Component{
          <h1>Details:</h1>
          <p>{item.description}</p>
        </div>
-       
+
+       <ReviewIndexContainer itemId={item.id}/>
       </div>
      </div>
    );

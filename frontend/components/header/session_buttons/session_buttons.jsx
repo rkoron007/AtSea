@@ -37,13 +37,13 @@ class SessionButtons extends React.Component {
           <li>
               <div
                 className="session-user-picture">
-                <Link to={`users/${this.currentUser.id}`}>
+                <Link to={`/users/${this.currentUser.id}`}>
                 <img src={this.currentUser.imgUrl}className="user-image"></img>
                 </Link>
               </div>
             <h3
             className="current-user">
-            <Link to={`users/${this.currentUser.id}`}>
+            <Link to={`/users/${this.currentUser.id}`}>
               {this.props.currentUser.username}
               </Link>
             </h3>
