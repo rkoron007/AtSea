@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
       @user.set_cart
       render partial: "api/users/user", locals: { user: @user }
     else
-      render json: @user.errors.full_messages, status: 422
+      render json: ['Need a username and password. Please Try Again!'], status: 401
     end
   end
 
@@ -22,7 +22,7 @@ class Api::UsersController < ApplicationController
     if @user
       render "api/users/show"
     else
-      render json: @user.errors.full_messages, status: 404
+      render json: ['Please Try Again!'], status: 401
     end
   end
 

@@ -1,4 +1,5 @@
 
+
 .review-form-outer{
   border-radius: 4px;
   font-family: $graphik;
@@ -25,18 +26,9 @@
 
     .review-box-header{
       .stars{
-        i{
-          &.full #rating,
-          &.full #rating:before,
-          &.full #rating:after {
-            background-color: $gold-orange;
-          }
 
-          &.empty #rating,
-          &.empty #rating:before,
-          &.empty #rating:after {
-            background-color: grey;
-          }
+        #full{
+          color: $gold-orange;
         }
       }
     }

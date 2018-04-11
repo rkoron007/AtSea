@@ -1,7 +1,7 @@
 class Api::CartItemsController < ApplicationController
 
   def create
-    @cart = Cart.find_by(user_id: current_user.id)
+    @cart = current_user.cart
     item_params = {}
     item_params[:item_id] = cart_item_params[:itemId]
     item_params[:quantity] = cart_item_params[:quantity]

@@ -1,6 +1,7 @@
 import { RECEIVE_ITEMS,
   RECEIVE_ITEM,
-  REMOVE_ITEM
+  REMOVE_ITEM,
+  RECEIVE_SEARCH_ITEMS
 } from "../actions/item_actions";
 
 import {

@@ -21,16 +21,16 @@ const receiveReviewErrors = (errors) =>({
 });
 
 
-export const deleteReview = (reviewId) => dispatch => {
-  return API.deleteReview(reviewId).then(
+export const deleteReview = (reviewId) => dispatch => (
+  API.deleteReview(reviewId).then(
     review => dispatch(removeReview(reviewId)),
     error => dispatch(receiveReviewErrors(error.responseJSON))
-  );
-};
+  )
+);
 
-export const createReview = (review) => dispatch => {
-  return API.createReview(review).then(
+export const createReview = (review) => dispatch => (
+    API.createReview(review).then(
     createdReview => dispatch(receiveReview(createdReview)),
     error => dispatch(receiveReviewErrors(error.responseJSON))
-  );
-};
+  )
+);

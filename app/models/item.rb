@@ -16,4 +16,11 @@ class Item < ApplicationRecord
     Item.where(user: user).where.not(id: id).limit(3)
   end
 
+  def self.search_results(search_params)
+    if search_params
+      query = '%' + search_params.downcase + '%'
+      @items = Item.where('lower(description) LIKE ? ', query).limit(5).to_a
+    end
+  end
+
 end

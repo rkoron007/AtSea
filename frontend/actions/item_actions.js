@@ -5,6 +5,7 @@ export const RECEIVE_ITEMS = "RECEIVE_ITEMS";
 export const RECEIVE_ITEM = "RECEIVE_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
 export const RECEIVE_ITEM_ERRORS = "RECEIVE_ITEM_ERRORS";
+export const RECEIVE_SEARCH_ITEMS = "RECEIVE_SEARCH_ITEMS";
 
 
 const receiveItems = (payload) => ({
@@ -25,6 +26,11 @@ const removeItem = (itemId) =>({
 const receiveItemErrors = (errors) =>({
     type: RECEIVE_ITEM_ERRORS,
     errors
+});
+
+const receiveSearchItems = (results) =>({
+    type: RECEIVE_SEARCH_ITEMS,
+    results
 });
 
 
@@ -62,3 +68,11 @@ export const deleteItem = (itemId) => dispatch => {
     error => dispatch(receiveItemErrors(error.responseJSON))
   );
 };
+
+
+export const searchItems = (description) => dispatch => (
+    API.fetchItemsBySearch(description).then(
+    items => dispatch(receiveItems(items)),
+    error => dispatch(receiveItemErrors(error.responseJSON))
+  )
+);

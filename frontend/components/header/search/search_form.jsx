@@ -1,6 +1,6 @@
 import React from "react";
 
-class SearchIndex extends React.Component{
+class SearchForm extends React.Component{
 
   render(){
       return(
@@ -19,4 +19,4 @@ class SearchIndex extends React.Component{
 
 }
 
-export default SearchIndex;
+export default SearchForm;

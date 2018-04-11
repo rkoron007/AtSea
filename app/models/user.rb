@@ -50,7 +50,6 @@ class User < ApplicationRecord
 
   def set_cart
     @cart = Cart.find_by({user_id: self.id })
-
     if @cart
 
     else

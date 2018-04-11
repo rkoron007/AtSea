@@ -11,8 +11,7 @@ class Api::ReviewsController < ApplicationController
     if @review.save
       render "api/reviews/show"
     else
-      render json: ['Sorry your review did not go through! Please try again'],
-      status:404
+      render json: ['One Review Per Product, please!'], status: 401
     end
   end
 
@@ -22,8 +21,7 @@ class Api::ReviewsController < ApplicationController
     if @review.destroy
       render "api/reviews/show"
     else
-      render json: ['Sorry couldn\'t find your review!'],
-      status:404
+      render json: ['Sorry couldn\'t find your review!'],status:404
     end
   end
 

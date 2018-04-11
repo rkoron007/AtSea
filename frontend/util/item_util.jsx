@@ -36,18 +36,19 @@ export const deleteItem = (itemId) => (
   })
 );
 
-export const fetchItemByFilter = (filter) => {
+export const fetchItemsBySearch = (description) => {
   return $.ajax({
     method: "GET",
-    url: "/api/items",
-    data: filter
+    url: "/api/item_searches",
+    data: { search: { description }}
   });
 };
 
-  export const makeChange = (price) => {
-    let newPrice = new Intl.NumberFormat('en-US',
-    { style: 'currency', currency: 'USD' });
+
+export const makeChange = (price) => {
+  let newPrice = new Intl.NumberFormat('en-US',
+  { style: 'currency', currency: 'USD' });
 
 
-    return newPrice.format(price);
-  };
+  return newPrice.format(price);
+};

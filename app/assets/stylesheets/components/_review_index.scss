@@ -28,7 +28,9 @@
       }
 
     .review-list{
-
+      display: flex;
+      flex-direction: column-reverse;
+      
       .review{
         border-bottom: 1px solid $line-grey;
         padding: 10px;

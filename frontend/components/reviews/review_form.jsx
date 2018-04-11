@@ -1,6 +1,7 @@
 import React from "react";
 import Redirect from "react-router-dom";
 import { makeChange } from "../../util/item_util";
+import Rater from 'react-rater';
 
 
 class ReviewForm extends React.Component{
@@ -8,12 +9,17 @@ class ReviewForm extends React.Component{
     super(props);
     this.state = {
       rating: 5,
-      body: ""
+      body: "",
+      hover:false,
+      hoverV: 0,
     };
+
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateRating = this.updateRating.bind(this);
     this.updateField = this.updateField.bind(this);
+    this.handleHover = this.handleHover.bind(this);
+    this.handleHoverLeave = this.handleHoverLeave.bind(this);
   }
 
   handleSubmit(e){
@@ -30,33 +36,60 @@ class ReviewForm extends React.Component{
   }
 
   updateField(field){
-    return (e) => this.setState({[field]: e.target.value});
+    return (e) => {
+      this.setState({[field]: e.target.value});
+    };
   }
 
   updateRating(updatedRating){
-    return (e) => this.setState({rating: e.target.value});
+    return (e) => this.setState({rating: updatedRating});
+  }
+
+  handleHover(i){
+    return () => this.setState({hover: true, hoverV: i});
+  }
+
+  handleHoverLeave(){
+    this.setState({hover: false});
   }
 
   ratingStars(){
     let starArr = [];
 
     for (let i = 1; i < 6; i++) {
-      const rating = ( i <= this.state.rating ? "full" : "empty");
+      let id, maxRating;
+      maxRating = this.state.hover ? this.state.hoverV: this.state.rating;
+      if (i <= maxRating) id ="full";
 
       starArr.push(
         <i
           key={i}
           className="fa fa-star"
-          id="rating"
+          id={id}
+          onMouseEnter={this.handleHover(i)}
+          onMouseLeave={this.handleHoverLeave}
           aria-hidden="true"
           onClick={this.updateRating(i)}>
         </i>);
     }
 
+    // debugger
     return starArr;
   }
 
+  renderErrors() {
+    if (this.props.errors){
+    return (
+      <ul className="session-errors">
+        {this.props.errors.map((error, i) => (
+          <li key = {`${i}`}>{error}</li>))}
+      </ul>
+        );
+      }
+    }
+
   render(){
+
     return (
       <div className="review-form-outer">
         <h3 className="review-head">Leave a Review</h3>
@@ -64,11 +97,12 @@ class ReviewForm extends React.Component{
         <form onSubmit={this.handleSubmit}>
           <div className="review-box">
             <div className="review-box-header">
-              <p>How much did you Enjoy this nautical product?</p>
+              <p>How much did you enjoy this nautical product?</p>
               <div className="stars">
                 {this.ratingStars()}
               </div>
             </div>
+            {this.renderErrors()}
             <label className="review-body">
               <textarea className="review-body-input"
                 value={this.state.body}
