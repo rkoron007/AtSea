@@ -1,0 +1,69 @@
+
+.review-form-outer{
+  border-radius: 4px;
+  font-family: $graphik;
+  line-height: 1.6;
+  display: flex;
+  width: 570px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $line-grey;
+  padding-bottom: 40px;
+
+  .review-head{
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+
+  }
+
+  .review-box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .review-box-header{
+      .stars{
+        i{
+          &.full #rating,
+          &.full #rating:before,
+          &.full #rating:after {
+            background-color: $gold-orange;
+          }
+
+          &.empty #rating,
+          &.empty #rating:before,
+          &.empty #rating:after {
+            background-color: grey;
+          }
+        }
+      }
+    }
+
+    .review-body{
+      padding-bottom: 10px;
+      padding-top: 10px;
+
+      .review-body-input{
+        margin: 0px;
+        height: 100%;
+        width: 100%;
+        border: 1px solid grey;
+      }
+    }
+
+    .leave-review{
+      border-radius: 4px;
+      border-width: 1px;
+      font-weight: bold;
+      height: 24px;
+      width:50%;
+      line-height: 1.4;
+      padding: 8px 12px;
+      text-align: center;
+      background-color: $gold-orange;
+    }
+
+  }
+}

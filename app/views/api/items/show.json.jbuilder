@@ -15,3 +15,12 @@ end
 json.user do
   json.partial! 'api/users/user', user: @item.user
 end
+
+
+json.reviews do
+  @item.reviews.each do |review|
+    json.set! review.id do
+      json.partial! 'api/reviews/review', review: review
+    end
+  end
+end

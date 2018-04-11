@@ -2,12 +2,12 @@ import React from "react";
 import Redirect from "react-router-dom";
 import { makeChange } from "../../util/item_util";
 
+
 class ReviewForm extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      itemId: this.props.itemId,
-      rating: 0,
+      rating: 5,
       body: ""
     };
 
@@ -18,10 +18,14 @@ class ReviewForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.createReview(this.state, this.props.item.id);
+    const review = {
+      item_id: this.props.itemId,
+      rating: this.state.rating,
+      body: this.state.body,
+    };
+    this.props.createReview(review);
     this.setState({
-      itemId: this.props.item.id,
-      rating: 0,
+      rating: 5,
       body: "" });
   }
 
@@ -29,24 +33,50 @@ class ReviewForm extends React.Component{
     return (e) => this.setState({[field]: e.target.value});
   }
 
-  updateRating(){
+  updateRating(updatedRating){
     return (e) => this.setState({rating: e.target.value});
+  }
+
+  ratingStars(){
+    let starArr = [];
+
+    for (let i = 1; i < 6; i++) {
+      const rating = ( i <= this.state.rating ? "full" : "empty");
+
+      starArr.push(
+        <i
+          key={i}
+          className="fa fa-star"
+          id="rating"
+          aria-hidden="true"
+          onClick={this.updateRating(i)}>
+        </i>);
+    }
+
+    return starArr;
   }
 
   render(){
     return (
-      <div className="review-form">
-        <h3 className="review-head">Leave a Review?</h3>
+      <div className="review-form-outer">
+        <h3 className="review-head">Leave a Review</h3>
+
         <form onSubmit={this.handleSubmit}>
           <div className="review-box">
+            <div className="review-box-header">
+              <p>How much did you Enjoy this nautical product?</p>
+              <div className="stars">
+                {this.ratingStars()}
+              </div>
+            </div>
             <label className="review-body">
-              <textarea className="review-body"
-                value={this.state.body}>
-                {this.updateField("body")}
+              <textarea className="review-body-input"
+                value={this.state.body}
+                onChange={this.updateField("body")} required>
               </textarea>
             </label>
-
-         <button className="leave-review">Leave Review</button>
+              <button className="leave-review">Leave Review
+              </button>
          </div>
        </form>
      </div>

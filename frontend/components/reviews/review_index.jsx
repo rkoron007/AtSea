@@ -4,12 +4,18 @@ import { Route } from 'react-router-dom';
 
 class ReviewsIndex extends React.Component{
 
-  componentDidMount(){
-    this.props.fetchReviews(this.props.itemId);
+  reviewCount(){
+    return 0 || this.props.reviews.length;
   }
 
-  reviewCount(){
-    return this.props.reviews.length;
+  ratingAverage(){
+    let sum = 0;
+    this.props.reviews.forEach((review) => (sum += review.rating));
+      if (this.props.reviews.length){
+        return sum / this.props.reviews.length;
+      } else {
+        return "";
+      }
   }
 
   render(){
@@ -17,12 +23,11 @@ class ReviewsIndex extends React.Component{
       return null;
     }
 
-
     return(
       <div className="review-index">
         <div className="review-index-main">
           <div className="review-header">
-            <h3>Reviews {this.reviewCount()}</h3>
+            <h3>Reviews {this.ratingAverage()}</h3><p>({this.reviewCount()})</p>
           </div>
           <ul className="review-list">
             {this.props.reviews.map(
@@ -30,13 +35,14 @@ class ReviewsIndex extends React.Component{
               <ReviewIndexItem
                 key={review.id}
                 review={review}
-              />)};
+                deleteReview={this.props.deleteReview}
+                currentUser={this.props.currentUser}
+              />)}
           </ul>
         </div>
       </div>
     );
   }
-
 }
 
 

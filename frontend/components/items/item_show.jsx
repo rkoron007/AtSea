@@ -12,7 +12,7 @@ class ItemShow extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
+
     if (this.props.match.params.itemId !== nextProps.match.params.itemId) {
       this.props.fetchItem(nextProps.match.params.itemId);
     }
@@ -63,6 +63,7 @@ class ItemShow extends React.Component{
          <p>{item.description}</p>
        </div>
 
+       <ReviewFormContainer itemId={item.id}/>
        <ReviewIndexContainer itemId={item.id}/>
       </div>
      </div>

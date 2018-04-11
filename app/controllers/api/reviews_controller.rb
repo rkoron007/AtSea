@@ -1,12 +1,12 @@
 class Api::ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.where(item_id: params[:item_id])
+    @reviews = Review.includes(:user).where(item_id: params[:item_id]).load
   end
 
   def create
     @review = Review.new(review_params)
-    @review.user_id = current_user.id
+    @review.author_id = current_user.id
 
     if @review.save
       render "api/reviews/show"
@@ -16,9 +16,10 @@ class Api::ReviewsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @review = Review.find(params[:id])
-    if @review.delete
+
+    if @review.destroy
       render "api/reviews/show"
     else
       render json: ['Sorry couldn\'t find your review!'],

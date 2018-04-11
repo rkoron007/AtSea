@@ -53,7 +53,7 @@ class Api::ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.includes(user: [:items]).find(params[:id])
+    @item = Item.includes(user: [:items], reviews: [:user]).find(params[:id])
   end
 
   private
