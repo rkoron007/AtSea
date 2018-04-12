@@ -6,6 +6,7 @@ export const RECEIVE_ITEM = "RECEIVE_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
 export const RECEIVE_ITEM_ERRORS = "RECEIVE_ITEM_ERRORS";
 export const RECEIVE_SEARCH_ITEMS = "RECEIVE_SEARCH_ITEMS";
+export const CLEAN_ITEMS = "CLEAN_ITEMS";
 
 
 const receiveItems = (payload) => ({
@@ -28,10 +29,16 @@ const receiveItemErrors = (errors) =>({
     errors
 });
 
-const receiveSearchItems = (results) =>({
+const receiveSearchItems = (payload) =>({
     type: RECEIVE_SEARCH_ITEMS,
-    results
+    payload
 });
+
+export const cleanItems = () =>({
+    type: CLEAN_ITEMS,
+    items: {}
+});
+
 
 
 export const fetchItems = () => dispatch => {

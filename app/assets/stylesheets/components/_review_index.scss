@@ -7,6 +7,9 @@
   display: flex;
   padding-left:28px;
 
+  #full{
+    color: $gold-orange;
+  }
   .review-index-main{
     .review-header{
       border-top: 1px solid $line-grey;

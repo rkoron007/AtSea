@@ -25,6 +25,17 @@ class ItemShow extends React.Component{
     }
   }
 
+  editButtonVisible(){
+    if (this.props.currentUser.id === this.props.item.userId) {
+      return(
+        <Link to={`/items/${this.props.item.id}/edit`}
+          className="edit-button">
+          Edit Item
+        </Link>
+      );
+    }
+  }
+
   render(){
    const { item, user, items } = this.props;
    if (!item || !user ) {
@@ -42,6 +53,7 @@ class ItemShow extends React.Component{
              <Link to={`/users/${user.id}`}>
                <h1>{user.username}</h1>
              </Link>
+
             </div>
          </div>
          <div className="show-right">

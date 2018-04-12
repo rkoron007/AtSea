@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { parseTime } from '../../util/review_util';
+import { parseTime, starCreator } from '../../util/review_util';
 
 
 class ReviewIndexItem extends React.Component{
@@ -13,11 +13,15 @@ class ReviewIndexItem extends React.Component{
     return () => this.props.deleteReview(reviewId);
   }
 
+
   render(){
     const review = this.props.review;
     const reviewer = review.reviewer;
     const currentUser = this.props.currentUser;
 
+    if (!review){
+      return null;
+    }
     let removeButton;
       if (currentUser.id === review.authorId){
       removeButton = <button
@@ -37,7 +41,7 @@ class ReviewIndexItem extends React.Component{
         <div className="review-info">
 
           <div className="rating-date">
-            <p>{review.rating}</p>
+            <p>{starCreator(review.rating)}</p>
             <p>{parseTime(review.createdAt)}</p>
           </div>
 

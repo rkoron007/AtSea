@@ -8,7 +8,7 @@ class ReviewForm extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      rating: 5,
+      rating: 0,
       body: "",
       hover:false,
       hoverV: 0,

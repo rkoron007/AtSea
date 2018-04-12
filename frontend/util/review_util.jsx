@@ -1,3 +1,5 @@
+import React from "react";
+
 
 export const createReview = (review) => (
   $.ajax({
@@ -25,6 +27,29 @@ export const parseTime = (rdate) => {
   let fulldate = "";
   fulldate += monthStr + " " + day +", " + year;
 
-
   return fulldate;
+};
+
+
+export const starCreator = (num) => {
+    let starArr = [];
+
+    for (let i = 1; i < 6; i++) {
+
+      if(i <= num ) {
+      starArr.push(<i key={i+num}
+        className="fa fa-star"
+        id="full"
+        aria-hidden="true">
+      </i>);
+    } else {
+      starArr.push(
+      <i key={i + num}
+        className="fa fa-star-o"
+        id="empty"
+        aria-hidden="true">
+      </i>);
+      }
+    }
+    return starArr;
 };

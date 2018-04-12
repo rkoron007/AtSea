@@ -16,8 +16,8 @@ class UserShow extends React.Component{
   }
 
   createButtonShow(){
-    if (this.props.items[0]){
-      if (this.props.currentUser.id === this.props.items[0].userId) {
+    if (this.props.user){
+      if (this.props.currentUser.id === this.props.user.id) {
         return(
           <Link to={`/items/new`} className="create-item-btn">
             Create an Item!

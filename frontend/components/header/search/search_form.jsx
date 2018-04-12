@@ -17,7 +17,10 @@ class SearchForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.searchItems(this.state);
+    this.props.searchItems(this.state).then(
+      this.props.history.push("/search")
+    );
+    this.setState({description:''});
   }
 
   render(){

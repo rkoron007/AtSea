@@ -1,7 +1,8 @@
 import { RECEIVE_ITEMS,
   RECEIVE_ITEM,
   REMOVE_ITEM,
-  RECEIVE_SEARCH_ITEMS
+  RECEIVE_SEARCH_ITEMS,
+  CLEAN_ITEMS
 } from "../actions/item_actions";
 
 import {
@@ -15,7 +16,9 @@ const itemsReducer = (state={}, action) =>{
     case RECEIVE_ITEMS:
       return action.payload.items;
     case RECEIVE_SEARCH_ITEMS:
-      return action.results;
+      return action.payload.items;
+    case CLEAN_ITEMS:
+      return {};
     case RECEIVE_USER:
       return action.payload.items;
     case RECEIVE_ITEM:

@@ -1,6 +1,7 @@
 import React from "react";
 import ReviewIndexItem from "./review_index_items";
 import { Route } from 'react-router-dom';
+import { starCreator } from "../../util/review_util";
 
 class ReviewsIndex extends React.Component{
 
@@ -18,6 +19,7 @@ class ReviewsIndex extends React.Component{
       }
   }
 
+
   render(){
     if (!this.props.reviews) {
       return null;
@@ -27,7 +29,9 @@ class ReviewsIndex extends React.Component{
       <div className="review-index">
         <div className="review-index-main">
           <div className="review-header">
-            <h3>Reviews {this.ratingAverage()}</h3><p>({this.reviewCount()})</p>
+            <h3>Reviews
+              {starCreator(this.ratingAverage())}</h3><p>
+              ({this.reviewCount()})</p>
           </div>
           <ul className="review-list">
             {this.props.reviews.map(

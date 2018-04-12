@@ -17,7 +17,8 @@ const mapStateToProps = (state, ownParams) => {
   return {
     item,
     items,
-    user
+    user,
+    currentUser: state.session.currentUser
   };
 };
 

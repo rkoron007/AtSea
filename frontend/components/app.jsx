@@ -8,7 +8,7 @@ import {
 
 import HeaderContainer from "./header/header_container";
 import MainPageContainer from "./mainpage/mainpage";
-import CategoriesBar from "./categories/categories_bar";
+import CategoriesBarContainer from "./categories/categories_container";
 import CartIndexContainer from "./cart/cart_index_container";
 import UserShowContainer from "./users/user_show_container";
 
@@ -26,7 +26,7 @@ const App = () => (
       <HeaderContainer />
     </header>
 
-    <Route path ="/" component={CategoriesBar} />
+    <Route path ="/" component={CategoriesBarContainer} />
     <Switch>
       <ProtectRoute
         exact path ="/users/:userId"
@@ -43,7 +43,7 @@ const App = () => (
         component={ ItemIndexContainer }
       />
       <ProtectRoute
-        exact path="/item_searches"
+        exact path="/search"
         component={ ItemIndexContainer }
       />
       <Route exact path ="/signup" component={ MainPageContainer } />

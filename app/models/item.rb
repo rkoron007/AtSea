@@ -19,7 +19,7 @@ class Item < ApplicationRecord
   def self.search_results(search_params)
     if search_params
       query = '%' + search_params.downcase + '%'
-      @items = Item.where('lower(description) LIKE ? ', query).limit(5).to_a
+      @items = Item.where('lower(description) LIKE ? OR lower(title) LIKE ?', query, query).limit(5).to_a
     end
   end
 

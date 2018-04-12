@@ -59,6 +59,15 @@
         font-family: $graphik;
         text-align: left;
 
+        .show-edit-button{
+          display:flex;
+          text-decoration: none;
+          font-size: 14px;
+          border: 1px solid $line-grey;
+          padding: 5px;
+          margin-top: 5px;
+          border-radius: 3px;
+        }
         &:hover{
           text-decoration: underline;
         }

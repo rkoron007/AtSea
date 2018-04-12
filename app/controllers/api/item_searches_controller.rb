@@ -2,7 +2,6 @@ class Api::ItemSearchesController < ApplicationController
 
   def index
     @items = Item.search_results(item_search_params[:description])
-    debugger
     render "api/items/index"
   end
 

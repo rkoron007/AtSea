@@ -1,6 +1,7 @@
 import { RECEIVE_ITEMS,
   RECEIVE_ITEM,
   REMOVE_ITEM,
+  RECEIVE_SEARCH_ITEMS,
 } from "../actions/item_actions";
 
 import {
@@ -13,6 +14,8 @@ const usersReducer = (state={}, action) =>{
   let newState;
   switch (action.type) {
     case RECEIVE_ITEMS:
+      return action.payload.users;
+    case RECEIVE_SEARCH_ITEMS:
       return action.payload.users;
     case RECEIVE_ITEM:
     newState = Object.assign({},

@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { makeChange } from "../../util/item_util";
 
 const ItemIndexItem = ({ item, user }) => {
+  if (!user){
+    return null;
+  }
   return <li className="item">
     <Link
       to={`/items/${item.id}`}><img src={item.imageUrl}/>
