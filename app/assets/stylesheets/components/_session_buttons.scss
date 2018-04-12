@@ -2,98 +2,107 @@ header{
   margin: 0px 84px;
   padding: 0px 36px;
 
-
-  .new-session-btns ul{
-    color: $gold-orange;
-    background-color: #fff;
-    font-family: $roboto;
+  .right-buttons{
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-evenly;
 
-    li{
-      padding: 10px;
-      font-size: 14px;
-      margin-right: 15px;
-      .register{
-        display:block;
-        padding: 8px;
-        line-height: 15px;
-        margin-top: 13px;
+    .new-session-btns ul{
+      color: $gold-orange;
+      background-color: #fff;
+      font-family: $roboto;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
 
-        &:hover{
-          text-decoration: underline;
+      li{
+        padding: 10px;
+        font-size: 14px;
+        margin-right: 15px;
+        .register{
+          display:block;
+          padding: 8px;
+          line-height: 15px;
+          margin-top: 13px;
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+
+        button:hover {
+          background-color: #fce0a9;
+        }
+        .sign-in-btn:hover{
+          background-color: #fce0a9
+        }
+
+        .demo{
+          display:block;
+          border: 1px solid $gold-orange;
+          padding: 8px;
+          line-height: 15px;
+          margin-top: 13px;
+          border-radius: 3px;
+        }
+
+        .sign-in-btn{
+          display:block;
+          border: 1px solid $gold-orange;
+          padding: 8px;
+          line-height: 15px;
+          margin-top: 13px;
+          border-radius: 3px;
         }
       }
-
-      button:hover {
-        background-color: #fce0a9;
-      }
-      .sign-in-btn:hover{
-        background-color: #fce0a9
-      }
-
-      .demo{
-        display:block;
-        border: 1px solid $gold-orange;
-        padding: 8px;
-        line-height: 15px;
-        margin-top: 13px;
-        border-radius: 3px;
-      }
-
-      .sign-in-btn{
-        display:block;
-        border: 1px solid $gold-orange;
-        padding: 8px;
-        line-height: 15px;
-        margin-top: 13px;
-        border-radius: 3px;
-      }
-    }
-  }
-
-  .carts-link{
-    font-family: $roboto;
-    padding: 10px 20px 5px 20px;
-  }
-
-  .current-session-btns ul{
-    color: #666666;
-    background-color: #fff;
-    font-family: $roboto;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-
-    a:hover{
-      color: #444444;
     }
 
-    .current-user{
+    .carts-link{
+      font-family: "Roboto", sans-serif;
+      padding: 10px 20px 5px 20px;
+      white-space: nowrap;
+      color: #888;
       font-size: 14px;
-      margin-right: 20px;
     }
-    .session-user-picture{
+    .current-session-btns{
+      margin: auto;
+      ul{
+      color: #666666;
+      background-color: #fff;
+      font-family: $roboto;
       display: flex;
-      justify-content: center;
-      margin-right: 15px;
-      margin-top: 10px;
-    }
-    .logout-button{
-      display:block;
-      color: $gold-orange;
-      border: 1px solid $gold-orange;
-      padding: 8px;
-      margin-top: 20px;
-      margin-right: 15px;
-      border-radius: 5px;
-    }
-    .user-image{
-      width: 28px;
-      height: 28px;
+      flex-direction: row;
+      justify-content: flex-end;
 
+      a:hover{
+        color: #444444;
+      }
+
+      .current-user{
+        font-size: 14px;
+        margin-right: 20px;
+      }
+      .session-user-picture{
+        display: flex;
+        justify-content: center;
+        margin-right: 15px;
+        margin-top: 10px;
+      }
+      .logout-button{
+        display:block;
+        color: $gold-orange;
+        border: 1px solid $gold-orange;
+        padding: 8px;
+        margin-top: 20px;
+        margin-right: 15px;
+        border-radius: 5px;
+      }
+      .user-image{
+        width: 28px;
+        height: 28px;
+
+      }
+      }
     }
   }
 }

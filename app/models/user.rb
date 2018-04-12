@@ -51,7 +51,7 @@ class User < ApplicationRecord
   def set_cart
     @cart = Cart.find_by({user_id: self.id })
     if @cart
-
+      @cart
     else
       @cart = Cart.create!({user_id:self.id})
     end

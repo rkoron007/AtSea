@@ -7,18 +7,31 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
+User.destroy_all
 user1 = User.create!({ username: 'USERNAME',password: 'PASSWORD' ,img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522954985/anchor.png"})
-user2 = User.create!({ username: 'BoatLover',password: 'PASSWORD1', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957073/anchor2.jpg" })
-user3 = User.create!({ username: 'Knotsar3C00l',password: 'PASSWORD2', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957185/seahorse.jpg" })
-user4 = User.create!({ username: 'LandLubber',password: 'PASSWORD3', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957236/crab.jpg" })
-user5 = User.create!({ username: 'BIRDS!',password: 'PASSWORD4', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957293/whale.jpg"})
-user6 = User.create!({ username: 'poseidon#1',password: 'PASSWORD5', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957461/Poseidon_2.jpg" })
-user7 = User.create!({ username: 'SailorGal',password: 'PASSWORD6', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957591/moon.png" })
-user8 = User.create!({ username: 'PartyBooats',password: 'PASSWORD7', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957634/boat.jpg" })
-user9 = User.create!({ username: 'HelloHallo',password: 'PASSWORD8', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957715/ocean.jpg" })
-user10 = User.create!({ username: 'Parrots4Ever',password: 'PASSWORD9', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957770/parrottsss.jpg" })
+user2 = User.create!({ username: 'BoatLover',password: 'PASSWORD', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957073/anchor2.jpg" })
+user3 = User.create!({ username: 'Knotsar3C00l',password: 'PASSWORD', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957185/seahorse.jpg" })
+user4 = User.create!({ username: 'LandLubber',password: 'PASSWORD', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957236/crab.jpg" })
+user5 = User.create!({ username: 'BIRDS!',password: 'PASSWORD', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957293/whale.jpg"})
+user6 = User.create!({ username: 'poseidon#1',password: 'PASSWORD', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957461/Poseidon_2.jpg" })
+user7 = User.create!({ username: 'SailorGal',password: 'PASSWORD', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957591/moon.png" })
+user8 = User.create!({ username: 'PartyBooats',password: 'PASSWORD', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957634/boat.jpg" })
+user9 = User.create!({ username: 'HelloHallo',password: 'PASSWORD', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957715/ocean.jpg" })
+user10 = User.create!({ username: 'Parrots4Ever',password: 'PASSWORD', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957770/parrottsss.jpg" })
 
+Cart.destroy_all
+cart1 = Cart.create(user_id: 1)
+cart2 = Cart.create(user_id: 2)
+cart3 = Cart.create!({user_id: user3.id})
+cart4 = Cart.create!({user_id: user4.id})
+cart5 = Cart.create!({user_id: user5.id})
+cart6 = Cart.create!({user_id: user6.id})
+cart7 = Cart.create!({user_id: user7.id})
+cart8 = Cart.create!({user_id: user8.id})
+cart9 = Cart.create!({user_id: user9.id})
+cart10 = Cart.create!({user_id: user10.id})
+
+Item.destroy_all
 item1 = Item.create!({ title: 'Knotted Knot',
   description: 'I have no idea how to undo this. Halp.', price: 25, user_id: user1.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522885318/majorknot.jpg" })
@@ -83,8 +96,26 @@ item20 = Item.create!({ title: 'Large Compass',
   description: 'Much better than tiny compass.', price: 2, user_id: user9.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522959804/largecompass.jpg" })
 
-
-review1 = Review.create!({author_id: user1.id, item_id: 1, rating: 5, body: "I'd buy it."})
-review1 = Review.create!({author_id: user2.id, item_id: 1, rating: 5, body: "I'd buy it."})
-review1 = Review.create!({author_id: user3.id, item_id: 1, rating: 5, body: "I'd buy it."})
-review1 = Review.create!({author_id: user4.id, item_id: 1, rating: 5, body: "I'd buy it."})
+Review.destory_all
+Review.create!({author_id: user1.id, item_id: 1, rating: 5, body: "I love this nautical item."})
+Review.create!({author_id: user2.id, item_id: 1, rating: 1, body: "I'm not sure bout this one."})
+Review.create!({author_id: user3.id, item_id: 1, rating: 5, body: "I'd buy it. Or would I?"})
+Review.create!({author_id: user4.id, item_id: 2, rating: 5, body: "ILOVETHIS"})
+Review.create!({author_id: user3.id, item_id: 3, rating: 4, body: "This is so cool. I'm going to buy 50."})
+Review.create!({author_id: user2.id, item_id: 4, rating: 5, body: "I need this thingggg"})
+Review.create!({author_id: user9.id, item_id: 5, rating: 3, body: "I'm a big fan of items"})
+Review.create!({author_id: user8.id, item_id: 6, rating: 2, body: "Quality was bad. But still made me smile."})
+Review.create!({author_id: user6.id, item_id: 7, rating: 1, body: "Duuuuuuuuuuuuuuuuuuuuuuude."})
+Review.create!({author_id: user6.id, item_id: 8, rating: 4, body: "I had so much fun with this!"})
+Review.create!({author_id: user5.id, item_id: 9, rating: 3, body: "But why?"})
+Review.create!({author_id: user4.id, item_id: 10, rating: 2, body: "I feel like I'd like this but in pink."})
+Review.create!({author_id: user2.id, item_id: 11, rating: 1, body: "HEEEEEEEEEYAAAAAAAA. Hated it."})
+Review.create!({author_id: user1.id, item_id: 12, rating: 5, body: "OHMYGOD"})
+Review.create!({author_id: user1.id, item_id: 13, rating: 4, body: "its okay"})
+Review.create!({author_id: user1.id, item_id: 14, rating: 2, body: "If I had money this would be mine."})
+Review.create!({author_id: user1.id, item_id: 15, rating: 1, body: "I have money but I hate this."})
+Review.create!({author_id: user1.id, item_id: 16, rating: 4, body: "I'm amazing you can keep making these!"})
+Review.create!({author_id: user6.id, item_id: 17, rating: 3, body: "But did you think you'd really like it?"})
+Review.create!({author_id: user8.id, item_id: 18, rating: 2, body: "I didn't really enjoy this that much."})
+Review.create!({author_id: user9.id, item_id: 19, rating: 1, body: "Nope."})
+Review.create!({author_id: user10.id, item_id: 20, rating: 5, body: "ILOVETHIS"})

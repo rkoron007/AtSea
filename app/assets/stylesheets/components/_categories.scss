@@ -3,16 +3,16 @@
   border-bottom: 1px solid $light-grey;
   border-top: 1px solid $light-grey;
   color: #222;
-  padding: 5px 0 10px 0;
   font-family: $graphik;
   line-height: 1.4;
   font-weight: 340;
 
   .categories{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 10px 0;
-    width: 100%;
+    max-width: 1272px;
+    margin: auto;
 
     li {
       margin: 0 10px;

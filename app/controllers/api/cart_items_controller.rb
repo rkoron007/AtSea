@@ -2,6 +2,10 @@ class Api::CartItemsController < ApplicationController
 
   def create
     @cart = current_user.cart
+      if @cart.nil?
+        current_user.set_cart
+        @cart = current_user.cart
+      end
     item_params = {}
     item_params[:item_id] = cart_item_params[:itemId]
     item_params[:quantity] = cart_item_params[:quantity]

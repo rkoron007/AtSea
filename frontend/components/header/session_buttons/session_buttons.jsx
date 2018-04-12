@@ -35,6 +35,12 @@ class SessionButtons extends React.Component {
       <nav className="current-session-btns">
         <ul>
           <li>
+            <button className="logout-button"
+              onClick={this.logout}
+              >Logout
+            </button>
+          </li>
+          <li>
               <div
                 className="session-user-picture">
                 <Link to={`/users/${this.currentUser.id}`}>
@@ -47,12 +53,6 @@ class SessionButtons extends React.Component {
               {this.props.currentUser.username}
               </Link>
             </h3>
-          </li>
-          <li>
-            <button className="logout-button"
-              onClick={this.logout}
-              >Logout
-            </button>
           </li>
           <li className="carts-link">
             <Link
@@ -71,7 +71,7 @@ class SessionButtons extends React.Component {
     this.currentUser = this.props.currentUser;
     this.logout = this.props.logout;
     return(
-      <div>
+      <div className="right-buttons">
           {this.currentUser ? this.navBarGreeting() : this.sessionLinks()}
       </div>
     );
