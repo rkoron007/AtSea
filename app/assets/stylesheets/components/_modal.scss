@@ -5,60 +5,79 @@
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 999;
+  height: 4977px;
   z-index: 9;
-  background: rgba(0,0,0,0.3);
+  opacity: 0.8;
+  background: rgb(221, 221, 221);
 }
 
 
 .modal-window {
-  font-family: $roboto;
-  top: 100px;
-  left: 30%;
+  font-family: $graphik;
+  top: 80px;
+  left: 35%;
   margin-left: -220px;
-  width: 580px;
-  padding: 20px;
+  width: 500px;
   border-radius: 5px;
-  border: 1px solid #000;
+  border: 1px solid #BFBFBF;
   display: block;
   background-color: #fff;
   position: absolute;
   z-index: 999;
   overflow: hidden;
-  height: 485px;
+  height: 450px;
   margin: 0 auto;
-  box-shadow: 0px 0px 2px 4px rgba(0,0,255,0.1);
+  box-shadow: -1px 1px 20px 4px rgba(180, 180, 190, 0.62);
 
-  section{
-    padding: 10px;
-    border-bottom: 1px solid grey;
-    a{
-      background-color: lightgrey;
+  .modal-header{
+    background-color: $modal-grey;
+    padding: 3px;
+    border-top: 1px solid #FFF;
+    section{
+      padding-left: 40px;
+      padding-top: 36px;
+      padding-right: 10px;
+      a{
+        background-color: $modal-grey;
       border: 1px solid grey;
-
       border-top-right-radius: 5px;
       border-top-left-radius: 5px;
-      padding: 11px;
+      background-color: #FAF9F5;
+      border: 1px solid #E1E3DF;
+      border-left: 0;
+      font-size: 13px;
+      padding: 7px 12px;
+      margin: 0 0 -1px;
+      text-align: center;
+      color: #444;
+      font-weight: bold;
+      cursor: pointer;
 
-      &:hover{
-        text-decoration: underline;
+        &:hover{
+          text-decoration: underline;
+        }
       }
-    }
-    .selected{
-      background-color: white;
-      border-bottom: none;
+      .selected{
+        background-color: white;
+        padding: 8px 12px;
+        border-bottom: none;
+      }
     }
   }
 }
 
 .session-form-container{
-  font-family: $roboto;
+  font-family: $graphik;
   display: flex;
   flex-direction: column;
-
+  border-top: 1px solid $light-grey;
+  padding: 20px 53px;
+  overflow: hidden;
 
   .session-errors {
     font-family: $roboto;
-    line-height: 16px;
+    line-height: 13px;
 
     color: #C12323;
     display: inline-block;
@@ -83,10 +102,15 @@
   }
   label{
     padding: 10px 10px 15px 0px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    letter-spacing: .05em;
   }
   button{
     display: inline-block;
     padding: 7px 7px 8px;
+
     border-width: 1px;
     border-style: solid;
     text-align: center;
@@ -94,8 +118,9 @@
     color: #fff;
     border-radius: 4px;
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 400;
     width: 218px;
+    margin-bottom: 9px;
   }
 
 }

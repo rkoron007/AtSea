@@ -86,7 +86,7 @@ class ItemForm extends React.Component {
       img_url: this.state.uploadedFileCloudinaryUrl
       ||
       this.state.imageUrl ||
-      "http://res.cloudinary.com/dkaolr6pg/image/upload/v1523392738/default.jpg",
+      "http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523392738/default.jpg",
       id: this.state.id || null
     };
     this.props.processItemForm(currentItem, this.state.id).then(

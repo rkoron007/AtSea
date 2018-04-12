@@ -40,6 +40,14 @@ class SessionForm extends React.Component {
     return this.props.clearErrors();
   }
 
+  demoButtonShowing(){
+    if (this.props.formType === "Sign in"){
+      return (
+        <button onClick={this.props.demoLogin}>Demo</button>
+      );
+    }
+  }
+
   render(){
     return(
       <div>
@@ -61,6 +69,9 @@ class SessionForm extends React.Component {
             </input>
           </label>
           <button className="session-form-btn">{this.props.formType}</button>
+          <div className="demo-btn">
+            {this.demoButtonShowing()}
+          </div>
         </form>
       </div>
     );

@@ -25,10 +25,12 @@ class Modal extends React.Component{
         <div className='modal-backdrop'onClick={this.handleClick}>
         </div>
         <div className="modal-window">
-          <section>
-            <NavLink to="/login" activeClassName="selected">Sign In</NavLink>
-            <NavLink to="/signup" activeClassName="selected">Register</NavLink>
-          </section>
+          <div className="modal-header">
+            <section className="modal-header">
+                <NavLink to="/signup" activeClassName="selected">Register</NavLink>
+              <NavLink to="/login" activeClassName="selected">Sign In</NavLink>
+            </section>
+          </div>
 
           <AuthRoute exact path="/login" component={ LoginFormContainer }/>
           <AuthRoute exact path="/signup" component={ SignUpFormContainer }/>
