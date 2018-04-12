@@ -1,5 +1,4 @@
 
-
 .staff-headline{
   font-family: $roboto;
   text-align: center;
@@ -8,70 +7,82 @@
   font-size: 26px;
 }
 
-.items-index{
-  font-family: $roboto;
+.empty-search{
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: auto;
-  font-size: 12px;
-
-  .item{
-    display:flex;
-    flex-direction: column;
-    border-radius: 4px;
-    margin: 10px;
-    width: 206px;
-    height: 164px;
-    transition: box-shadow 0.5s;
-    margin-top: 0px;
-    margin-bottom: 180px;
-    margin-left: 30px;
-    margin-right: 30px;
-    font-family: $graphik;
-
-    .item-index-price{
-      color: $dark-grey;
-      font-weight: 550;
-      line-height: 1.4;
-      text-align: left;
-      font-size: 14px;
-    }
-    .item-index-title{
-      color: #444;
-      text-align: left;
-      font-size: 15px;
-      font-weight: 100;
-      margin-top: 7px;
-      margin-bottom: 3px;
-      letter-spacing: .02em;
-  }
-    .item-index-user{
-      line-height: 1.4;
-      color: $user-username-grey;
-      text-align: left;
-      font-weight: 100;
-
-    }
-    img{
-      border: 1px solid $light-grey;
-      border-radius: 4px;
-      transition: box-shadow 0.5s;
-      position: relative;
-      width:  200px;
-      height: 200px;
-      &:hover{
-        box-shadow: 1px 4px 15px 3px rgba(0, 0, 255, 0.1);
-      }
-    }
-  }
+  padding: 10%;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 26px;
+  color: $black;
+  font-family: $graphik;
 }
-
 
 .filter-and-index{
   display:flex;
   margin: 50px;
+
+  .items-index-main{
+      width: 100%;
+    .items-index{
+      font-family: $roboto;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      width: 100%;
+      margin: auto;
+      font-size: 12px;
+
+      .item{
+        display:flex;
+        flex-direction: column;
+        border-radius: 4px;
+        margin: 10px;
+        width: 200px;
+        height: 164px;
+        transition: box-shadow 0.5s;
+        margin-top: 0px;
+        margin-bottom: 180px;
+        margin-left: 1.8%;
+        margin-right: 2.8%;
+        font-family: $graphik;
+
+        .item-index-price{
+          color: $dark-grey;
+          font-weight: 550;
+          line-height: 1.4;
+          text-align: left;
+          font-size: 14px;
+        }
+        .item-index-title{
+          color: #444;
+          text-align: left;
+          font-size: 15px;
+          font-weight: 100;
+          margin-top: 7px;
+          margin-bottom: 3px;
+          letter-spacing: .02em;
+        }
+        .item-index-user{
+          line-height: 1.4;
+          color: $user-username-grey;
+          text-align: left;
+          font-weight: 100;
+        }
+        img{
+          border: 1px solid $light-grey;
+          border-radius: 4px;
+          transition: box-shadow 0.5s;
+          position: relative;
+          width:  200px;
+          height: 200px;
+          &:hover{
+            box-shadow: 1px 4px 15px 3px rgba(0, 0, 255, 0.1);
+          }
+        }
+      }
+    }
+  }
   .index-filter{
     font-family: $roboto;
     font-weight: 500;

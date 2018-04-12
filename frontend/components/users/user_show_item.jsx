@@ -21,7 +21,9 @@ class UserShowItem extends React.Component{
     }
     return(
       <li className="user-item">
-        <img src={item.imageUrl} className="show-item-img"/>
+          <Link to={`/items/${this.props.item.id}/`}>
+            <img src={item.imageUrl} className="show-item-img"/>
+          </Link>
         <div className="item-info">
           <h5>{item.title}</h5>
           <p>{makeChange(item.price)}</p>

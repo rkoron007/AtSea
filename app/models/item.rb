@@ -3,8 +3,7 @@ class Item < ApplicationRecord
 
   belongs_to :user,
   foreign_key: :user_id,
-  class_name: "User",
-  dependent: :destroy
+  class_name: "User"
 
   has_many :cartings,
   foreign_key: :item_id,

@@ -1,35 +1,52 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { button } from "react-router-dom";
 
 class CategoriesBar extends React.Component{
+
+  handleSearch(query){
+    return () => this.props.searchItems({description: query}).then(
+      this.props.history.push("/search"));
+  }
 
   render(){
     return(
       <div className="categories-bar">
         <ul className="categories">
-          <li><NavLink to="/items"
-            activeClassName="categories-selected"
-            >Maps</NavLink>
+          <li><button
+          onClick={this.handleSearch("map")}
+            >Maps</button>
           </li>
-          <li><NavLink to="/items"
-            activeClassName="categories-selected"
-            >Boats</NavLink>
+          <li><button
+            onClick={this.handleSearch("boat")}
+            >Boats</button>
           </li>
-          <li><NavLink to="/items"
-            activeClassName="categories-selected"
-            >Oceans</NavLink>
+          <li><button
+            onClick={this.handleSearch("ocean")}
+            >Oceans</button>
           </li>
-          <li><NavLink to="/items"
-            activeClassName="categories-selected"
-            >Knots</NavLink>
+          <li><button
+            onClick={this.handleSearch("knot")}
+            >Knots</button>
           </li>
-          <li><NavLink to="/items"
-            activeClassName="categories-selected"
-            >Compasses</NavLink>
+          <li><button
+            onClick={this.handleSearch("compass")}
+            >Compasses</button>
           </li>
-          <li><NavLink to="/items"
-            activeClassName="categories-selected"
-            >Animals</NavLink>
+          <li><button
+            onClick={this.handleSearch("animal")}
+            >Land Animals</button>
+          </li>
+          <li><button
+            onClick={this.handleSearch("rope")}
+            >Rope</button>
+          </li>
+          <li><button
+            onClick={this.handleSearch("bird")}
+            >Birds</button>
+          </li>
+          <li><button
+            onClick={this.handleSearch("fish")}
+            >Fish</button>
           </li>
         </ul>
       </div>

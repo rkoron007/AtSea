@@ -20,7 +20,9 @@ class ItemsIndex extends React.Component{
 
   render(){
     if (this.props.items.length === 0) {
-      return null;
+      return (
+        <h1 className="empty-search">No Items to be Found!</h1>
+      );
     }
 
     return(
@@ -35,7 +37,7 @@ class ItemsIndex extends React.Component{
                 key={item.id}
                 item={item}
                 user={this.props.users[item.userId]}
-              />)};
+              />)}
           </ul>
         </div>
       </div>

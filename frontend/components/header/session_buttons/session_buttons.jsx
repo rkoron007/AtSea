@@ -35,24 +35,17 @@ class SessionButtons extends React.Component {
       <nav className="current-session-btns">
         <ul>
           <li>
-            <button className="logout-button"
-              onClick={this.logout}
-              >Logout
-            </button>
-          </li>
-          <li>
               <div
                 className="session-user-picture">
                 <Link to={`/users/${this.currentUser.id}`}>
                 <img src={this.currentUser.imgUrl}className="user-image"></img>
                 </Link>
               </div>
-            <h3
-            className="current-user">
-            <Link to={`/users/${this.currentUser.id}`}>
-              {this.props.currentUser.username}
+            <p className="current-user">
+              <Link to={`/users/${this.currentUser.id}`}>
+                You
               </Link>
-            </h3>
+            </p>
           </li>
           <li className="carts-link">
             <Link
@@ -61,6 +54,14 @@ class SessionButtons extends React.Component {
               <br></br>
   						<p>Cart</p>
               </Link>
+          </li>
+          <li>
+            <button className="logout-button"
+              onClick={this.logout}
+              >
+            <i className="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+            </button>
+            <p>Logout</p>
           </li>
         </ul>
       </nav>

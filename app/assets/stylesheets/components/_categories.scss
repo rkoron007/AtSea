@@ -1,21 +1,24 @@
 .categories-bar{
-
   border-bottom: 1px solid $light-grey;
   border-top: 1px solid $light-grey;
   color: #222;
   font-family: $graphik;
+  font-size: 15px;
   line-height: 1.4;
-  font-weight: 340;
+  font-weight: 200;
+  width: 100%;
 
   .categories{
     display: flex;
     justify-content: space-evenly;
-    padding: 10px 0;
-    max-width: 1272px;
-    margin: auto;
+    padding: 8px 0;
+    font-size: 16px;
 
     li {
       margin: 0 10px;
+      &:hover{
+        border-bottom: 1px solid $gold-orange;
+      }
     }
   }
 }

@@ -33,7 +33,7 @@ item4 = Item.create!({ title: 'Iron Boat',
   description: 'This may be too heavy to float. Buy it anyway.', price: 1000, user_id: user4.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522885669/USS_Foote__DD-511__underway_at_sea__circa_in_1945.jpg" })
 item5 = Item.create!({ title: 'Parrot',
-  description: 'All this bird does is shit and talk. You know you want it.', price: 80, user_id: user5.id,
+  description: 'All this bird does is shit and talk. You know you want this animal.', price: 80, user_id: user5.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522885764/parrot.jpg" })
 item6 = Item.create!({ title: 'The Pacific Ocean',
   description: 'I made this ocean. I can always make more. Want one?', price: 1, user_id: user6.id,
@@ -47,7 +47,7 @@ item8 = Item.create!({ title: 'Tiddy Knot',
   description: 'A cute little knot.', price: 1, user_id: user8.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522886524/tidy.png" })
 item9 = Item.create!({ title: 'Loyal Dog',
-  description: 'Dogs are the best! You should totally get one. Like this one!', price: 0, user_id: user9.id,
+  description: 'Dogs are the best! Best animal! You should totally get one. Like this one!', price: 0, user_id: user9.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522886660/dog.jpg" })
 item10 = Item.create!({ title: 'Broken Compass',
   description: 'I got a ton of these things. Please buy one.', price: 50, user_id: user1.id,
@@ -56,7 +56,7 @@ item11 = Item.create!({ title: 'Map of the Pacific Ocean',
   description: 'I painted it myself!', price: 30, user_id: user2.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522887317/Pacific-centric-map_2.png" })
 item12 = Item.create!({ title: 'Sea Fairing Cat',
-  description: 'WARNING: Do not let the sea fairing cat in the water',
+  description: 'WARNING: Do not let the sea fairing cat in the water. This animal will eat you.',
   price: 10, user_id: user2.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522887390/cat.jpg" })
 item13 = Item.create!({ title: 'This Compass Works!',
@@ -81,8 +81,53 @@ item19 = Item.create!({ title: 'Paper Boat',
   description: 'Totally safe to boat in.', price: 50, user_id: user3.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522959734/paper.jpg" })
 item20 = Item.create!({ title: 'Large Compass',
-  description: 'Much better than tiny compass.', price: 2, user_id: user9.id,
+  description: 'Much better than tiny compass.', price: 200, user_id: user9.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522959804/largecompass.jpg" })
+item21 = Item.create!({ title: 'Crab',
+  description: 'This guy will mess you up. For real. Fish avoid.', price: 30, user_id: user1.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523562707/crab-2525186_960_720.png" })
+item22 = Item.create!({ title: 'Tiny Fish',
+  description: 'So little. So wanted.', price: 4000, user_id: user2.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523562776/tiny.jpg" })
+item23 = Item.create!({ title: 'Island',
+  description: 'COME GETYA ISLAND HERE!.', price: 10000000000, user_id: user3.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523562867/island-2482200_960_720.jpg" })
+item24 = Item.create!({ title: 'WeatherVane',
+  description: 'I mean come on. It goes with the theme of everything in your house. Get it.', price: 300, user_id: user3.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,w_600/v1523562985/weather.jpg" })
+item25 = Item.create!({ title: 'Useless Wheel',
+  description: 'This doesnt even work.But buy it anyway.', price: 60, user_id: user4.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523563142/wood_wheel.jpg" })
+item26 = Item.create!({ title: 'Chains',
+  description: 'Everyone needs some chain chain chainssss.', price: 10, user_id: user5.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523563241/nautical-cables-1788387_960_720.jpg" })
+item27 = Item.create!({ title: 'Picture of Boat',
+  description: 'Not as good as the real thing- but faster to make.', price: 5000, user_id: user6.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523563308/schooner-3229657_960_720.jpg" })
+item28 = Item.create!({ title: 'Model Boat',
+  description: 'For when you get off your boat but still want to look at a boat.', price: 2, user_id: user7.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523563418/model_ship.jpg" })
+item29 = Item.create!({ title: 'Ropes',
+  description: 'Every boat could always use more ropes.', price: 60, user_id: user8.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523563530/ropes.jpg" })
+item30 = Item.create!({ title: 'LightHouse Cove',
+  description: 'I own so many light houses. Please buy themmmmm.', price: 20000, user_id: user9.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523563823/light_house.jpg" })
+item31 = Item.create!({ title: 'SpyGlass',
+  description: 'Binoculars! But for one eye! Much better.', price: 25, user_id: user10.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523563953/spyglass.jpg" })
+item32 = Item.create!({ title: 'Pretty Compass',
+  description: 'Like your compass but prettier.', price: 2000, user_id: user3.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523564107/nautical_compass.jpg" })
+item33 = Item.create!({ title: 'Blue Parrot',
+  description: 'Dont. Make. Eye Contact. This bird will eat you.', price: 20, user_id: user4.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523564341/blue_parrot.jpg" })
+item34 = Item.create!({ title: 'Shy Seahorse',
+  description: 'This fish is just a shy guy but that just makes you want him more.', price: 10, user_id: user5.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523564430/seahorse-2335646_960_720.jpg" })
+item35 = Item.create!({ title: 'Fancy Seahorse',
+  description: 'This fish is Fancier than thou.', price: 1000, user_id: user7.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523564618/sea-dragon.jpg" })
 
 Review.destroy_all
 Review.create!({author_id: user1.id, item_id: item1.id, rating: 5, body: "I love this nautical item."})

@@ -2,9 +2,10 @@ $splash: image_path("ocean2.jpg");
 
 .splashImage{
   background-image: url($splash);
-  background-size: 1385px;
+  background-size: 88%;
   background-position: center;
   background-repeat: no-repeat;
   height: 320px;
   margin: 20px;
+  padding-top: 18px;
 }

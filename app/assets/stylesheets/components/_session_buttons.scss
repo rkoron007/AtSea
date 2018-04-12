@@ -57,54 +57,55 @@ header{
       }
     }
 
-    .carts-link{
-      font-family: "Roboto", sans-serif;
-      padding: 10px 20px 5px 20px;
-      white-space: nowrap;
-      color: #888;
-      font-size: 14px;
-    }
     .current-session-btns{
-      margin: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+
       ul{
       color: #666666;
       background-color: #fff;
       font-family: $roboto;
       display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
+      line-height: 15px;
 
         li{
+          padding-left: 9px;
+          padding-right: 9px;
+          text-align: center;
+          font-size: 13px;
+          width:50px;
+          border-left: 1px solid $session-grey;
+
           .current-user{
             font-size: 14px;
-            margin-right: 20px;
+            border-left: none;
           }
           .session-user-picture{
             display: flex;
             justify-content: center;
-            margin-right: 15px;
-            margin-top: 10px;
           }
           .logout-button{
             display:block;
             font-family: $graphik;
-            font-size: 14px;
-            color: $gold-orange;
-            border-radius: 3px;
-            border: 1px solid $gold-orange;
-            padding: 8px;
-            line-height: 16px;
-            margin-top: 23px;
-            margin-right: 18px;
-              &:hover{
-                background-color: $session-hover;
-                color: $session-hover;
-              }
+            padding-left: 15px;
+
           }
           .user-image{
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
+          }
+          .carts-link{
+            font-family: "Roboto", sans-serif;
+            padding: 10px 20px 5px 20px;
+            white-space: nowrap;
+            color: #888;
+            font-size: 14px;
+          }
 
+          &:hover{
+            color:black;
           }
         }
       }

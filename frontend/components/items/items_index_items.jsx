@@ -6,7 +6,7 @@ const ItemIndexItem = ({ item, user }) => {
   if (!user){
     return null;
   }
-  return <li className="item">
+  return (<li className="item">
     <Link
       to={`/items/${item.id}`}><img src={item.imageUrl}/>
     </Link>
@@ -22,7 +22,8 @@ const ItemIndexItem = ({ item, user }) => {
       to={`/items/${item.id}`}
       className= 'item-index-price'>{makeChange(item.price)}
     </Link>
-  </li>;
+  </li>
+  );
 };
 
 export default ItemIndexItem;

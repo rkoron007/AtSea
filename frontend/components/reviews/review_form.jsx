@@ -31,7 +31,7 @@ class ReviewForm extends React.Component{
     };
     this.props.createReview(review);
     this.setState({
-      rating: 5,
+      rating: 0,
       body: "" });
   }
 
@@ -79,13 +79,14 @@ class ReviewForm extends React.Component{
   renderErrors() {
     if (this.props.errors){
     return (
-      <ul className="session-errors">
+      <ul className="review-errors">
         {this.props.errors.map((error, i) => (
           <li key = {`${i}`}>{error}</li>))}
       </ul>
         );
       }
     }
+
 
   render(){
 
