@@ -31,10 +31,10 @@ header{
         }
 
         button:hover {
-          background-color: #fce0a9;
+          background-color: $session-hover;
         }
         .sign-in-btn:hover{
-          background-color: #fce0a9
+          background-color: $session-hover;
         }
 
         .demo{
@@ -74,34 +74,39 @@ header{
       flex-direction: row;
       justify-content: flex-end;
 
-      a:hover{
-        color: #444444;
-      }
+        li{
+          .current-user{
+            font-size: 14px;
+            margin-right: 20px;
+          }
+          .session-user-picture{
+            display: flex;
+            justify-content: center;
+            margin-right: 15px;
+            margin-top: 10px;
+          }
+          .logout-button{
+            display:block;
+            font-family: $graphik;
+            font-size: 14px;
+            color: $gold-orange;
+            border-radius: 3px;
+            border: 1px solid $gold-orange;
+            padding: 8px;
+            line-height: 16px;
+            margin-top: 23px;
+            margin-right: 18px;
+              &:hover{
+                background-color: $session-hover;
+                color: $session-hover;
+              }
+          }
+          .user-image{
+            width: 28px;
+            height: 28px;
 
-      .current-user{
-        font-size: 14px;
-        margin-right: 20px;
-      }
-      .session-user-picture{
-        display: flex;
-        justify-content: center;
-        margin-right: 15px;
-        margin-top: 10px;
-      }
-      .logout-button{
-        display:block;
-        color: $gold-orange;
-        border: 1px solid $gold-orange;
-        padding: 8px;
-        margin-top: 20px;
-        margin-right: 15px;
-        border-radius: 5px;
-      }
-      .user-image{
-        width: 28px;
-        height: 28px;
-
-      }
+          }
+        }
       }
     }
   }

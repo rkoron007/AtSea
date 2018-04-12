@@ -20,16 +20,16 @@ user9 = User.create!({ username: 'HelloHallo',password: 'PASSWORD', img_url:"htt
 user10 = User.create!({ username: 'Parrots4Ever',password: 'PASSWORD', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522957770/parrottsss.jpg" })
 
 Cart.destroy_all
-cart1 = Cart.create(user_id: 1)
-cart2 = Cart.create(user_id: 2)
-cart3 = Cart.create!({user_id: user3.id})
-cart4 = Cart.create!({user_id: user4.id})
-cart5 = Cart.create!({user_id: user5.id})
-cart6 = Cart.create!({user_id: user6.id})
-cart7 = Cart.create!({user_id: user7.id})
-cart8 = Cart.create!({user_id: user8.id})
-cart9 = Cart.create!({user_id: user9.id})
-cart10 = Cart.create!({user_id: user10.id})
+cart1 = Cart.create!(user_id: user1.id)
+cart2 = Cart.create!(user_id: user2.id)
+cart3 = Cart.create!(user_id: user3.id)
+cart4 = Cart.create!(user_id: user4.id)
+cart5 = Cart.create!(user_id: user5.id)
+cart6 = Cart.create!(user_id: user6.id)
+cart7 = Cart.create!(user_id: user7.id)
+cart8 = Cart.create!(user_id: user8.id)
+cart9 = Cart.create!(user_id: user9.id)
+cart10 = Cart.create!(user_id: user10.id)
 
 Item.destroy_all
 item1 = Item.create!({ title: 'Knotted Knot',
@@ -96,7 +96,7 @@ item20 = Item.create!({ title: 'Large Compass',
   description: 'Much better than tiny compass.', price: 2, user_id: user9.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/v1522959804/largecompass.jpg" })
 
-Review.destory_all
+Review.destroy_all
 Review.create!({author_id: user1.id, item_id: 1, rating: 5, body: "I love this nautical item."})
 Review.create!({author_id: user2.id, item_id: 1, rating: 1, body: "I'm not sure bout this one."})
 Review.create!({author_id: user3.id, item_id: 1, rating: 5, body: "I'd buy it. Or would I?"})

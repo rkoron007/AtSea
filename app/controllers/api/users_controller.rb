@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+
   def new
     @user = User.new
   end
@@ -6,10 +7,8 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.setDefaultPicture
     if @user.save
       login!(@user)
-      @user.set_cart
       render partial: "api/users/user", locals: { user: @user }
     else
       render json: ['Need a username and password. Please Try Again!'], status: 401

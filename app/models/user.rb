@@ -13,6 +13,8 @@ class User < ApplicationRecord
   attr_reader :password
 
   after_initialize :ensure_session_token
+  before_create :set_default_picture
+  after_create :set_cart
 
 
   def ensure_session_token
@@ -42,7 +44,7 @@ class User < ApplicationRecord
     nil
   end
 
-  def setDefaultPicture
+  def set_default_picture
     if !(self.img_url)
     self.img_url = "http://res.cloudinary.com/dkaolr6pg/image/upload/v1523305258/Screen_Shot_2018-04-09_at_13.20.32.png"
     end
