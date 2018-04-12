@@ -1,16 +1,16 @@
 .search{
-  white-space: nowrap;
+  display:flex;
   padding-top: 25px;
   padding-left: 20px;
+  width: 35%;
 
   .search-input{
     font-family: $graphik;
-    float: left;
     line-height: 16px;
     color: #333;
     font-size: 14px;
     padding: 9px 7px 7px;
-    width: 320px;
+    width: 300px;
     border-left: 1px solid $light-grey;
     border-bottom: 1px solid $light-grey;
     border-top: 1px solid $light-grey;
@@ -18,16 +18,18 @@
     border-bottom-left-radius: 5px;
 
     input{
-      width: 320px;
+      width: 283px;
+    }
+    .search-input:focus{
+      border: 1px solid $gold-orange;
     }
 
   }
   .search-button{
     font-family: $graphik;
-    width:42%;
-    float: left;
-    padding: 6px 6px 8px 0;
+    padding: 7px 15px 8px;
     border-width: 1px;
+    line-height: 17px;
     border-style: solid;
     text-align: center;
     background-color: #FFAA00;
