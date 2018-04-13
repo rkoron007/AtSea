@@ -2,6 +2,11 @@ import React from  "react";
 import { NavLink, Link } from "react-router-dom";
 
 class SessionButtons extends React.Component {
+  handleDemo(e){
+    this.props.demoLogin();
+  }
+
+
   sessionLinks(){
     return (
     <nav className="new-session-btns">
@@ -20,10 +25,9 @@ class SessionButtons extends React.Component {
           <li>
             <button
               className="demo"
-              onClick={this.props.demologin}
+              onClick={this.handleDemo.bind(this)}
             >Demo</button>
           </li>
-
       </ul>
   </nav>
     );
@@ -67,6 +71,7 @@ class SessionButtons extends React.Component {
       </nav>
     );
   }
+
 
   render(){
     this.currentUser = this.props.currentUser;

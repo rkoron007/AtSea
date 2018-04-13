@@ -4,7 +4,7 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(
       params[:user][:username],
       params[:user][:password])
-
+      debugger
     if @user
       login!(@user)
       render partial: "api/users/user", locals: { user: @user }

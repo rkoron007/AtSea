@@ -12,12 +12,12 @@ const mapStateToProps = ( { errors }) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    const demoUser = ({username:"USERNAME", password:"PASSWORD"});
-  return {
-    processForm: (user) => dispatch(login(user)),
-    demoLogin: () => (dispatch(login(demoUser))),
-    clearErrors: () => dispatch(receiveErrors([]))
-  };
+  const demo = ({username: "USERNAME", password: "PASSWORD"});
+    return {
+      processForm: (user) => dispatch(login(user)),
+      demoLogin: () => dispatch(login(demo)),
+      clearErrors: () => dispatch(receiveErrors([]))
+    };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);

@@ -40,10 +40,16 @@ class SessionForm extends React.Component {
     return this.props.clearErrors();
   }
 
+  handleDemo(e){
+    e.preventDefault();
+    this.props.demoLogin();
+  }
+
+
   demoButtonShowing(){
     if (this.props.formType === "Sign in"){
       return (
-        <button onClick={this.props.demoLogin}>Demo</button>
+        <button onClick={this.handleDemo.bind(this)}>Demo</button>
       );
     }
   }
