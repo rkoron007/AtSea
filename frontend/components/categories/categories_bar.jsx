@@ -5,7 +5,7 @@ class CategoriesBar extends React.Component{
 
   handleSearch(query){
     return () => this.props.searchItems({description: query}).then(
-      this.props.history.push("/search"));
+      () => this.props.history.push("/search"));
   }
 
   render(){

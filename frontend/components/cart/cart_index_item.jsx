@@ -13,7 +13,9 @@ class CartIndexItem extends React.Component{
     const { item, removeItemfromCart} = this.props;
       return(
       <li>
-        <img src={item.imageUrl} className="cart-item-image"/>
+        <Link to={`/items/${item.id}`}>
+          <img src={item.imageUrl} className="cart-item-image"/>
+        </Link>
 
         <div className="cart-item-info">
           <p className="cart-item-price">{makeChange(item.price)}</p>

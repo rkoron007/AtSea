@@ -17,7 +17,9 @@ class CartForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.addItemtoCart(this.state);
+    this.props.addItemtoCart(this.state).then(
+      () => this.props.history.push("/carts")
+    );
   }
 
   updateField(field){

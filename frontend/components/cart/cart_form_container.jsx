@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import CartForm from "./cart_form";
 import { addItemtoCart } from "../../actions/cart_actions";
 
@@ -16,4 +17,5 @@ const mapDispatchToProps = (dispatch) => ({
   addItemtoCart: (cartItem) => dispatch(addItemtoCart(cartItem))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartForm);
+export default withRouter(connect(mapStateToProps,
+  mapDispatchToProps)(CartForm));
