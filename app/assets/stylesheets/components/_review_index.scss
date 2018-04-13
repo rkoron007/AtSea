@@ -10,6 +10,27 @@
   #full{
     color: $gold-orange;
   }
+
+  .remove-review{
+    width: 100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin-top: 10px;
+    padding-top: 6px;
+    font-size: 12px;
+    font-weight: normal;
+    height: 28px;
+    padding: 4px 12px;
+    background-color: #FFF;
+    border-radius: 3px;
+    border: 1px solid $btn-grey;
+    display: inline-block;
+    font-family: inherit;
+    text-align: center;
+    line-height: 1.4;
+  }
+
   .review-index-main{
     .review-header{
       border-top: 1px solid $line-grey;

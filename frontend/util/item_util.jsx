@@ -44,6 +44,13 @@ export const fetchItemsBySearch = ({description}) => {
   });
 };
 
+export const fetchItemsByPrice = (filterbyprice) => {
+  return $.ajax({
+    method: "GET",
+    url: `/api/items?filterbyprice=${filterbyprice}`
+  });
+};
+
 
 export const makeChange = (price) => {
   let newPrice = new Intl.NumberFormat('en-US',

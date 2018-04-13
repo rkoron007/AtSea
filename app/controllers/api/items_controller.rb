@@ -15,11 +15,6 @@ class Api::ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-      if @item.user != current_user
-        render "api/items/show", status: 422
-    else
-        render plain: "works!"
-    end
   end
 
 

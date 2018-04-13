@@ -1,6 +1,6 @@
 import React from "react";
 import ItemIndexItem from "./items_index_items";
-import FilterForm from './index_filter/filter_form';
+import FilterFormContainer from './index_filter/filter_form_container';
 import { Route } from 'react-router-dom';
 
 class ItemsIndex extends React.Component{
@@ -27,14 +27,14 @@ class ItemsIndex extends React.Component{
 
     return(
       <div className="filter-and-index">
-        <Route exact path="/items" component={FilterForm } />
-        <Route exact path="/search" component={FilterForm } />
+        <Route exact path="/items" component={FilterFormContainer } />
+        <Route exact path="/search" component={FilterFormContainer } />
         <div className="items-index-main">
           <ul className="items-index">
             {this.props.items.map(
               item =>
               <ItemIndexItem
-                key={item.id}
+                key={`item-index-${item.id}`}
                 item={item}
                 user={this.props.users[item.userId]}
               />)}

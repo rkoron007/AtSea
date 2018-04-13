@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   renderErrors() {
@@ -49,7 +50,7 @@ class SessionForm extends React.Component {
   demoButtonShowing(){
     if (this.props.formType === "Sign in"){
       return (
-        <button onClick={this.handleDemo.bind(this)}>Demo</button>
+        <button onClick={this.handleDemo}>Demo</button>
       );
     }
   }

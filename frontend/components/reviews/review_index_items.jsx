@@ -24,7 +24,7 @@ class ReviewIndexItem extends React.Component{
     }
     let removeButton;
       if (currentUser.id === review.authorId){
-      removeButton = <button
+      removeButton = <button className="remove-review"
         onClick={this.handleDeleteReview(review.id)}>
         Remove Review
       </button>;

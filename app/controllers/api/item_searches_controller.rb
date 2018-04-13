@@ -6,6 +6,7 @@ class Api::ItemSearchesController < ApplicationController
   end
 
 
+
   private
 
   def item_search_params
