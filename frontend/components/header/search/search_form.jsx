@@ -23,6 +23,18 @@ class SearchForm extends React.Component{
     this.setState({description:''});
   }
 
+  renderErrors() {
+    if (this.props.errors){
+    return (
+      <ul className="session-errors">
+        {this.props.errors.map((error, i) => (
+          <li key = {`${i}`}>{error}</li>))}
+      </ul>
+        );
+      }
+    }
+
+
   render(){
       return(
         <div>

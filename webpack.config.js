@@ -19,15 +19,14 @@ var prodPlugins = [
 
 plugins = plugins.concat(
   process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
-)
+);
 
-// include plugins config
+
 module.exports = {
   context: __dirname,
-  entry: "./frontend/<name of entry file>",
+  entry: "./frontend/entry.jsx",
   output: {
       filename: 'app/assets/javascripts/bundle.js',
-    filename: "bundle.js"
   },
   plugins: plugins,
   module: {
