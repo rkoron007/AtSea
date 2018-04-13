@@ -178,11 +178,9 @@
           color: #222;
           padding-bottom: 10%;
           align-content: unset;
-          }
+        }
 
         .cart-button{
-          font-size: 15px;
-          line-height: 1.2;
           border-color: rgba(0, 0, 0, 0.1);
           color: #FFF;
           background-color: $gold-orange;
@@ -195,18 +193,39 @@
           line-height: 1.4;
           padding: 8px 12px;
           text-align: center;
-          text-decoration: none;
           &:hover{
             border-color: rgba(0, 0, 0, 0.2);
           }
         }
         .quantity{
-          padding-bottom: 15%;
+          margin-top: 14px;
+          margin-bottom: 14px;
           display: block;
           color: $black;
           font-size: 14px;
-          margin-bottom: 3px;
           font-weight: 100;
+        }
+        .edit-button{
+          padding-bottom: 10px;
+          border: 2px solid $gold-orange;
+          border-radius: 3px;
+          font-weight: bold;
+          font-size: 15px;
+          line-height: 1.2;
+          color: $gold-orange;
+          border-radius: 4px;
+          font-family: inherit;
+          font-size: 14px;
+          line-height: 1.4;
+          padding: 8px 12px;
+          text-align: center;
+          margin-bottom: 12px;
+          margin-top: 12px;
+
+          &:hover{
+            color: white;
+            background-color: $gold-orange;
+          }
         }
         .show-item-price-label{
           text-align: left;

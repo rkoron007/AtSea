@@ -1,5 +1,5 @@
 import React from "react";
-import Redirect from "react-router-dom";
+import { Link } from "react-router-dom";
 import { makeChange } from "../../util/item_util";
 
 class CartForm extends React.Component{
@@ -30,6 +30,17 @@ class CartForm extends React.Component{
     return (e) => this.setState({quantity: parseInt(e.target.value)});
   }
 
+  editButtonVisible(){
+    if (this.props.currentUser.id === this.props.item.userId) {
+      return(
+        <Link to={`/items/${this.props.item.id}/edit`}
+          className="edit-button">
+          Edit Item
+        </Link>
+      );
+    }
+  }
+
   render(){
     const { item, currentUser } = this.props;
     return (
@@ -51,7 +62,7 @@ class CartForm extends React.Component{
                 <option value="5">5</option>
               </select>
             </label>
-
+            {this.editButtonVisible()}
            <button className="cart-button">Add to Cart</button>
          </aside>
        </form>
