@@ -19,33 +19,34 @@
 }
 
 .filter-and-index{
-  display:flex;
-  margin: 50px;
+  display: flex;
+  margin: 50px 0 50px 0;
 
   .items-index-main{
-      width: 100%;
+    width: 88%;
+    margin: auto;
+    display: flex;
+
     .items-index{
       font-family: $roboto;
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-around;
       flex-wrap: wrap;
-      width: 100%;
-      margin: auto;
+      margin-left: -.5%;
+      margin-right: -1.5%;
       font-size: 12px;
-      min-width: 1200px;
+
 
       .item{
-        display:flex;
+        display: flex;
         flex-direction: column;
         border-radius: 4px;
-        margin: 10px;
         width: 190px;
         height: 164px;
         transition: box-shadow 0.5s;
         margin-top: 0px;
         margin-bottom: 180px;
-        margin-right: 1.5%;
-        margin-left: 3.5%;
+        margin-right: 1%;
         font-family: $graphik;
 
         .item-index-price{

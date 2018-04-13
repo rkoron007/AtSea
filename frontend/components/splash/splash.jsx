@@ -4,7 +4,7 @@ class Splash extends React.Component{
 
   render(){
     return(
-      <div>
+      <div className="splash-contain">
         <div className="splashImage"></div>
         <h1 className="staff-headline">Staff Favorites</h1>
       </div>

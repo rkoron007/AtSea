@@ -33,7 +33,7 @@ item4 = Item.create!({ title: 'Iron Boat',
   description: 'This may be too heavy to float. Buy it anyway.', price: 1000, user_id: user4.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522885669/USS_Foote__DD-511__underway_at_sea__circa_in_1945.jpg" })
 item5 = Item.create!({ title: 'Parrot',
-  description: 'All this bird does is shit and talk. You know you want this animal.', price: 80, user_id: user5.id,
+  description: 'All this bird does is shit and talk. You know you want it.', price: 80, user_id: user5.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522885764/parrot.jpg" })
 item6 = Item.create!({ title: 'The Pacific Ocean',
   description: 'I made this ocean. I can always make more. Want one?', price: 1, user_id: user6.id,
@@ -128,6 +128,51 @@ item34 = Item.create!({ title: 'Shy Seahorse',
 item35 = Item.create!({ title: 'Fancy Seahorse',
   description: 'This fish is Fancier than thou.', price: 1000, user_id: user7.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523564618/sea-dragon.jpg" })
+item36 = Item.create!({ title: 'BIG BIRD',
+  description: 'No not that other guy.', price: 300, user_id: user3.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523643760/bird.jpg" })
+item37 = Item.create!({ title: 'tiny bird',
+  description: 'Soooooo little! <3.', price: 40000, user_id: user4.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523645558/tiny-bird.jpg" })
+item38 = Item.create!({ title: 'Pigeon',
+  description: 'What? I found it. I sell it- it is not weird.This bird is too cool.', price: 1000, user_id: user7.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523645623/pidge.jpg" })
+item39 = Item.create!({ title: 'Sweet Seagull',
+  description: 'You know you need like 4 of these guys as your hype birds.', price: 50, user_id: user6.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523645669/seagull-249638_960_720.jpg" })
+item40 = Item.create!({ title: 'Spike Fish',
+  description: 'So cuddly!.', price: 10, user_id: user3.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523645793/1280px-Pterois_volitans_Manado-e_edit.jpg" })
+item41 = Item.create!({ title: 'Crazy Rope',
+  description: 'It is EVERYWHERE!', price: 400, user_id: user8.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523645893/dew-rope-brown-rein-knitting-strand-beige-leash-shipping-maritime-cordage-ship-traffic-jams-fixing-ship-accessories-loose-ocher-hardware-accessory-760214.jpg" })
+item42 = Item.create!({ title: 'Small Rope',
+  description: 'Not very useful. But cute!', price: 4, user_id: user9.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523646011/rope-2437560_960_720.jpg" })
+item43 = Item.create!({ title: 'Rope',
+  description: 'What do you want? GET THAT ROPE.', price: 100, user_id: user6.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523646089/800px-A_aesthetic_rope_2.jpg" })
+item44 = Item.create!({ title: 'Rope Ball',
+  description: 'Your job to untie.', price: 300, user_id: user1.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523646138/Rope-Ball-Brown-Decoration-Three-Balls-Sphere-1417400.jpg" })
+item45 = Item.create!({ title: 'Hippo',
+  description: 'Who does not need this animal in their lives?', price: 5000, user_id: user4.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523646629/Hippo_at_dawn.jpg" })
+item46 = Item.create!({ title: 'Sea Lion',
+  description: 'A cool animal friend!', price: 500, user_id: user6.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523646675/sea-lion-2662860_960_720.jpg" })
+item47 = Item.create!({ title: 'Monkey',
+  description: 'Teach this little animal do drive your ship!', price: 3000, user_id: user1.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523646729/moneky.jpg" })
+item48 = Item.create!({ title: 'Map to Your House',
+  description: 'In case your get lost.', price: 30, user_id: user5.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523646784/NPS_white-house-3d-map.jpg" })
+item49 = Item.create!({ title: 'Map To Who Knows Where',
+  description: 'Seriously- who knows where?', price: 20, user_id: user6.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600/v1523646874/map_to_who_knows.jpg" })
+item50 = Item.create!({ title: 'Atlanic Ocean Map',
+  description: 'Need I say more?', price: 3000, user_id: user4.id,
+  img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523646964/739px-North_Atlantic_Ocean_laea_relief_location_map.jpg" })
 
 Review.destroy_all
 Review.create!({author_id: user1.id, item_id: item1.id, rating: 5, body: "I love this nautical item."})
@@ -151,8 +196,8 @@ Review.create!({author_id: user4.id, item_id: item16.id, rating: 4, body: "I'm a
 Review.create!({author_id: user5.id, item_id: item17.id, rating: 3, body: "But did you think you'd really like it?"})
 Review.create!({author_id: user8.id, item_id: item18.id, rating: 2, body: "I didn't really enjoy this that much."})
 Review.create!({author_id: user9.id, item_id: item19.id, rating: 1, body: "Nope."})
-Review.create!({author_id: user10.id, item_id: item20.id, rating: 5, body: "ILOVETHIS"})
-Review.create!({author_id: user9.id, item_id: item21.id, rating: 1, body: "Nope."})
+Review.create!({author_id: user10.id, item_id: item20.id, rating: 5, body: "I thought this was pretty cool"})
+Review.create!({author_id: user9.id, item_id: item21.id, rating: 1, body: "It's pretty bad."})
 Review.create!({author_id: user10.id, item_id: item22.id, rating: 5, body: "ILOVETHIS"})
 Review.create!({author_id: user9.id, item_id: item23.id, rating: 1, body: "Nope."})
 Review.create!({author_id: user10.id, item_id: item24.id, rating: 5, body: "ILOVETHIS"})
