@@ -1,6 +1,79 @@
 .main-page{
 
-  .items-index-main{
+  .staff-headline{
+    font-family: $roboto;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-size: 26px;
+  }
+
+  .filter-and-index{
     display: flex;
+    margin: 50px 0 50px 0;
+
+    .items-index-main{
+      width: 88%;
+      margin: auto;
+      display: flex;
+
+      .items-index{
+        font-family: $roboto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-left: -.5%;
+        margin-right: -1%;
+        font-size: 12px;
+
+
+        .item{
+          display: flex;
+          flex-direction: column;
+          border-radius: 4px;
+          width: 190px;
+          height: 164px;
+          transition: box-shadow 0.5s;
+          margin-top: 0px;
+          margin-bottom: 180px;
+          margin-right: 1%;
+          font-family: $graphik;
+
+          .item-index-price{
+            color: $dark-grey;
+            font-weight: 550;
+            line-height: 1.4;
+            text-align: left;
+            font-size: 14px;
+          }
+          .item-index-title{
+            color: #444;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 100;
+            margin-top: 7px;
+            margin-bottom: 3px;
+            letter-spacing: .02em;
+          }
+          .item-index-user{
+            line-height: 1.4;
+            color: $user-username-grey;
+            text-align: left;
+            font-weight: 100;
+          }
+          img{
+            border: 1px solid $light-grey;
+            border-radius: 4px;
+            transition: box-shadow 0.5s;
+            position: relative;
+            width:  200px;
+            height: 200px;
+            &:hover{
+              box-shadow: 1px 4px 15px 3px rgba(0, 0, 255, 0.1);
+            }
+          }
+        }
+      }
+    }
   }
 }
