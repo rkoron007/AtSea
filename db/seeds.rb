@@ -43,7 +43,7 @@ item7 = Item.create!({ title: 'Map of The Hidden Sea',
   But I know that I want to make money off you buying this map.',
   price: 50, user_id: user7.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522886045/World_Map_1689.jpg" })
-item8 = Item.create!({ title: 'Tiddy Knot',
+item8 = Item.create!({ title: 'Tidy Knot',
   description: 'A cute little knot.', price: 1, user_id: user8.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522886524/tidy.png" })
 item9 = Item.create!({ title: 'Loyal Dog',
@@ -55,7 +55,7 @@ item10 = Item.create!({ title: 'Broken Compass',
 item11 = Item.create!({ title: 'Map of the Pacific Ocean',
   description: 'I painted it myself!', price: 30, user_id: user2.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522887317/Pacific-centric-map_2.png" })
-item12 = Item.create!({ title: 'Sea Fairing Cat',
+item12 = Item.create!({ title: 'Sea Faring Cat',
   description: 'WARNING: Do not let the sea fairing cat in the water. This animal will eat you.',
   price: 10, user_id: user2.id,
   img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522887390/cat.jpg" })

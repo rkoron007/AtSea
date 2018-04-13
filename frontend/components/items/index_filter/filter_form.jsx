@@ -7,13 +7,13 @@ const FilterForm = (props) => (
     <label>Minimum Price</label>
     <input
       type="number"
-      value=""
+      value="number"
     />
     <label>Maximum Price</label>
     <input
       type="number"
       className="line-under"
-      value=""
+      value="number"
     />
   <strike></strike>
   </div>
