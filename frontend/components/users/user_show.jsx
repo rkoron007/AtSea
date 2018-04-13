@@ -10,10 +10,8 @@ class UserShow extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.fetchItem){
-      if (this.props.match.params.userId !== nextProps.match.params.userId) {
-        this.props.getUser(nextProps.match.params.userId);
-      }
+    if (this.props.match.params.userId !== nextProps.match.params.userId) {
+      this.props.getUser(nextProps.match.params.userId);
     }
   }
 
