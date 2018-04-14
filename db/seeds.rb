@@ -17,7 +17,7 @@ user6 = User.create!({ username: 'poseidon#1',password: 'PASSWORD', img_url:"htt
 user7 = User.create!({ username: 'SailorGal',password: 'PASSWORD', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522957591/moon.png" })
 user8 = User.create!({ username: 'PartyBooats',password: 'PASSWORD', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522957634/boat.jpg" })
 user9 = User.create!({ username: 'HelloHallo',password: 'PASSWORD', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522957715/ocean.jpg" })
-user10 = User.create!({ username: 'Parrots4Ever',password: 'PASSWORD', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522957770/parrottsss.jpg" })
+user10 = User.create!({ username: 'Parrots4Evar',password: 'PASSWORD', img_url:"http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522957770/parrottsss.jpg" })
 
 Item.destroy_all
 item1 = Item.create!({ title: 'Knotted Knot',
