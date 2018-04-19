@@ -1,24 +1,7 @@
-# README
+# AtSea - the etsy clone for all your nautical needs.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview!
 
-Things you may want to cover:
+AtSea is a single page Etsy clone built with a React/Redux frontend and Ruby on Rails backend. User's can log in and create, edit, update, and delete all kinds of nautical items. There is a categories bar and search bar for easy item sorting and lookup. 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![intro](https://media.giphy.com/media/TIdSI8dOShTmJe9RdW/giphy.gif)
