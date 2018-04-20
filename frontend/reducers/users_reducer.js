@@ -16,7 +16,11 @@ const usersReducer = (state={}, action) =>{
     case RECEIVE_ITEMS:
       return action.payload.users;
     case RECEIVE_SEARCH_ITEMS:
+    if (!action.payload.users){
+      return action.payload;
+    } else {
       return action.payload.users;
+    }
     case RECEIVE_ITEM:
     newState = Object.assign({},
       {[action.payload.user.id]: action.payload.user});
