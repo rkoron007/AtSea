@@ -6,10 +6,12 @@
   left: 0;
   right: 0;
   z-index: 999;
-  height: 4977px;
+  height: 3800px;
   z-index: 9;
   opacity: 0.8;
   background: rgb(221, 221, 221);
+  overflow: hidden;
+  position: absolute;
 }
 
 
@@ -99,6 +101,7 @@
     border-right: 1px solid #e6e6e6;
     border-bottom: 1px solid #e6e6e6;
     display: block;
+    margin-top: 8px;
   }
   label{
     padding: 10px 10px 15px 0px;

@@ -46,7 +46,7 @@ class User < ApplicationRecord
 
   def set_default_picture
     if !(self.img_url)
-    self.img_url = "http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_400/v1523557539/penguin.png"
+    self.img_url = "https://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_400/v1523557539/penguin.png"
     end
   end
 
