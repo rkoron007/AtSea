@@ -47,13 +47,13 @@ class SessionForm extends React.Component {
   }
 
 
-  demoButtonShowing(){
-    if (this.props.formType === "Sign in"){
-      return (
-        <button onClick={this.handleDemo}>Demo</button>
-      );
-    }
-  }
+  // demoButtonShowing(){
+  //   if (this.props.formType === "Sign in"){
+  //     return (
+  //       <button onClick={this.handleDemo}>Demo</button>
+  //     );
+  //   }
+  // }
 
   render(){
     return(
@@ -77,7 +77,7 @@ class SessionForm extends React.Component {
           </label>
           <button className="session-form-btn">{this.props.formType}</button>
           <div className="demo-btn">
-            {this.demoButtonShowing()}
+            <button onClick={this.handleDemo}>Demo</button>
           </div>
         </form>
       </div>

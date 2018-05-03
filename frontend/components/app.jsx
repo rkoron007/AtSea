@@ -46,11 +46,11 @@ const App = () => (
         exact path="/search"
         component={ ItemIndexContainer }
       />
-      <Route exact path ="/signup" component={ MainPageContainer } />
-      <Route exact path ="/login" component={ MainPageContainer } />
       <ProtectRoute exact path ="/carts"
         component={ CartIndexContainer }
       />
+      <Route exact path ="/signup" component={ MainPageContainer } />
+      <Route exact path ="/login" component={ MainPageContainer } />
       <Route exact path ="/" component={ MainPageContainer } />
       <Redirect to="/"></Redirect>
     </Switch>
