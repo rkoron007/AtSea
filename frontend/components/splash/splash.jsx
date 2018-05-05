@@ -13,7 +13,7 @@ class Splash extends React.Component{
               <p className="seller-title">Unique Everything</p>
             </div>
             <p>Love the sea? So do we.
-              We have hundreds unique nautical items.</p>
+              We have hundreds of unique nautical items.</p>
           </li>
           <li>
             <div className="check-title">
