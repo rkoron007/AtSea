@@ -10,7 +10,7 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDemo = this.handleDemo.bind(this);
+    this.handleDemoLogic = this.handleDemoLogic.bind(this);
   }
 
   renderErrors() {
@@ -32,6 +32,10 @@ class SessionForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
+
+    let body = document.getElementsByTagName("body")[0];
+    body.classList.remove("hidden");
+
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
     this.setState({ username: "", password:""});
@@ -41,19 +45,18 @@ class SessionForm extends React.Component {
     return this.props.clearErrors();
   }
 
-  handleDemo(e){
-    e.preventDefault();
-    this.props.demoLogin();
+  handleDemoLogic(){
+    return (e) => {
+      console.log(e);
+      e.preventDefault();
+
+      let body = document.getElementsByTagName("body")[0];
+      body.classList.remove("hidden");
+
+      this.props.demoLogin();
+    };
   }
 
-
-  // demoButtonShowing(){
-  //   if (this.props.formType === "Sign in"){
-  //     return (
-  //       <button onClick={this.handleDemo}>Demo</button>
-  //     );
-  //   }
-  // }
 
   render(){
     return(
@@ -77,7 +80,7 @@ class SessionForm extends React.Component {
           </label>
           <button className="session-form-btn">{this.props.formType}</button>
           <div className="demo-btn">
-            <button onClick={this.handleDemo}>Demo</button>
+            <button onClick={this.handleDemoLogic()}>Demo</button>
           </div>
         </form>
       </div>

@@ -9,3 +9,51 @@ $splash: image_path("ocean2.jpg");
   margin: 20px;
   padding-top: 18px;
 }
+
+.sellers-info{
+  font-family: $graphik;
+  display:flex;
+  color: $seller-grey;
+  flex-direction: row;
+  text-align: center;
+  line-height: 1.6;
+  justify-content: space-between;
+  width: 88%;
+  margin: auto;
+
+  li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 25%;
+
+    .check-title{
+      display: flex;
+      padding-left: 18px;
+      padding-right: 18px;
+      flex-direction: row;
+
+      i{
+        color: $gold-orange;
+        margin-top: 1%;
+        font-size: 25px;
+      }
+      .seller-title{
+        width: 100%;
+        padding-left: 12px;
+        font-size: 18px;
+      }
+    }
+
+    p{
+      width: 100%;
+      font-size: 14px;
+      font-weight: 300;
+      max-width: 340px;
+    }
+  }
+
+
+}
