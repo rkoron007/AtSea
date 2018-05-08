@@ -1,11 +1,36 @@
 import React from "react";
+import Slider from "react-slick";
 
 class Splash extends React.Component{
 
+  splashSlider(){
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
+
+    return(
+    <Slider {...settings}>
+      <div>
+        <div className="splashImage"></div>
+      </div>
+      <div>
+        <div className="islandImage"></div>
+      </div>
+      <div>
+        <div className="turtleImage"></div>
+      </div>
+    </Slider>
+  );
+
+  }
   render(){
     return(
       <div className="splash-contain">
-        <div className="splashImage"></div>
+        {this.splashSlider()}
         <ul className="sellers-info">
           <li>
             <div className="check-title">
