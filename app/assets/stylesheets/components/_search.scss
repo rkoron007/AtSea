@@ -1,8 +1,8 @@
 .search{
   display:flex;
-  padding-top: 25px;
+  padding-top: 20px;
   padding-left: 20px;
-  width: 35%;
+
 
   .search-input{
     font-family: $graphik;
@@ -10,7 +10,7 @@
     color: #333;
     font-size: 14px;
     padding: 9px 7px 7px;
-    width: 300px;
+    // width: 300px;
     border-left: 1px solid $light-grey;
     border-bottom: 1px solid $light-grey;
     border-top: 1px solid $light-grey;
@@ -38,7 +38,7 @@
     border-bottom-right-radius: 4px;
     font-size: 15px;
     font-weight: 200;
-    width: 80px;
+    // width: 80px;
     border-color:rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
   }
 }
