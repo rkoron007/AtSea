@@ -27,6 +27,12 @@ class UserShow extends React.Component{
     }
   }
 
+  showFavorites(){
+    return (
+      null
+    );
+  }
+
   render(){
    const { user, items, currentUser } = this.props;
    if ( !user ) {
@@ -45,7 +51,7 @@ class UserShow extends React.Component{
            <nav className="side-bar">
              <p>Favorites</p>
              <p>Followers</p>
-             <p>Contact </p>
+             <a href="http://rkoron.com"><p>Contact</p></a>
            </nav>
         </div>
 
@@ -54,6 +60,7 @@ class UserShow extends React.Component{
               <div className="right-box-header">
                 <h2>{user.username}s Profile</h2>
                 {this.createButtonShow()}
+                {this.showFavorites()}
               </div>
             <UserShowList items={items} currentUser={currentUser}/>
           </div>

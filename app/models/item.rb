@@ -14,6 +14,8 @@ class Item < ApplicationRecord
   has_many :reviews,
   dependent: :destroy
 
+  has_many :favorites,
+  dependent: :destroy
 
   def associated_items
     Item.where(user: user).where.not(id: id).limit(3)

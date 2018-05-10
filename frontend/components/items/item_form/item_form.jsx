@@ -165,25 +165,31 @@ class ItemForm extends React.Component {
             </section>
 
             <section className="item-form-details">
-              <h2>Item Details</h2>
-              <label className="item-form-title">Title
-                <input type="text"
-                  value={this.state.title}
-                  onChange={this.updateField("title")} required>
-                </input>
-              </label>
-
-              <label className="item-form-description">Description
-                <textarea
-                  value={this.state.description}
-                  onChange={this.updateField("description")} required>
-                </textarea>
-              </label>
-
-              <label className="item-form-price">Price
-                $<input type="number"  value={this.state.price}
-                  onChange={this.updateField("price")} required/>
-              </label>
+              <h2 className="item-form-details-title">Item Details</h2>
+              <ul className="details-list">
+              <li>
+                <label className="item-form-title">Title
+                </label>
+                  <input type="text"
+                    value={this.state.title}
+                    onChange={this.updateField("title")} required>
+                  </input>
+              </li>
+                <li>
+                  <label className="item-form-description">Description
+                  </label>
+                    <textarea
+                      value={this.state.description}
+                      onChange={this.updateField("description")} required>
+                    </textarea>
+                </li>
+                <li>
+                  <label className="item-form-price">Price
+                  </label>
+                    <input type="number"  value={this.state.price}
+                      onChange={this.updateField("price")} required/>
+                </li>
+              </ul>
             </section>
 
             <div className="item-form-footer">

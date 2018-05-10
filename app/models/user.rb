@@ -10,6 +10,8 @@ class User < ApplicationRecord
   foreign_key: :author_id,
   class_name: "Review"
 
+  has_many :favorites
+
   attr_reader :password
 
   after_initialize :ensure_session_token

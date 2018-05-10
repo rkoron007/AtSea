@@ -221,3 +221,8 @@ Review.create!({author_id: user2.id, item_id: item34.id, rating: 1, body: "Nope.
 Review.create!({author_id: user3.id, item_id: item18.id, rating: 5, body: "ILOVETHIS"})
 Review.create!({author_id: user4.id, item_id: item27.id, rating: 1, body: "Nope."})
 Review.create!({author_id: user1.id, item_id: item26.id, rating: 5, body: "ILOVETHIS"})
+
+Favorite.destroy_all
+Favorite.create!({user_id: user2.id, item_id: item1.id})
+Favorite.create!({user_id: user2.id, item_id: item3.id})
+Favorite.create!({user_id: user1.id, item_id: item1.id})
