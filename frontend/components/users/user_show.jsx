@@ -49,8 +49,6 @@ class UserShow extends React.Component{
            <img src={user.imgUrl} className="user-show-img"/>
            <h4>{user.username}</h4>
            <nav className="side-bar">
-             <p>Favorites</p>
-             <p>Followers</p>
              <a href="http://rkoron.com"><p>Contact</p></a>
            </nav>
         </div>
