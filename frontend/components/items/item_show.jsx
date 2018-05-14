@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import ItemShowItem from "./item_show_item";
+import FavoriteForm from "../favorites/favorite_form_container";
 import ReviewIndexContainer from "../reviews/review_index_container";
 import CartFormContainer from "../cart/cart_form_container";
 import ReviewFormContainer from "../reviews/review_form_container";
@@ -63,6 +64,7 @@ class ItemShow extends React.Component{
         <div className="show-middle">
 
           <img src={item.imageUrl} className="show-item-img"/>
+          // <FavoriteForm itemId={item.id} liked={item.currentUserLikes}/>
           <CartFormContainer item={item}/>
        </div>
 

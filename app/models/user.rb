@@ -10,7 +10,9 @@ class User < ApplicationRecord
   foreign_key: :author_id,
   class_name: "Review"
 
-  has_many :favorites
+  has_many :favorites,
+  through: :user_id,
+  class_name: "Favorite"
 
   attr_reader :password
 

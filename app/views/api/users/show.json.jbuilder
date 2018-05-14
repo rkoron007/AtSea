@@ -12,6 +12,7 @@ json.items do
   end
 end
 
+# json.favorites({})
 # json.favorites do
 #   @user.favorites.each do |favorite|
 #     json.set! favorite.item.id do
