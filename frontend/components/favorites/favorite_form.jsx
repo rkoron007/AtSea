@@ -9,7 +9,7 @@ class FavoriteForm extends React.Component{
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount(){
+  whatColor(){
     let heart = document.getElementById("heart");
     if (this.state.liked){
       heart.style.color = "red";
@@ -18,23 +18,27 @@ class FavoriteForm extends React.Component{
     }
   }
 
+  componentDidMount(){
+    this.whatColor();
+  }
+
   componentWillReceiveProps(nextProps){
+    console.log(nextProps);
     if (nextProps.isFavorite !== this.props.isFavorite){
       this.setState({liked: nextProps.isFavorite});
+      this.whatColor();
     }
   }
 
   handleClick(){
     let heart = document.getElementById("heart");
     if (this.state.liked){
-      console.log(this.props);
       this.props.deleteFavorite(this.props.itemId);
-      heart.style.color = "red";
     } else {
-      console.log(this.props.itemId);
       this.props.createFavorite(this.props.itemId);
-      heart.style.color = "grey";
     }
+    this.setState({liked: !this.state.liked});
+    this.whatColor();
   }
 
   render(){
