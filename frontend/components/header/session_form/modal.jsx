@@ -19,13 +19,11 @@ class Modal extends React.Component{
     if (this.state.open) {
       $('html, body').animate({ scrollTop: 0 }, 'fast');
       let body = document.getElementsByTagName("body")[0];
-      console.log("hidden on");
       body.classList.add("hidden");
     }
   }
 
   handleClick() {
-    console.log("hidden gone");
     let body = document.getElementsByTagName("body")[0];
         body.classList.remove("hidden");
    this.setState({open: false}, this.props.history.push('/'));

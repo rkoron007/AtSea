@@ -47,7 +47,6 @@ class SessionForm extends React.Component {
 
   handleDemoLogic(){
     return (e) => {
-      console.log(e);
       e.preventDefault();
 
       let body = document.getElementsByTagName("body")[0];

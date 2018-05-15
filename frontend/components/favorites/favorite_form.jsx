@@ -23,7 +23,6 @@ class FavoriteForm extends React.Component{
   }
 
   componentWillReceiveProps(nextProps){
-    console.log(nextProps);
     if (nextProps.isFavorite !== this.props.isFavorite){
       this.setState({liked: nextProps.isFavorite});
       this.whatColor();
