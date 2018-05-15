@@ -18,15 +18,22 @@ class FavoriteForm extends React.Component{
     }
   }
 
+  componentWillReceiveProps(nextProps){
+    if (nextProps.isFavorite !== this.props.isFavorite){
+      this.setState({liked: nextProps.isFavorite});
+    }
+  }
+
   handleClick(){
     let heart = document.getElementById("heart");
-
     if (this.state.liked){
-      this.props.deleteFavorite();
-      heart.style.color = "grey";
-    } else {
-      this.props.createFavorite(this.props.itemId);
+      console.log(this.props);
+      this.props.deleteFavorite(this.props.itemId);
       heart.style.color = "red";
+    } else {
+      console.log(this.props.itemId);
+      this.props.createFavorite(this.props.itemId);
+      heart.style.color = "grey";
     }
   }
 

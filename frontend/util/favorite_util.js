@@ -3,14 +3,15 @@ export const createFavorite = (itemId) => (
   $.ajax({
     method: "POST",
     url: `api/favorites/`,
-    data: {itemId}
+    data: {favorite:{item_id: itemId}}
   })
 );
 
 
-export const deleteFavorite = (favoriteId) => (
+export const deleteFavorite = (itemId) => (
   $.ajax({
     method: "DELETE",
-    url: `api/favorites/${favoriteId}`,
+    url: `api/favorites/`,
+    data: {favorite:{item_id: itemId}}
   })
 );

@@ -7,19 +7,20 @@ class Api::FavoritesController < ApplicationController
   def create
     @favorite = Favorite.new(favorite_params)
     @favorite.user_id = current_user.id
-
     if @favorite.save
-      render "api/favorites/show"
+      @item = @favorite.item
+      render "api/items/show"
     else
       render json: ['Sorry try Again!'], status: 401
     end
   end
 
   def destroy
-    @favorite = Favorite.find(params[:id])
-
+    @favorite = Favorite.find_by(item_id: favorite_params[:item_id], user_id: current_user.id)
     if @favorite.destroy
-      render "api/favorites/show"
+
+      @item = @favorite.item
+      render "api/items/show"
     else
       render json: ['Sorry couldn\'t find your favorite!'],status:404
     end

@@ -15,7 +15,7 @@ const receiveItems = (payload) => ({
   payload
 });
 
-const receiveItem = (payload) =>({
+export const receiveItem = (payload) =>({
   type: RECEIVE_ITEM,
   payload
 });
