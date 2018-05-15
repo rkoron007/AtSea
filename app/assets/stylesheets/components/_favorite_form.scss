@@ -1,4 +1,18 @@
+.item-show-favs{
+  position: relative;
+  right: 85px;
+  top: 45px;
+  color: #fff;
+}
 
+.item-show-circle{
+  padding: 6px;
+  /* z-index: 99; */
+  background-color: #fff;
+  border-radius: 50%;
+  line-height: 1;
+  font-size: 25px;
+}
 .heart{
   color: "red"
 }

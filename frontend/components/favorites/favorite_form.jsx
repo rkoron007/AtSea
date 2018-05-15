@@ -43,10 +43,12 @@ class FavoriteForm extends React.Component{
 
   render(){
     return(
-      <div>
+      <div className="item-show-favs">
+        <div className="item-show-circle">
         <i className="fa fa-heart"
           onClick={() =>this.handleClick()}
           aria-hidden="true" id="heart"></i>
+        </div>
       </div>
     );
   }

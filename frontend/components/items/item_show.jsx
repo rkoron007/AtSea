@@ -62,7 +62,6 @@ class ItemShow extends React.Component{
 
       <div className="show-middle-box">
         <div className="show-middle">
-
           <img src={item.imageUrl} className="show-item-img"/>
            <FavoriteForm itemId={item.id} liked={item.currentUserLikes}/>
           <CartFormContainer item={item}/>
