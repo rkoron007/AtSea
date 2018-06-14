@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import UserShowList from "./user_show_item_list";
-
+import FavoriteIndex from "../favorites/favorite_index";
 
 class UserShow extends React.Component{
 
@@ -34,7 +34,7 @@ class UserShow extends React.Component{
   }
 
   render(){
-   const { user, items, currentUser } = this.props;
+   const { user, items, currentUser, favorites} = this.props;
    if ( !user ) {
      return <div>No User Here!</div>;
      }
@@ -60,7 +60,8 @@ class UserShow extends React.Component{
                 {this.createButtonShow()}
                 {this.showFavorites()}
               </div>
-            <UserShowList items={items} currentUser={currentUser}/>
+             <UserShowList items={items} currentUser={currentUser} />
+             <FavoriteIndex favorites={favorites}/>
           </div>
         </div>
       </div>

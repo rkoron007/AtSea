@@ -18,7 +18,6 @@ class Api::FavoritesController < ApplicationController
   def destroy
     @favorite = Favorite.find_by(item_id: favorite_params[:item_id], user_id: current_user.id)
     if @favorite.destroy
-
       @item = @favorite.item
       render "api/items/show"
     else
@@ -31,6 +30,5 @@ class Api::FavoritesController < ApplicationController
   def favorite_params
     params.require(:favorite).permit(:item_id)
   end
-
 
 end

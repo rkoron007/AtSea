@@ -9,8 +9,8 @@ const favoritesReducer = (state = {}, action) =>{
   Object.freeze(state);
   let newState;
   switch (action.type) {
-    // case RECEIVE_USER:
-    //   return action.payload.favorites || {};
+    case RECEIVE_USER:
+      return action.payload.favorites || {};
     // case RECEIVE_ITEM:
     //   return action.payload.favorites || {};
     // case REMOVE_FAVORITE:

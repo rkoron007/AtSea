@@ -11,7 +11,7 @@ class User < ApplicationRecord
   class_name: "Review"
 
   has_many :favorites,
-  through: :user_id,
+  foreign_key: :user_id,
   class_name: "Favorite"
 
   attr_reader :password
@@ -20,7 +20,7 @@ class User < ApplicationRecord
   before_create :set_default_picture
   after_create :set_cart
 
-
+  
   def ensure_session_token
     self.session_token ||= generate_session_token
   end
@@ -62,5 +62,4 @@ class User < ApplicationRecord
       @cart = Cart.create!({user_id:self.id})
     end
   end
-
 end
