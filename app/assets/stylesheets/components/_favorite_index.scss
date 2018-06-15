@@ -1,5 +1,64 @@
-.favorite-images{
-    display: block;
-    width: 198px;
-    height: 198px;
+.favorite-index{
+    width:100%;
+    
+    .favorite-title{
+      font-size: 20px;
+      font-family: "Guardian-EgypTT", Arial, sans-serif;
+      line-height: 26px;
+      font-weight: 700;
+      color: #3E3E3E;
+      width: auto;
+      text-shadow: 0 1px 0 white;
+      text-align: left;
+      padding-bottom: 16px;
+    }
+    .favorite-list{
+        display:flex;
+        flex: 1;
+        flex-wrap: wrap;
+
+      .favorite-item{
+        border-radius: 5px;
+        border: 2px solid $cart-background;
+        margin-bottom: 10px;
+        margin: 2.9%;
+        &:first-child{
+          margin-left:20px;
+        }
+
+        .show-item-img{
+          display: block;
+          width: 198px;
+          height: 198px;
+        }
+
+        .item-info{
+          display:block;
+          padding-bottom: 10px;
+          padding-left: 5px;
+          padding-right: 5px;
+
+          h5{
+            color: #444;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 400;
+            margin-top: 7px;
+            margin-bottom: 3px;
+            letter-spacing: .02em;
+            font-family: $graphik;
+          }
+
+          p{
+            color: $dark-grey;
+            font-weight: 550;
+            font-size: 13px;
+            line-height: 1.4;
+            padding-right: 7px;
+            text-align: right;
+          }
+        }
+      }
+  }
+
 }

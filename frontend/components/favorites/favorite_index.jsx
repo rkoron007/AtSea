@@ -11,6 +11,7 @@ export default class FavoriteIndex extends React.Component {
         }
         return (
         <div className="favorite-index">
+            <h2 className="favorite-title">Favorites</h2>
             <ul className="favorite-list">
             {this.props.favorites.map((favorite, idx) => 
                     <FavoriteIndexItem
