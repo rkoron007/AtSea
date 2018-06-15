@@ -86,25 +86,25 @@
     padding: 30px;
     font-size: 14px;
     text-align: center;
+
+    h5{
+      font-size: 14px;
+      text-align: left;
+
+    }
     .filter-btns{
       button{
         width: 150px;
         display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
-        margin-top: 40px;
-        padding-top: 6px;
-        font-size: 12px;
-        font-weight: normal;
+        margin-top: 15px;
         height: 28px;
         padding: 4px 12px;
         background-color: #FFF;
         border-radius: 3px;
-        border: 1px solid $btn-grey;
+        border: 1px solid #D9D9D9;
         display: inline-block;
-        font-family: inherit;
-        text-align: center;
         line-height: 1.4;
+        letter-spacing: .02em;
       }
 
       .line-under{

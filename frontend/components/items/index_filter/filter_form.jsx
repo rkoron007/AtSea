@@ -3,11 +3,11 @@ import React from 'react';
 
 const FilterForm = (props) => (
   <div className="index-filter">
-    <h3 className="filter-header">Filters</h3>
+    <h3 className="filter-header">Sort By:</h3>
     <div className="filter-btns">
-      <button onClick={ () => props.receiveSearchType("asc")}>Sort by Ascending
+      <button onClick={ () => props.receiveSearchType("asc")}>Ascending
       </button>
-      <button onClick={ () => props.receiveSearchType("desc")}>Sort by Descending
+      <button onClick={ () => props.receiveSearchType("desc")}>Descending
       </button>
     </div>
   <strike></strike>
