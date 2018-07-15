@@ -24,6 +24,8 @@
       flex-wrap: wrap;
       font-size: 12px;
       width:100%;
+      padding-left: 15px;
+      padding-top: 5px;
 
       .item{
         display: flex;
@@ -86,6 +88,7 @@
     padding: 30px;
     font-size: 14px;
     text-align: center;
+    margin-left: 20px;
 
     h5{
       font-size: 14px;

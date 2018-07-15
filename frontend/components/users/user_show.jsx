@@ -61,7 +61,6 @@ class UserShow extends React.Component{
                 {this.showFavorites()}
               </div>
              <UserShowList items={items} currentUser={currentUser} />
-             <FavoriteIndex favorites={favorites}/>
           </div>
         </div>
       </div>
@@ -70,5 +69,6 @@ class UserShow extends React.Component{
  }
 }
 
+// <FavoriteIndex favorites={favorites} />
 
 export default UserShow;
