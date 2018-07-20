@@ -5,10 +5,11 @@ import { receiveItem } from "./item_actions";
 
 export const FETCH_FAVORITES = "FETCH_FAVORITES"
 
-const receiveFavorites = (favorites) => ({
-  type: RECEIVE_FAVORITE,
-  favorites
-});
+export const receiveFavorites = (payload) => {
+  debugger
+  return ({ type: FETCH_FAVORITES,
+  payload});
+};
 // export const RECEIVE_FAVORITE = "RECEIVE_FAVORITE";
 // export const REMOVE_FAVORITE = "REMOVE_FAVORITEs";
 //

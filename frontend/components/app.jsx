@@ -11,7 +11,7 @@ import MainPageContainer from "./mainpage/mainpage";
 import CategoriesBarContainer from "./categories/categories_container";
 import CartIndexContainer from "./cart/cart_index_container";
 import UserShowContainer from "./users/user_show_container";
-import FavoriteIndex from "./favorites/favorite_index";
+import FavoriteIndexContainer from "./favorites/favorite_index_container";
 
 import ItemIndexContainer from "./items/items_index_container";
 import ItemShowContainer from "./items/item_show_container";
@@ -35,7 +35,7 @@ const App = () => (
       />
       <ProtectRoute
         exact path="/users/:userId/favorites"
-        component={FavoriteIndex}
+        component={FavoriteIndexContainer}
       />
       <ProtectRoute exact path="/items/:itemId/edit"
         component={ ItemEditContainer }/>

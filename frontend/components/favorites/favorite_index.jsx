@@ -2,7 +2,10 @@ import React from "react";
 import FavoriteIndexItem from "./favorite_index_item";
 
 export default class FavoriteIndex extends React.Component {
-
+    componentDidMount(){
+        const user = parseInt(this.props.match.params["userId"]);
+        this.props.fetchFavorites(user);
+    }
     render(){
         if (!this.props.favorites){
             return (
