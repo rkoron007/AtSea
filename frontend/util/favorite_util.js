@@ -15,3 +15,10 @@ export const deleteFavorite = (itemId) => (
     data: {favorite:{item_id: itemId}}
   })
 );
+
+export const fetchFavorites = (userId) => (
+  $.ajax({
+    method: "GET",
+    url: `api/users/${userId}/favorites/`,
+  })
+);

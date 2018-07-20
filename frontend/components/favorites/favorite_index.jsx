@@ -23,4 +23,3 @@ export default class FavoriteIndex extends React.Component {
         );
     }
 }
-

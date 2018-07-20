@@ -3,13 +3,14 @@ import * as API from "../util/favorite_util";
 
 import { receiveItem } from "./item_actions";
 
+export const FETCH_FAVORITES = "FETCH_FAVORITES"
+
+const receiveFavorites = (favorites) => ({
+  type: RECEIVE_FAVORITE,
+  favorites
+});
 // export const RECEIVE_FAVORITE = "RECEIVE_FAVORITE";
 // export const REMOVE_FAVORITE = "REMOVE_FAVORITEs";
-
-// const receiveFavorite = (favorite) => ({
-//     type: RECEIVE_FAVORITE,
-//     favorite
-// });
 //
 // const removeFavorite = (favoriteId) => ({
 //     type: REMOVE_FAVORITE,
@@ -19,6 +20,12 @@ import { receiveItem } from "./item_actions";
 export const deleteFavorite = (itemId) => dispatch => (
   API.deleteFavorite(itemId).then(
     item => dispatch(receiveItem(item))
+  )
+);
+
+export const fetchFavorites = (userId) => dispatch => (
+  API.fetchFavorites(userId).then(
+    favorites => dispatch(receiveFavorites(favorites))
   )
 );
 

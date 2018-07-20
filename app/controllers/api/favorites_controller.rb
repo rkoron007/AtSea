@@ -1,7 +1,7 @@
 class Api::FavoritesController < ApplicationController
 
   def index
-    @favorites = Favorite.includes(:item).where(user_id: params[:user_id]).load
+    @favorites = Favorite.includes(:item).where(user_id: params[:user_id])
   end
 
   def create
