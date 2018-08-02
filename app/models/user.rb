@@ -15,14 +15,20 @@ class User < ApplicationRecord
   class_name: "Favorite"
 
   attr_reader :password
-
   after_initialize :ensure_session_token
   before_create :set_default_picture
   after_create :set_cart
-
+  
+  has_one_attached :photo
   
   def ensure_session_token
     self.session_token ||= generate_session_token
+  end
+  
+  def ensure_we_have_a_photo
+    unless self.photo.attached?
+        errors[:photo] << "Must be Attached"
+    end
   end
 
   def reset_session_token!

@@ -27,14 +27,9 @@ class UserShow extends React.Component{
     }
   }
 
-  showFavorites(){
-    return (
-      null
-    );
-  }
 
   render(){
-   const { user, items, currentUser, favorites} = this.props;
+   const { user, items, currentUser } = this.props;
    if ( !user ) {
      return <div>No User Here!</div>;
      }
@@ -50,6 +45,9 @@ class UserShow extends React.Component{
            <h4>{user.username}</h4>
            <nav className="side-bar">
              <a href="http://rkoron.com"><p>Contact</p></a>
+             <Link to={`/users/${user.id}/favorites`} className="favorites-link">
+                Favorites
+              </Link>
            </nav>
         </div>
 

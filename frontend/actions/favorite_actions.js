@@ -6,7 +6,6 @@ import { receiveItem } from "./item_actions";
 export const FETCH_FAVORITES = "FETCH_FAVORITES"
 
 export const receiveFavorites = (payload) => {
-  debugger
   return ({ type: FETCH_FAVORITES,
   payload});
 };
@@ -24,11 +23,11 @@ export const deleteFavorite = (itemId) => dispatch => (
   )
 );
 
-export const fetchFavorites = (userId) => dispatch => (
-  API.fetchFavorites(userId).then(
+export const fetchFavorites = (userId) => dispatch => {
+  return API.fetchFavorites(userId).then(
     favorites => dispatch(receiveFavorites(favorites))
   )
-);
+};
 
 export const createFavorite = (favorite) => dispatch => (
     API.createFavorite(favorite).then(

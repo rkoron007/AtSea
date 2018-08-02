@@ -8,17 +8,17 @@ export const createFavorite = (itemId) => (
 );
 
 
-export const deleteFavorite = (itemId) => (
-  $.ajax({
+export const deleteFavorite = (itemId) => {
+  return $.ajax({
     method: "DELETE",
-    url: `api/favorites/`,
-    data: {favorite:{item_id: itemId}}
+    url: `api/favorites/${itemId}`,
+    data: { favorite: { item_id: itemId } }
   })
-);
+};
 
-export const fetchFavorites = (userId) => (
-  $.ajax({
+export const fetchFavorites = (userId) => {
+  return $.ajax({
     method: "GET",
-    url: `api/users/${userId}/favorites/`,
+    url: `api/users/${userId}/favorites/`
   })
-);
+};

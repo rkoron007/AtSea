@@ -10,15 +10,24 @@ class Item < ApplicationRecord
   class_name: "CartItem",
   dependent: :destroy
 
-
   has_many :reviews,
   dependent: :destroy
 
   has_many :favorites,
   dependent: :destroy
 
+
+  has_one_attached :photo
+
+
   def associated_items
     Item.where(user: user).where.not(id: id).limit(3)
+  end
+
+  def ensure_we_have_a_photo
+    unless self.photo.attached?
+        errors[:photo] << "Must be Attached"
+    end
   end
 
   def self.search_results(search_params)
