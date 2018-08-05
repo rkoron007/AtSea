@@ -6,7 +6,8 @@ class Api::ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
+
+    if @item.save!
       render "api/items/show"
     else
       render json: ['Sorry invalid item, please try again.'], status: 422
@@ -54,6 +55,6 @@ class Api::ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:title, :description, :price, :img_url, :user_id)
+    params.require(:item).permit(:title, :description, :price, :photo, :user_id)
   end
 end

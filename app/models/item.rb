@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
-  validates :description, :title, :user_id, :img_url, :price, presence: true
-  # validate :ensure_we_have_a_photo
+  validates :description, :title, :user_id, :price, presence: true
+  validate :ensure_we_have_a_photo
   belongs_to :user,
   foreign_key: :user_id,
   class_name: "User"

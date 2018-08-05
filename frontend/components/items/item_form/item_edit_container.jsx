@@ -8,7 +8,17 @@ import {
 import ItemForm from "./item_form";
 
 const mapStateToProps = ( state, ownProps ) => {
-  const item = state.entities.items[ownProps.match.params.itemId];
+  const defaultItem = {
+    id: '',
+    title: '',
+    description: '',
+    price: '',
+    imageUrl: null,
+    userId: '',
+    uploadedFile: null,
+  };
+  const fetchedItem = state.entities.items[ownProps.match.params.itemId];
+  let item = fetchedItem || defaultItem;
   return {
     item,
     formTitle: "Update Your Product",

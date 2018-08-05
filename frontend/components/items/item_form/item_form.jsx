@@ -1,4 +1,5 @@
 import React from "react";
+import { log } from "util";
 // import Dropzone from 'react-dropzone';
 // import request from 'superagent';
 // import { Redirect } from "react-router-dom";
@@ -9,86 +10,56 @@ import React from "react";
 class ItemForm extends React.Component {
   constructor (props){
     super(props);
-    this.state = {
-      id:'',
-      title: '',
-      description:'',
-      price: '',
-      imageUrl: '',
-      userId: '',
-      uploadedFile: null,
-      uploadedFileCloudinaryUrl: ''
-    };
+    this.state = this.props.item;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateField = this.updateField.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   componentDidMount(){
-    if (this.props.item) {
-      this.setState({
-        title: this.props.item.title,
-        description: this.props.item.description,
-        price: this.props.item.price,
-        imageUrl: this.props.item.imageUrl,
-        userId: this.props.currentUser.id,
-        id: parseInt(this.props.item.id),
-      });
-    } else if (this.props.match.params.itemId) {
+    if (this.props.match.params.itemId) {
       this.props.fetchItem(this.props.match.params.itemId);
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    if(!this.props.item && nextProps.item){
-      this.setState({
-        title: nextProps.item.title,
-        description: nextProps.item.description,
-        price: nextProps.item.price,
-        imageUrl: nextProps.item.imageUrl,
-        userId: nextProps.currentUser.id,
-        id: parseInt(nextProps.item.id)
-      });
+    // if(!this.props.item && nextProps.item){
+    //   this.setState({
+    //     title: nextProps.item.title,
+    //     description: nextProps.item.description,
+    //     price: nextProps.item.price,
+    //     imageUrl: nextProps.item.imageUrl,
+    //     userId: nextProps.currentUser.id,
+    //     id: parseInt(nextProps.item.id)
+    //   });
+    // }
+  }
+
+  handleFile(e){
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ uploadedFile: file, imageUrl: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
     }
-  }
-
-  onImageDrop(files) {
-    this.setState({
-      uploadedFile: files[0]
-    });
-
-    this.handleImageUpload(files[0]);
-  }
-
-  handleImageUpload(file){
-      let upload = request.post(CLOUDINARY_UPLOAD_URL)
-                          .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
-                          .field('file', file);
-
-    upload.end((err, response) => {
-
-      if (response.body.secure_url !== '') {
-        this.setState({
-          uploadedFileCloudinaryUrl: response.body.secure_url
-        });
-      }
-    });
   }
 
   handleSubmit(e){
     e.preventDefault();
-    const currentItem ={
-      title: this.state.title,
-      description: this.state.description,
-      price: this.state.price,
-      user_id: this.props.currentUser.id,
-      img_url: this.state.uploadedFileCloudinaryUrl
-      ||
-      this.state.imageUrl ||
-      "http://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523392738/default.jpg",
-      id: this.state.id || null
-    };
-    this.props.processItemForm(currentItem, this.state.id).then(
+    
+    const formData = new FormData();
+    formData.append('item[title]', this.state.title);
+    formData.append('item[description]', this.state.description);
+    formData.append('item[price]', this.state.price);
+    formData.append('item[user_id]', this.props.currentUser.id);
+    if (this.state.uploadedFile) {
+      formData.append('item[photo]', this.state.uploadedFile);
+    }
+
+    this.props.processItemForm(formData).then(
       railsitem => {
         this.props.history.push(`/items/${railsitem.payload.item.id}`);
       });
@@ -110,22 +81,9 @@ class ItemForm extends React.Component {
       }
   }
 
-  showCurrentPicture(){
-    if (this.state.imageUrl && this.state.uploadedFileCloudinaryUrl === ''){
-      return(
-              <img src={this.state.imageUrl} />
-          );
-    } else if (this.state.uploadedFileCloudinaryUrl){
-      return(
-            <img src={this.state.uploadedFileCloudinaryUrl} />
-      );
-    } else {return null;}
-  }
-
-
   render(){
      const { item, formType, formTitle } = this.props;
-     if(this.props.item){
+    if (this.props.formType ==='Update Your Product'){
        if (this.props.item.userId !== this.props.currentUser.id){
          return (
            <h1 className="not-yo-item">Hey this is not your item!
@@ -133,6 +91,7 @@ class ItemForm extends React.Component {
          );
        }
      }
+      const preview = this.state.imageUrl ? <img src={this.state.imageUrl} /> : null;
     return(
 
       <div className="item-form">
@@ -149,15 +108,10 @@ class ItemForm extends React.Component {
                 <p>Please Add One Photo per Item</p>
               </div>
               <div className="file-upload">
-                <Dropzone padding="15px"
-                  multiple={false}
-                  accept="image/*"
-                  onDrop={this.onImageDrop.bind(this)}>
-                  <p className="droptext">Drop an image or click to
-                    select a file to upload.</p>
-                </Dropzone>
+                <input type="file"
+                  onChange={this.handleFile} />
                   <div className="uploaded-picture">
-                    {this.showCurrentPicture()}
+                    {preview}
                   </div>
               </div>
 
@@ -184,9 +138,9 @@ class ItemForm extends React.Component {
                 </li>
                 <li>
                   <label className="item-form-price">Price
-                  </label>
                     <input type="number"  value={this.state.price}
                       onChange={this.updateField("price")} required/>
+                  </label>
                 </li>
               </ul>
             </section>
@@ -207,3 +161,12 @@ class ItemForm extends React.Component {
 }
 
 export default ItemForm;
+
+
+{/* <Dropzone padding="15px"
+                  multiple={false}
+                  accept="image/*"
+                  onDrop={this.onImageDrop.bind(this)}>
+                  <p className="droptext">Drop an image or click to
+                    select a file to upload.</p>
+                </Dropzone> */}

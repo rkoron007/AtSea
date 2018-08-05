@@ -9,7 +9,17 @@ import ItemForm from "./item_form";
 import {withRouter} from "react-router-dom";
 
 const mapStateToProps = ( state, ownProps ) => {
+  const defaultItem = {
+    id: '',
+    title: '',
+    description: '',
+    price: '',
+    imageUrl: null,
+    userId: '',
+    uploadedFile: null,
+  };
   return {
+    item: defaultItem,
     formTitle: "Create a New Product!",
     currentUser: state.session.currentUser
   };

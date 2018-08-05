@@ -56,7 +56,6 @@ class UserShow extends React.Component{
               <div className="right-box-header">
                 <h2>{user.username}s Profile</h2>
                 {this.createButtonShow()}
-                {this.showFavorites()}
               </div>
              <UserShowList items={items} currentUser={currentUser} />
           </div>
