@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   validates :description, :title, :user_id, :img_url, :price, presence: true
-
+  # validate :ensure_we_have_a_photo
   belongs_to :user,
   foreign_key: :user_id,
   class_name: "User"
@@ -19,16 +19,16 @@ class Item < ApplicationRecord
 
   has_one_attached :photo
 
-
-  def associated_items
-    Item.where(user: user).where.not(id: id).limit(3)
-  end
-
   def ensure_we_have_a_photo
     unless self.photo.attached?
         errors[:photo] << "Must be Attached"
     end
   end
+
+  def associated_items
+    Item.where(user: user).where.not(id: id).limit(3)
+  end
+
 
   def self.search_results(search_params)
     if search_params

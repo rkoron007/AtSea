@@ -1,11 +1,10 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
-import Dropzone from 'react-dropzone';
-import request from 'superagent';
-import { Redirect } from "react-router-dom";
+// import Dropzone from 'react-dropzone';
+// import request from 'superagent';
+// import { Redirect } from "react-router-dom";
 
-const CLOUDINARY_UPLOAD_PRESET = 'fdvmycl7';
-const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dkaolr6pg/upload';
+// const CLOUDINARY_UPLOAD_PRESET = 'fdvmycl7';
+// const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dkaolr6pg/upload';
 
 class ItemForm extends React.Component {
   constructor (props){
