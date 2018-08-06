@@ -22,53 +22,53 @@ user10 = User.create!({ username: 'Parrots4Evar',password: 'PASSWORD', img_url:"
 Item.destroy_all
 item1 = Item.new({ title: 'Knotted Knot1',
   description: 'I have no idea how to undo this. Halp.', price: 25, user_id: user1.id})
-  item1.photo.attach(io: File.open('/Users/rosekoron/Desktop/fullstack_demo/AtSea/app/assets/images/knot.jpg'), filename: 'rope.pdf', content_type: 'pdf')
+  item1.photo.attach(io: File.open('./app/assets/images/knot.jpg'), filename: 'rope.pdf', content_type: 'pdf')
   item1.save!
 item2 = Item.new({ title: 'Solid Gold Boat',
   description: 'The highest quality solid gold boat. I am a genie I can make more.', price: 200000000, user_id: user2.id})
-  item2.photo.attach(io: File.open('/Users/rosekoron/Desktop/fullstack_demo/AtSea/app/assets/images/boat.jpg'), filename: 'boat.pdf', content_type: 'pdf')
+  item2.photo.attach(io: File.open('./app/assets/images/boat.jpg'), filename: 'boat.pdf', content_type: 'pdf')
   item2.save!
   
   item3 = Item.new({ title: 'Wooden Boat',
     description: 'Pretty good boat! +2 speed.', price: 100, user_id: user3.id})
-    item3.photo.attach(io: File.open('/Users/rosekoron/Desktop/fullstack_demo/AtSea/app/assets/images/wood_boat.jpg'), filename: 'woodboat.pdf', content_type: 'pdf')
+    item3.photo.attach(io: File.open('./app/assets/images/wood_boat.jpg'), filename: 'woodboat.pdf', content_type: 'pdf')
     item3.save!
     
   item4 = Item.new({ title: 'Iron Boat',
     description: 'This may be too heavy to float. Buy it anyway.', price: 1000, user_id: user4.id})
-    item4.photo.attach(io: File.open('/Users/rosekoron/Desktop/fullstack_demo/AtSea/app/assets/images/USS_Foote__DD-511__underway_at_sea__circa_in_1945.jpg'), filename: 'steelboat.pdf', content_type: 'pdf')
+    item4.photo.attach(io: File.open('./app/assets/images/USS_Foote__DD-511__underway_at_sea__circa_in_1945.jpg'), filename: 'steelboat.pdf', content_type: 'pdf')
     item4.save!
     
     
   item5 = Item.new({ title: 'Parrot',
     description: 'All this bird does is shit and talk. You know you want it.', price: 80, user_id: user5.id})
-    item5.photo.attach(io: File.open('/Users/rosekoron/Desktop/fullstack_demo/AtSea/app/assets/images/parrot.jpg'), filename: 'parrot.pdf', content_type: 'pdf')
+    item5.photo.attach(io: File.open('./app/assets/images/parrot.jpg'), filename: 'parrot.pdf', content_type: 'pdf')
     item5.save!
       
   item6 = Item.new({ title: 'The Pacific Ocean',
     description: 'I made this ocean. I can always make more. Want one?', price: 1, user_id: user6.id})
-    item6.photo.attach(io: File.open('/Users/rosekoron/Desktop/fullstack_demo/AtSea/app/assets/images/pacific.jpg'), filename: 'ocean.pdf', content_type: 'pdf')
+    item6.photo.attach(io: File.open('./app/assets/images/pacific.jpg'), filename: 'ocean.pdf', content_type: 'pdf')
     item6.save!
     
     item7 = Item.new({ title: 'Map of The Hidden Sea',
       description: 'Even I do not know where the hidden sea lay.
       But I know that I want to make money off you buying this map.',
       price: 50, user_id: user7.id})
-    item7.photo.attach(io: File.open('/Users/rosekoron/Desktop/fullstack_demo/AtSea/app/assets/images/World_Map_1689.jpg'), filename: 'map.pdf', content_type: 'pdf')
+    item7.photo.attach(io: File.open('./app/assets/images/World_Map_1689.jpg'), filename: 'map.pdf', content_type: 'pdf')
     item7.save!
     
     item8 = Item.new({ title: 'Tidy Knot',
       description: 'A cute little knot.', price: 1, user_id: user8.id })
-    item8.photo.attach(io: File.open('/Users/rosekoron/Desktop/fullstack_demo/AtSea/app/assets/images/knot.png'), filename: 'knot.pdf', content_type: 'pdf')
+    item8.photo.attach(io: File.open('./app/assets/images/knot.png'), filename: 'knot.pdf', content_type: 'pdf')
     item8.save!
     item9 = Item.new({ title: 'Loyal Dog',
       description: 'Dogs are the best! Best animal! You should totally get one. Like this one!', price: 0, user_id: user9.id})
-    item9.photo.attach(io: File.open('/Users/rosekoron/Desktop/fullstack_demo/AtSea/app/assets/images/dog.jpg'), filename: 'dog.pdf', content_type: 'pdf')
+    item9.photo.attach(io: File.open('./app/assets/images/dog.jpg'), filename: 'dog.pdf', content_type: 'pdf')
     item9.save!
     
     item10 = Item.new({ title: 'Broken Compass',
       description: 'I got a ton of these things. Please buy one.', price: 50, user_id: user1.id})
-    item10.photo.attach(io: File.open('/Users/rosekoron/Desktop/fullstack_demo/AtSea/app/assets/images/compass.jpg'), filename: 'compass.pdf', content_type: 'pdf')
+    item10.photo.attach(io: File.open('./app/assets/images/compass.jpg'), filename: 'compass.pdf', content_type: 'pdf')
     item10.save!
     #   :"https://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522887179/valve-2971385_960_720_2.jpg" })
 # item11 = Item.new({ title: 'Map of the Pacific Ocean',
