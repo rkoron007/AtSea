@@ -45,7 +45,7 @@ class Api::ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all.includes(:user)
+    @items = Item.with_attached_photo.all.includes(:user)
   end
 
   def show

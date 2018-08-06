@@ -1,11 +1,4 @@
 import React from "react";
-import { log } from "util";
-// import Dropzone from 'react-dropzone';
-// import request from 'superagent';
-// import { Redirect } from "react-router-dom";
-
-// const CLOUDINARY_UPLOAD_PRESET = 'fdvmycl7';
-// const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dkaolr6pg/upload';
 
 class ItemForm extends React.Component {
   constructor (props){
@@ -23,18 +16,18 @@ class ItemForm extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    // if(!this.props.item && nextProps.item){
-    //   this.setState({
-    //     title: nextProps.item.title,
-    //     description: nextProps.item.description,
-    //     price: nextProps.item.price,
-    //     imageUrl: nextProps.item.imageUrl,
-    //     userId: nextProps.currentUser.id,
-    //     id: parseInt(nextProps.item.id)
-    //   });
-    // }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if(!this.props.id && nextProps.item){
+  //     this.setState({
+  //       title: nextProps.item.title,
+  //       description: nextProps.item.description,
+  //       price: nextProps.item.price,
+  //       imageUrl: nextProps.item.imageUrl,
+  //       userId: nextProps.currentUser.id,
+  //       id: parseInt(nextProps.item.id)
+  //     });
+  //   }
+  // }
 
   handleFile(e){
     const file = e.currentTarget.files[0];
@@ -57,6 +50,10 @@ class ItemForm extends React.Component {
     formData.append('item[user_id]', this.props.currentUser.id);
     if (this.state.uploadedFile) {
       formData.append('item[photo]', this.state.uploadedFile);
+    } 
+    
+    if (this.state.id ) {
+      formData.append('item[id]', this.state.id);
     }
 
     this.props.processItemForm(formData).then(
