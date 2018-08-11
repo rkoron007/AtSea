@@ -26,13 +26,14 @@ class User < ApplicationRecord
   #       errors[:photo] << "Must be Attached"
   #   end
   # end
+
   def ensure_session_token
     self.session_token ||= generate_session_token
   end
   
-
   def reset_session_token!
     self.session_token = generate_session_token
+    self.session_token
   end
 
   def generate_session_token
@@ -68,4 +69,5 @@ class User < ApplicationRecord
       @cart = Cart.create!({user_id:self.id})
     end
   end
+  
 end

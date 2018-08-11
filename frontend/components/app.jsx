@@ -30,12 +30,12 @@ const App = () => (
     <Route path ="/" component={CategoriesBarContainer} />
     <Switch>
       <ProtectRoute
-        exact path ="/users/:userId"
-        component={ UserShowContainer }
-      />
-      <ProtectRoute
         exact path="/users/:userId/favorites"
         component={FavoriteIndexContainer}
+      />
+      <ProtectRoute
+        exact path ="/users/:userId"
+        component={ UserShowContainer }
       />
       <ProtectRoute exact path="/items/:itemId/edit"
         component={ ItemEditContainer }/>
