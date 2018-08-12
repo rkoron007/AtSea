@@ -19,6 +19,8 @@ class User < ApplicationRecord
   before_create :set_default_picture
   after_create :set_cart
   
+  has_many :messages, foreign_key: :sender_id, class_name: 'Message'
+  has_many :chats, through: :messages, source: :chat
   # has_one_attached :photo
   
   # def ensure_we_have_a_photo

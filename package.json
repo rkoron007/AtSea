@@ -2,6 +2,8 @@
   "name": "At_sea",
   "private": true,
   "dependencies": {
+    "actioncable": "^5.2.1",
+    "actioncable-js": "^5.0.0-rc2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",

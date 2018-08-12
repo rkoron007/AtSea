@@ -13,8 +13,10 @@ Rails.application.routes.draw do
     resources :carts, only: [:index]
     resources :cart_items, only: [:create, :destroy]
     resource :session, only: [:destroy, :create]
+    resources :chats
+    resources :messages
   end
 
- root to: "static_pages#root"
-
+  mount ActionCable.server => '/cable'
+  root to: "static_pages#root"
 end
