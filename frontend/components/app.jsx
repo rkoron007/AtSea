@@ -12,7 +12,7 @@ import CategoriesBarContainer from "./categories/categories_container";
 import CartIndexContainer from "./cart/cart_index_container";
 import UserShowContainer from "./users/user_show_container";
 import FavoriteIndexContainer from "./favorites/favorite_index_container";
-
+import MessageFormContainer from './messages/message_form_container';
 import ItemIndexContainer from "./items/items_index_container";
 import ItemShowContainer from "./items/item_show_container";
 import ItemEditContainer from "./items/item_form/item_edit_container";
@@ -29,6 +29,10 @@ const App = () => (
 
     <Route path ="/" component={CategoriesBarContainer} />
     <Switch>
+      <ProtectRoute
+        exact path="/chats/:chatId"
+        component={MessageFormContainer}
+      />
       <ProtectRoute
         exact path="/users/:userId/favorites"
         component={FavoriteIndexContainer}

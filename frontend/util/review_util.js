@@ -1,6 +1,4 @@
 import React from "react";
-
-
 export const createReview = (review) => (
   $.ajax({
     method: "POST",

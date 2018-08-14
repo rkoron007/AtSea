@@ -7,7 +7,6 @@ class UserShowList extends React.Component{
     if (!this.props){
       return null;
     }
-    console.log(this.props.items);
     return(
       <ul className="user-item-list">
         {this.props.items.map(item =>

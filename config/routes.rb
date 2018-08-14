@@ -13,8 +13,9 @@ Rails.application.routes.draw do
     resources :carts, only: [:index]
     resources :cart_items, only: [:create, :destroy]
     resource :session, only: [:destroy, :create]
-    resources :chats
-    resources :messages
+    resources :chats, only: [:show, :create] do 
+      resources :messages, only: [:create]
+    end
   end
 
   mount ActionCable.server => '/cable'
