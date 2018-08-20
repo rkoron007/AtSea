@@ -6,3 +6,8 @@ json.messages do
         end
     end
 end 
+
+
+json.chat do
+    json.extract! @chat, :id
+end 

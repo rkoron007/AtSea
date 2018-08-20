@@ -8,6 +8,9 @@ class Message < ApplicationRecord
     ActionCable.server.broadcast "chats-#{chat_id}:messages",
       id: id,
       body: body,
-      sender_id: sender_id
+      sender_id: sender_id,
+      username: sender.username,
+      created: created_at,
+      imageUrl: sender.img_url
     end
 end

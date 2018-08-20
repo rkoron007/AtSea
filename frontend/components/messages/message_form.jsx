@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MessageFormItem from "./message_form_item";
 import { merge} from 'lodash';
+import { parseTime } from "../../util/review_util";
 import Cable from 'actioncable';
 
 class ChatShow extends Component {
@@ -10,6 +11,7 @@ class ChatShow extends Component {
             body: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleNewChat = this.handleNewChat.bind(this);
     }
 
 
@@ -47,6 +49,13 @@ class ChatShow extends Component {
     });
   }
 
+  handleNewChat(e){
+      e.preventDefault();
+      this.props.createChat().then((action) => {
+          return this.props.history.push(`/chats/${action.payload.chat.id}`)
+        })
+  }
+
     handleSubmit(e){
         e.preventDefault();
         let message = merge({}, this.state, {chat_id: this.props.match.params.chatId})
@@ -57,14 +66,19 @@ class ChatShow extends Component {
         if (!this.props.messages){
             return null;
         }
+        // debugger
         return (
-            <div>
-                <h1>Working!</h1>
-                <ul>
+            <div className="all-chats">
+            <div className="chat-header">
+                <h1>Chat Time</h1>
+                <button onClick={this.handleNewChat}>Create New Chat</button>
+             </div>
+                <ul className="chat-container">
                     {this.props.messages.map(message => <MessageFormItem key={message.id} message={message} />)}
                 </ul>
+                
 
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className="input-box">
                     <textarea onChange={this.update("body")} value={this.state.body} />
                     <input type="submit" value="Submit"/> 
                 </form>

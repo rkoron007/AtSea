@@ -1,6 +1,5 @@
 import React from "react";
 import ReviewIndexItem from "./review_index_items";
-import { Route } from 'react-router-dom';
 import { starCreator } from "../../util/review_util";
 
 class ReviewsIndex extends React.Component{

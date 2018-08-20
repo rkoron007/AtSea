@@ -1,0 +1,83 @@
+
+.all-chats {
+    padding-top: 6px;
+    padding-left: 36px;
+    padding-right: 36px;
+    background-color: $chat-creme;
+    display: grid;
+    font-family: $graphik;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20% 20%;
+    .chat-header{
+        grid-column: 1 / span 5;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $line-grey;
+        h1 {
+            padding-top: 24px;
+            padding-bottom: 18px;
+            font-size: 24px;
+            vertical-align: middle;
+        }
+
+        button{
+            text-align: right;
+            // font-size: 14px;
+            padding: 7px;
+            height: 1.5em;
+            margin: 1em;
+            display: table;
+            color: #444;
+            background-color: #fff;
+            font-weight: normal;
+            text-shadow: none;
+            border-radius: 3px;
+            border: 1px solid #E1E3E0;
+        }
+    }
+    .chat-container {
+        background-color: #FAFAF9;
+        border-radius: 3px;
+        color: $chat-grey;
+        font-size: 14px;
+        line-height: 1.4;
+        grid-column: 2/ span 4;
+        border-left: 1px solid $line-grey;
+        border-right: 1px solid $line-grey;
+        border-bottom: 1px solid $line-grey;
+        li {
+            border-bottom: 1px solid $line-grey;
+            padding: 6px;
+            display: flex;
+            justify-content: space-between;
+            
+            .user-message-info {
+                font-family: $graphik;
+                display: flex;
+                justify-content: space-between;
+                img {
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                }
+                
+                p {
+                    padding-left: 18px;
+                    padding-top: 12px;
+                }
+            }
+            .message-info{
+
+            }
+        }
+    }
+
+    .input-box {
+        padding: 10px;
+        textarea {
+            border: 1px solid $line-grey;
+        }
+    }
+
+}

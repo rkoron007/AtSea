@@ -45,9 +45,15 @@ class UserShow extends React.Component{
            <h4>{user.username}</h4>
            <nav className="side-bar">
              <a href="http://rkoron.com"><p>Contact</p></a>
-             <Link to={`/users/${user.id}/favorites`} className="favorites-link">
+             <p><Link to={`/users/${user.id}/favorites`} className="favorites-link">
                 Favorites
               </Link>
+             </p>
+              <p>
+               <Link to={`/chats/1`} className="favorites-link">
+                Conversations
+              </Link>
+             </p>
            </nav>
         </div>
 

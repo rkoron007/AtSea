@@ -7,6 +7,10 @@ class Api::ChatsController < ApplicationController
 
     def create
         @chat = Chat.new
-        render "api/chats/show"
+        if @chat.save
+            render "api/chats/show"
+        else
+            render json: ["nahhhhhh"], status: 404
+        end
     end
 end

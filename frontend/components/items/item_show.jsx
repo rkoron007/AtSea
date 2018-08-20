@@ -13,7 +13,6 @@ class ItemShow extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-
     if (this.props.match.params.itemId !== nextProps.match.params.itemId) {
       this.props.fetchItem(nextProps.match.params.itemId);
     }

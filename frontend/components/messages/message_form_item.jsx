@@ -1,9 +1,16 @@
 import React from 'react';
+import { parseTime } from "../../util/review_util";
 
 const MessageFormItem = ({ message }) => (
     <li>
-        <span>{message.id}</span>
-        <span>{message.body}</span>
+        <div className="user-message-info">
+            <img src={message.imageUrl} />
+            <p>{message.username}</p>
+        </div>
+        <div className="message-info">
+            <p>{message.body}</p>
+        </div>
+        <p>{parseTime(message.created)}</p>
     </li>
 );
 

@@ -14,6 +14,7 @@ export const fetchItem = (itemId) => (
 );
 
 export const createItem = (item) => {
+  debugger
   return $.ajax({
     method: "POST",
     url: `/api/items/`,
