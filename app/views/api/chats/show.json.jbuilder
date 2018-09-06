@@ -9,5 +9,5 @@ end
 
 
 json.chat do
-    json.extract! @chat, :id
+    json.extract! @chat, :id, :title
 end 

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import MessageFormItem from "./message_form_item";
 import { merge} from 'lodash';
-import { parseTime } from "../../util/review_util";
+import { Link } from "react-router-dom"
+import NewChatForm from "./new_chat_form";
 import Cable from 'actioncable';
 
 class ChatShow extends Component {
     constructor(props) {
         super(props);
-        this.state={
+        this.state= {
             body: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,15 +17,26 @@ class ChatShow extends Component {
 
 
     componentDidMount(){
+        this.props.fetchChats();
         this.props.fetchMessages(this.props.match.params.chatId)
-        this.createSocket();
+        let socket = this.props.match.params.chatId;
+        this.createSocket(socket);
+    }
+    
+    componentWillReceiveProps(nextProps){
+        if (this.props.match.params.chatId !== nextProps.match.params.chatId){
+            this.props.fetchChats();
+            this.props.fetchMessages(nextProps.match.params.chatId)
+            let socket = nextProps.match.params.chatId;
+            this.createSocket(socket);
+        }
     }
 
     update(field){
         return (e) => this.setState({body: e.target.value})
     }
 
-    createSocket() {
+    createSocket(socket) {
     let cable;
     if (process.env.NODE_ENV !== 'production') {
       cable = Cable.createConsumer('http://localhost:3000/cable');
@@ -33,27 +45,23 @@ class ChatShow extends Component {
     }
     this.chats = cable.subscriptions.create({
     channel: "MessagesChannel",
-    chat_id: this.props.match.params.chatId
-    //  messageable_id: this.props.currentChat.id //this will be sent to messages_channel's params
+    chat_id: socket
     }, {
       connected: () => {
-        console.log("CONNECTED!");
+        // console.log("CONNECTED!");
       },
       disconnected: () => {
-        console.log("---DISCONNECTED---");
+        // console.log("---DISCONNECTED---");
       },
       received: (data) => { //data passed from js/channels/messages.js.erb
-        data.chatId = this.props.match.params.chatId;
+        data.chatId = socket;
         this.props.receiveMessage(data);
       }
     });
   }
 
-  handleNewChat(e){
-      e.preventDefault();
-      this.props.createChat().then((action) => {
-          return this.props.history.push(`/chats/${action.payload.chat.id}`)
-        })
+  handleNewChat(){
+      this.props.openModal();
   }
 
     handleSubmit(e){
@@ -66,22 +74,27 @@ class ChatShow extends Component {
         if (!this.props.messages){
             return null;
         }
-        // debugger
         return (
             <div className="all-chats">
-            <div className="chat-header">
-                <h1>Chat Time</h1>
-                <button onClick={this.handleNewChat}>Create New Chat</button>
-             </div>
-                <ul className="chat-container">
-                    {this.props.messages.map(message => <MessageFormItem key={message.id} message={message} />)}
-                </ul>
-                
+                <NewChatForm createChat={this.props.createChat} closeModal={this.props.closeModal} modal={this.props.modal} />
+                <div className="chat-header">
+                    <h1>Coversations</h1>
+                    <button onClick={this.handleNewChat}>Create New Chat</button>
+                </div>
+                <div className="chat-index">
+                    <ul>
+                        {this.props.chats.map(chat => <li key={chat.id}><Link to={`/chats/${chat.id}`}>{chat.title}</Link></li>)}
+                    </ul>
+                </div>
+                    <ul className="chat-container">
+                        {this.props.messages.map(message => <MessageFormItem key={message.id} message={message} />)}
+                    </ul>
+                    
 
-                <form onSubmit={this.handleSubmit} className="input-box">
-                    <textarea onChange={this.update("body")} value={this.state.body} />
-                    <input type="submit" value="Submit"/> 
-                </form>
+                    <form onSubmit={this.handleSubmit} className="input-box">
+                        <textarea onChange={this.update("body")} value={this.state.body} />
+                        <input type="submit" value="Submit"/> 
+                    </form>
             </div>
         );
     }

@@ -1,0 +1,130 @@
+.hidden{
+  overflow: hidden;
+}
+
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  height: 3800px;
+  opacity: 0.8;
+  background: rgb(221, 221, 221);
+  overflow: hidden;
+}
+
+
+.modal-window {
+  font-family: $graphik;
+  top: 80px;
+  left: 35%;
+  margin-left: -220px;
+  width: 500px;
+  border-radius: 5px;
+  border: 1px solid #BFBFBF;
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  z-index: 999;
+  overflow: hidden;
+  height: 450px;
+  margin: 0 auto;
+  box-shadow: -1px 1px 20px 4px rgba(180, 180, 190, 0.62);
+
+  .modal-header{
+    background-color: $modal-grey;
+    padding: 3px;
+    border-top: 1px solid #FFF;
+    section{
+      padding-left: 40px;
+      padding-top: 36px;
+      padding-right: 10px;
+      a{
+        background-color: $modal-grey;
+      border: 1px solid grey;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      background-color: #FAF9F5;
+      border: 1px solid #E1E3DF;
+      border-left: 0;
+      font-size: 13px;
+      padding: 7px 12px;
+      margin: 0 0 -1px;
+      text-align: center;
+      color: #444;
+      font-weight: bold;
+      cursor: pointer;
+
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+      .selected{
+        background-color: white;
+        padding: 8px 12px;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.session-form-container{
+  font-family: $graphik;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid $light-grey;
+  padding: 20px 53px;
+  overflow: hidden;
+
+  .session-errors {
+    font-family: $roboto;
+    line-height: 13px;
+
+    color: #C12323;
+    display: inline-block;
+
+    li{
+    background-color: #FFEDED;
+    padding: 10px;
+    border-radius: 5px;
+    }
+  }
+
+  input{
+    line-height: 16px;
+    color: #333;
+    font-size: 12px;
+    padding: 6px;
+    width: 218px;
+    border: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    display: block;
+    margin-top: 8px;
+  }
+  label{
+    padding: 10px 10px 15px 0px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    letter-spacing: .05em;
+  }
+  button{
+    display: inline-block;
+    padding: 7px 7px 8px;
+
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    background-color: #FFAA00;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 400;
+    width: 218px;
+    margin-bottom: 9px;
+  }
+
+}

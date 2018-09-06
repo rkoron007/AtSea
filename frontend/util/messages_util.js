@@ -5,10 +5,18 @@ export const fetchMessages = (chatId) => (
     })
 )
 
-export const createChat = () => (
+export const createChat = (title) => {
+    return $.ajax({
+        url: `api/chats`,
+        method: 'post',
+        data: {chat:{title}}
+    })
+}
+
+export const fetchChats = () => (
     $.ajax({
         url: `api/chats`,
-        method: 'post'
+        method: 'get'
     })
 )
 

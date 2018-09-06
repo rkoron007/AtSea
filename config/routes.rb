@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :carts, only: [:index]
     resources :cart_items, only: [:create, :destroy]
     resource :session, only: [:destroy, :create]
-    resources :chats, only: [:show, :create] do 
+    resources :chats, only: [:show, :create, :index] do 
       resources :messages, only: [:create]
     end
   end
