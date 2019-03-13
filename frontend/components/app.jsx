@@ -30,10 +30,6 @@ const App = () => (
     <Route path ="/" component={CategoriesBarContainer} />
     <Switch>
       <ProtectRoute
-        exact path="/chats/:chatId"
-        component={MessageFormContainer}
-      />
-      <ProtectRoute
         exact path="/users/:userId/favorites"
         component={FavoriteIndexContainer}
       />

@@ -50,9 +50,9 @@ class UserShow extends React.Component{
               </Link>
              </p>
               <p>
-               <Link to={`/chats/1`} className="favorites-link">
+               {/* <Link to={`/chats/1`} className="favorites-link">
                 Conversations
-              </Link>
+              </Link> */}
              </p>
            </nav>
         </div>
