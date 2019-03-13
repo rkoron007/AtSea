@@ -11,4 +11,4 @@ build:
       NODE_ENV: production
 run:
   web: rails s
-  frontend: npm start
+  frontend: npm run webpack --mode=production
