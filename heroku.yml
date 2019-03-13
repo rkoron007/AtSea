@@ -1,32 +1,16 @@
 version: '3'
-services:
-  db:
-    image: postgres
-    volumes:
-      - ./tmp/db:/var/lib/postgresql/data
-  web:
-    build: 
-      context: .
-      dockerfile: Dockerfile.rails
-    image: rkoron/rails
-    command: puma
-    volumes:
-      - .:/myapp
-    ports:
-      - "3000:3000"
-    environment:
+
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: DATABASE
+build:
+  docker:
+    web: Dockerfile.rails
+    frontend: Dockerfile.rails
+  config:
       DATABASE_URL: postgres://postgres@db
-    depends_on:
-      - db
-  frontend:
-    build: 
-      context: .
-      dockerfile: Dockerfile.react
-    image: rkoron/react
-    volumes:
-      - '.:/usr/src/app'
-      - '/usr/src/app/node_modules'
-    ports:
-      - "80:3000"
-    environment:
-      - NODE_ENV=development
+      NODE_ENV: production
+run:
+  web: rails rb:create
+  frontend: npm start
