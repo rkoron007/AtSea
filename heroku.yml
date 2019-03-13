@@ -12,4 +12,4 @@ build:
       NODE_ENV: production
 run:
   web: rails s
-  frontend: npm run webpack --mode=production
+  frontend: npm run postinstall
