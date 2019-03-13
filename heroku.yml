@@ -10,5 +10,5 @@ build:
       DATABASE_URL: postgres://postgres@db
       NODE_ENV: production
 run:
-  web: rails rb:create
+  web: rails s
   frontend: npm start
