@@ -8,6 +8,7 @@ build:
     frontend: Dockerfile.rails
   config:
       DATABASE_URL: postgres://postgres@db
+      RAILS_ENV: production
       NODE_ENV: production
 run:
   web: rails s
