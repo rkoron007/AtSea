@@ -47,13 +47,8 @@ class ChatShow extends Component {
     channel: "MessagesChannel",
     chat_id: socket
     }, {
-      connected: () => {
-        // console.log("CONNECTED!");
-      },
-      disconnected: () => {
-        // console.log("---DISCONNECTED---");
-      },
-      received: (data) => { //data passed from js/channels/messages.js.erb
+      received: (data) => { 
+        //data passed from js/channels/messages.js.erb
         data.chatId = socket;
         this.props.receiveMessage(data);
       }

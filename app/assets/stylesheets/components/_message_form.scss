@@ -12,8 +12,12 @@
     .chat-index {
         ul{
             grid-column: 1 / span 3;
+            background: $medium-grey;
+            padding-left: 5px;
+
             li {
-    
+            padding-bottom: 10px;
+            border: 1px solid $cart-line-grey;
             }
         }
     }
