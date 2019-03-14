@@ -1,11 +1,41 @@
-FROM node:7.8.0
+
+FROM node:11-alpine
 
 WORKDIR /app
 
 # Install all dependencies of the current project.
 COPY package.json package.json
 RUN npm install
-COPY . .
+COPY frontend .
 
 # Copy all local files into the image.
-CMD npm start
+CMD ["npm", "postinstall"]
+
+
+FROM rkoron1 as build-stage
+
+WORKDIR /app
+
+FROM ruby:2.5.3-alpine
+RUN apk add --no-cache --update build-base \
+  linux-headers \
+  git \
+  postgresql-dev \
+  nodejs \
+  tzdata
+
+WORKDIR /myapp
+COPY Gemfile /myapp/Gemfile
+COPY Gemfile.lock /myapp/Gemfile.lock
+RUN bundle install
+
+COPY --from=build-stage /myapp /myapp
+
+# Add a script to be executed every time the container starts.
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 3000
+
+# Start the main process.
+CMD ["rails", "server", "-b", "0.0.0.0"]

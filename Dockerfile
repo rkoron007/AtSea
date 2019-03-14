@@ -1,7 +1,6 @@
 
 FROM node:11-alpine as build-stage
 
-RUN mkdir /myapp
 WORKDIR /myapp
 
 COPY package.json package.json
@@ -9,19 +8,27 @@ RUN npm install
 COPY . .
 RUN npm run postinstall
 
-FROM ruby:2.5
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
-RUN mkdir /myapp
+# FROM ruby:2.5.3
+FROM ruby:2.5.3-alpine
+RUN apk add --no-cache --update build-base \
+  linux-headers \
+  git \
+  postgresql-dev \
+  nodejs \
+  tzdata
+# RUN apt-get update -qq && apt-get install -y nodejs postgresql-client \
+#   && rm -rf /var/lib/apt/lists/*
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
+
 COPY --from=build-stage /myapp /myapp
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
+# ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 
 # Start the main process.

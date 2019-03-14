@@ -4,7 +4,7 @@ setup:
       as: DATABASE
 build:
   docker:
-    web: Dockerfile.rails
+    web: Dockerfile
   config:
       DATABASE_URL: postgres://postgres@db
       RAILS_ENV: production

@@ -5,9 +5,7 @@ services:
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
   web:
-    build: 
-      context: .
-      dockerfile: Dockerfile.rails
+    build: .
     image: rkoron/rails
     command: puma
     volumes:
