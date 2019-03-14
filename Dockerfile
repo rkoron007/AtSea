@@ -16,8 +16,7 @@ RUN apk add --no-cache --update build-base \
   postgresql-dev \
   nodejs \
   tzdata
-# RUN apt-get update -qq && apt-get install -y nodejs postgresql-client \
-#   && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
