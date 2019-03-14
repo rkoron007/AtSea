@@ -1,3 +1,14 @@
+
+FROM node:11-alpine as build-stage
+
+RUN mkdir /myapp
+WORKDIR /myapp
+
+COPY package.json package.json
+RUN npm install
+COPY . .
+RUN npm run postinstall
+
 FROM ruby:2.5
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 RUN mkdir /myapp
@@ -5,7 +16,7 @@ WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
-COPY . /myapp
+COPY --from=build-stage /myapp /myapp
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/

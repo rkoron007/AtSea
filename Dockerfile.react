@@ -4,10 +4,8 @@ WORKDIR /app
 
 # Install all dependencies of the current project.
 COPY package.json package.json
-COPY webpack.config.js .
 RUN npm install
+COPY . .
 
 # Copy all local files into the image.
-COPY /frontend .
-EXPOSE 3000
 CMD npm start

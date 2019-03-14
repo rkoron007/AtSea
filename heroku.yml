@@ -5,11 +5,9 @@ setup:
 build:
   docker:
     web: Dockerfile.rails
-    frontend: Dockerfile.react
   config:
       DATABASE_URL: postgres://postgres@db
       RAILS_ENV: production
       NODE_ENV: production
 run:
   web: rails s
-  frontend: npm run postinstall

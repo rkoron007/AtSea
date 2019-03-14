@@ -18,13 +18,3 @@ services:
       DATABASE_URL: postgres://postgres@db
     depends_on:
       - db
-  frontend:
-    build: 
-      context: .
-      dockerfile: Dockerfile.react
-    image: rkoron/react
-    volumes:
-      - '.:/usr/src/app'
-      - '/usr/src/app/node_modules'
-    environment:
-      - NODE_ENV=development
