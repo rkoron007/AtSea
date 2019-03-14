@@ -246,10 +246,10 @@ Favorite.create!({user_id: user2.id, item_id: item1.id})
 Favorite.create!({user_id: user2.id, item_id: item3.id})
 Favorite.create!({user_id: user1.id, item_id: item1.id})
 
-Chat.destroy_all
-chat1 = Chat.create!({title: "General Chat"})
-chat2 = Chat.create!({title: "Animal Lovers"})
+# Chat.destroy_all
+# chat1 = Chat.create!({title: "General Chat"})
+# chat2 = Chat.create!({title: "Animal Lovers"})
 
-Message.destroy_all
-message1 = Message.create!({sender_id: user1.id, chat_id: chat1.id, body:'Yooooo'})
-message2 = Message.create!({sender_id: user2.id, chat_id: chat1.id, body:'Love Dogs'})
+# Message.destroy_all
+# message1 = Message.create!({sender_id: user1.id, chat_id: chat1.id, body:'Yooooo'})
+# message2 = Message.create!({sender_id: user2.id, chat_id: chat1.id, body:'Love Dogs'})
