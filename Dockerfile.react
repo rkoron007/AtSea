@@ -1,16 +1,13 @@
-# base image
-FROM node:9.6.1
+FROM node:7.8.0
 
-# set working directory
-RUN mkdir /usr/src/app
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# add `/usr/src/app/node_modules/.bin` to $PATH
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
+# Install all dependencies of the current project.
+COPY package.json package.json
+COPY webpack.config.js .
+RUN npm install
 
-# install and cache app dependencies
-COPY package.json /usr/src/app/package.json
-RUN npm install --silent
-
-# start app
-CMD ["npm", "start"]
+# Copy all local files into the image.
+COPY /frontend .
+EXPOSE 3000
+CMD npm start
