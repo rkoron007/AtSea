@@ -19,7 +19,7 @@ default: &default
   encoding: unicode
   host: db
   username: postgres
-  password:
+  password: postgres
   pool: 5
 
 
@@ -82,6 +82,8 @@ test:
 #
 production:
   <<: *default
-  database: house_list_production
-  username: house_list
-  password: <%= ENV['HOUSE_LIST_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  host: db
+  username: postgres
+  password: postgres
+

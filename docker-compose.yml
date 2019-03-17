@@ -5,8 +5,10 @@ services:
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
   web:
-    build: .
-    image: rkoron/rails
+    build:
+      context: .
+      dockerfile: Dockerfile.rails
+    image: rkoron/atsea-rails
     command: puma
     volumes:
       - .:/myapp
@@ -16,3 +18,16 @@ services:
       DATABASE_URL: postgres://postgres@db
     depends_on:
       - db
+  frontend:
+      build: 
+        context: .
+        dockerfile: Dockerfile.react
+      image: rkoron/atsea-react
+      volumes:
+        - '.:/usr/src/app'
+        - '/usr/src/app/node_modules'
+      ports:
+        - "80:3000"
+      environment:
+        - NODE_ENV=development 
+  
