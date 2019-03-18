@@ -10,3 +10,7 @@ build:
       DATABASE_URL: postgres://postgres@db
       RAILS_ENV: production
       NODE_ENV: production
+run:
+  image: web
+  command:
+    - rails server -b 0.0.0.0 -p $PORT
