@@ -9,11 +9,12 @@ services:
       context: .
       dockerfile: Dockerfile.rails
     image: rkoron/atsea-rails
-    command: puma
     volumes:
       - .:/myapp
     ports:
       - "3000:3000"
+    depends_on:
+      - db
     environment:
       DATABASE_URL: postgres://postgres@db
     depends_on:

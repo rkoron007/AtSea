@@ -1,5 +1,11 @@
-FROM ruby:2.5
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+FROM ruby:2.5.3-alpine
+RUN apk add --no-cache --update build-base \
+  linux-headers \
+  git \
+  postgresql-dev \
+  nodejs \
+  tzdata
+
 
 # environment vars must be included in heroku.yml and dockerfile
 ARG DATABASE_URL="postgres://postgres@db"
@@ -14,8 +20,8 @@ COPY . /myapp
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
-#ENTRYPOINT ["entrypoint.sh"]
+
 EXPOSE 3000
 
 # Start the main process.
-CMD ["rails", "server", "-b", "0.0.0.0", "-p", $PORT] 
+CMD ["rails", "server", "-b", "0.0.0.0"] 
