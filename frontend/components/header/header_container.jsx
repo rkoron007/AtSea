@@ -21,7 +21,7 @@ class HeaderContainer extends React.Component{
         <div className="header-left">
         <Link to="/" className="header-link">
           <i className="fa fa-anchor fa-3x" aria-hidden="true"></i>
-          <h2>AtSea</h2>
+          <h2>NotSea</h2>
         </Link>
           <SearchFormContainer />
         </div>

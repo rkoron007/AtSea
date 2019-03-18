@@ -23,7 +23,15 @@ Item.destroy_all
 item1 = Item.new({ title: 'Knotted Knot1',
   description: 'I have no idea how to undo this. Halp.', price: 25, user_id: user1.id})
   item1.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/knot.png")), filename: 'knot.png', content_type: 'pdf')
-  item1.save!
+
+  item1 = Item.new({ title: 'Knotted Knot1',
+  description: 'I have no idea how to undo this. Halp.', price: 25, user_id: 1})
+  require 'open-uri'
+ item1.photo.attach(io:  open("https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/05/22224952/beagle-puppy-in-large-cushion-chair.jpg"), filename: 'knot.png', content_type: 'pdf')
+  # item1 = Item.new({ title: 'Knotted Knot1',
+  # description: 'I have no idea how to undo this. Halp.', price: 25, user_id: 1})
+  # item1.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/knot.png")), filename: 'knot.png', content_type: 'pdf')
+  # item1.save!
 # item2 = Item.new({ title: 'Solid Gold Boat',
 #   description: 'The highest quality solid gold boat. I am a genie I can make more.', price: 200000000, user_id: user2.id})
 #   item2.photo.attach(io: File.open('./app/assets/images/boat.jpg'), filename: 'boat.pdf', content_type: 'pdf')
