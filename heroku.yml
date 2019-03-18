@@ -10,7 +10,3 @@ build:
       DATABASE_URL: postgres://postgres@db
       RAILS_ENV: production
       NODE_ENV: production
-release:
-  image: web
-  command: 
-    - rails db:reset
