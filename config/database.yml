@@ -17,7 +17,6 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: db
   url: <%= ENV['DATABASE_URL'] %>
   pool: 5
 

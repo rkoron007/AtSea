@@ -20,10 +20,10 @@ user9 = User.create!({ username: 'HelloHallo',password: 'PASSWORD', img_url:"htt
 user10 = User.create!({ username: 'Parrots4Evar',password: 'PASSWORD', img_url:"https://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522957770/parrottsss.jpg" })
 
 Item.destroy_all
-# item1 = Item.new({ title: 'Knotted Knot1',
-#   description: 'I have no idea how to undo this. Halp.', price: 25, user_id: user1.id})
-#   item1.photo.attach(io: File.open('./app/assets/images/knot.jpg'), filename: 'rope.pdf', content_type: 'pdf')
-#   item1.save!
+item1 = Item.new({ title: 'Knotted Knot1',
+  description: 'I have no idea how to undo this. Halp.', price: 25, user_id: user1.id})
+  item1.photo.attach(io: File.open(File.join(Rails.root, "/app/assets/images/knot.png")), filename: 'knot.png', content_type: 'pdf')
+  item1.save!
 # item2 = Item.new({ title: 'Solid Gold Boat',
 #   description: 'The highest quality solid gold boat. I am a genie I can make more.', price: 200000000, user_id: user2.id})
 #   item2.photo.attach(io: File.open('./app/assets/images/boat.jpg'), filename: 'boat.pdf', content_type: 'pdf')
@@ -194,17 +194,17 @@ Item.destroy_all
 #   :"https://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1523646964/739px-North_Atlantic_Ocean_laea_relief_location_map.jpg" })
 
 Review.destroy_all
-Review.create!({author_id: user1.id, item_id: item1.id, rating: 5, body: "I love this nautical item."})
-Review.create!({author_id: user2.id, item_id: item1.id, rating: 1, body: "I'm not sure bout this one."})
-Review.create!({author_id: user3.id, item_id: item1.id, rating: 5, body: "I'd buy it. Or would I?"})
-Review.create!({author_id: user4.id, item_id: item1.id, rating: 5, body: "ILOVETHIS"})
-Review.create!({author_id: user3.id, item_id: item4.id, rating: 4, body: "This is so cool. I'm going to buy 50."})
-Review.create!({author_id: user2.id, item_id: item5.id, rating: 5, body: "I need this thingggg"})
-Review.create!({author_id: user9.id, item_id: item6.id, rating: 3, body: "I'm a big fan of items"})
-Review.create!({author_id: user8.id, item_id: item7.id, rating: 2, body: "Quality was bad. But still made me smile."})
-Review.create!({author_id: user6.id, item_id: item8.id, rating: 1, body: "Duuuuuuuuuuuuuuuuuuuuuuude."})
-Review.create!({author_id: user6.id, item_id: item9.id, rating: 4, body: "I had so much fun with this!"})
-Review.create!({author_id: user5.id, item_id: item10.id, rating: 3, body: "But why?"})
+# Review.create!({author_id: user1.id, item_id: item1.id, rating: 5, body: "I love this nautical item."})
+# Review.create!({author_id: user2.id, item_id: item1.id, rating: 1, body: "I'm not sure bout this one."})
+# Review.create!({author_id: user3.id, item_id: item1.id, rating: 5, body: "I'd buy it. Or would I?"})
+# Review.create!({author_id: user4.id, item_id: item1.id, rating: 5, body: "ILOVETHIS"})
+# Review.create!({author_id: user3.id, item_id: item4.id, rating: 4, body: "This is so cool. I'm going to buy 50."})
+# Review.create!({author_id: user2.id, item_id: item5.id, rating: 5, body: "I need this thingggg"})
+# Review.create!({author_id: user9.id, item_id: item6.id, rating: 3, body: "I'm a big fan of items"})
+# Review.create!({author_id: user8.id, item_id: item7.id, rating: 2, body: "Quality was bad. But still made me smile."})
+# Review.create!({author_id: user6.id, item_id: item8.id, rating: 1, body: "Duuuuuuuuuuuuuuuuuuuuuuude."})
+# Review.create!({author_id: user6.id, item_id: item9.id, rating: 4, body: "I had so much fun with this!"})
+# Review.create!({author_id: user5.id, item_id: item10.id, rating: 3, body: "But why?"})
 # Review.create!({author_id: user4.id, item_id: item11.id, rating: 2, body: "I feel like I'd like this but in pink."})
 # Review.create!({author_id: user2.id, item_id: item12.id, rating: 1, body: "HEEEEEEEEEYAAAAAAAA. Hated it."})
 # Review.create!({author_id: user1.id, item_id: item13.id, rating: 5, body: "OHMYGOD"})
@@ -242,9 +242,9 @@ Review.create!({author_id: user5.id, item_id: item10.id, rating: 3, body: "But w
 # Review.create!({author_id: user1.id, item_id: item26.id, rating: 5, body: "ILOVETHIS"})
 
 Favorite.destroy_all
-Favorite.create!({user_id: user2.id, item_id: item1.id})
-Favorite.create!({user_id: user2.id, item_id: item3.id})
-Favorite.create!({user_id: user1.id, item_id: item1.id})
+# Favorite.create!({user_id: user2.id, item_id: item1.id})
+# Favorite.create!({user_id: user2.id, item_id: item3.id})
+# Favorite.create!({user_id: user1.id, item_id: item1.id})
 
 # Chat.destroy_all
 # chat1 = Chat.create!({title: "General Chat"})
