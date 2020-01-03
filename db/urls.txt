@@ -1,4 +1,0 @@
-"https://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522878283/Broighter_Gold_2C_Dublin_2C_October_2010__2803_29.jpg"
-https://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522885461/wood_boat.jpg
-https://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522885669/USS_Foote__DD-511__underway_at_sea__circa_in_1945.jpg"
-https://res.cloudinary.com/dkaolr6pg/image/upload/c_scale,h_600,w_600/v1522885764/parrot.jpg"

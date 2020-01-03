@@ -22,11 +22,10 @@
     "slick-carousel": "^1.8.1",
     "superagent": "^3.8.2",
     "url-loader": "^1.0.1",
-    "webpack": "^3.11.0", 
+    "webpack": "^3.11.0",
     "redux-logger": "^3.0.6"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "description": "",
   "version": "1.0.0",
   "main": "webpack.config.js",

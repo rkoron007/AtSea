@@ -3,13 +3,13 @@ import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
 
-import {createMessage} from "./actions/message_actions";
+import { createMessage } from "./actions/message_actions";
 
-document.addEventListener("DOMContentLoaded", ()=>{
-let store;
+document.addEventListener("DOMContentLoaded", () => {
+  let store;
 
   if (window.currentUser) {
-    const preloadedState = { session: { id: window.currentUser}};
+    const preloadedState = { session: { currentUser: window.currentUser } };
     store = configureStore(preloadedState);
     delete window.currentUser;
   } else {
@@ -18,5 +18,5 @@ let store;
   window.createMessage = createMessage;
   window.dispatch = store.dispatch;
   const rootElement = document.getElementById("root");
-  ReactDOM.render(<Root store={store}/>, rootElement);
+  ReactDOM.render(<Root store={store} />, rootElement);
 });
